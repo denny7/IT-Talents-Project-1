@@ -1,5 +1,79 @@
 body {
-  margin: 0 auto;
+    margin: 0 auto;
+    background: #ebeced;
+}
+.headerUp {
+    height: auto;
+    background: white;
+}
+.currency {
+    height: 70px;
+    border: none;
+    border-radius: 0;
+    border-left: 1px solid #e4e5e3;
+}
+.myProfile {
+    height: 70px;
+    margin-right: 25px;
+    border: none;
+    border-radius: 0;
+    border-left: 1px solid #e4e5e3;
+}
+#logo {
+    width: 150px;
+    display: inline-block;
+    margin-left:45%;
+    margin-top: -15px;
+    margin-bottom: -15px;
+}
+.headerDown {
+    background: #37454d;
+    height: auto;
+}
+.headerDown .form-control, .headerDown .searchHeader {
+  margin-top: 15px;
+  margin-bottom: 7px;
+  height: 40px;
+  margin-left: 23%;
+}
+.headerDown .searchHeader{
+  margin-top: 15px;
+  height: 40px;
+  margin-left: 30%;
+}
+.buttonsHeader button:first-child{
+  margin-left:15.1%;
+}
+.buttonsHeader button {
+display: inline-block;
+height: 40px;
+width: 22.38%;
+margin-bottom: 15px;
+}
+.dropdown,.currency {
+  display: inline-block;
+  float: right;
+}
+/* header ends here */
+main {
+  margin-top: 12px;
+}
+.mapArticle {
+  height: 100px;
+  width: 100%;
+  background-color: white;
+  margin : 5px 0px;
+}
+.mapArticle button {
+  margin-top: 12.5%;
+  margin-left: 22.5%;
+  border: 1px solid black;
+}
+.filterArticle>.buttons>button{
+width: 50%;
+}
+.filterArticle>.buttons>button:last-child{
+  margin-left:-0.5em;
 }
 .sidenav {
     height: auto;
@@ -7,33 +81,10 @@ body {
     color: white;
 }
 .center {
-    height: auto;
-    background: red;
+    height: 350px;
+    background: khaki;
 }
-
-header {
-    height: auto;
-    background: green;
-}
-
-.headerUp {
-    height: auto;
-}
-
-.headerDown {
-    background: grey;
-    height: 80%;
-}
-
 footer {
-    height: 150px;
+    height: auto;
     background: green;
-}
-
-#logo {
-    width: 150px;
-    display: block;
-    margin: -15px auto;
-
-
 }

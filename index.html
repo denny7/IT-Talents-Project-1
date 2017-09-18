@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,41 +21,50 @@
         <header>
             <div class="headerUp">
                 <img id="logo" src="images/logo.png" alt="trivago logo">
-                <button class="btn btn-default currency" type="button"> BGN </button>
                 <div class="dropdown">
-                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Моят профил<span class="caret"></span></button>
+                    <button class="btn btn-default dropdown-toggle myProfile" type="button" data-toggle="dropdown">Моят профил<span class="caret"></span></button>
                     <ul class="dropdown-menu">
                         <li><a href="#">Вход</a></li>
                         <li><a href="#">Регистрация</a></li>
                     </ul>
                 </div>
                 <!-- close .dropdown-->
+                <button class="btn btn-default currency" type="button"> BGN </button>
             </div>
             <!-- close .headerUp-->
             <div class="headerDown">
-                <form class="navbar-form navbar-left" role="search">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="&#x1F50D Search">
-                    </div>
-                    <button type="submit" class="btn btn-default">Търси</button>
-                </form>
-                <button class="btn btn-default">Calendar</button>
-                <button class="btn btn-default">Calendar</button>
-                <button class="btn btn-default">Двойна стая</button>
+              <div class="row">
+                  <div class="col-sm-8">
+                          <input type="text" class="form-control" placeholder="&#x1F50D Search">
+                  </div>
+                  <!-- close .col-sm-8 -->
+                  <div class="col-sm-4 ">
+                      <button type="submit" class="btn btn-default searchHeader">Търси</button>
+                  </div>
+              </div>
+                <div class="buttonsHeader">
+                    <button class="btn btn-default">Calendar</button>
+                    <button class="btn btn-default">Calendar</button>
+                    <button class="btn btn-default">Двойна стая</button>
+                </div>
+                <!-- close .buttonsHeader -->
+
             </div>
             <!-- close .headerDown -->
         </header>
         <div class="container">
             <main>
                 <div class="row">
-                    <section class="col-sm-4 sidenav">
+                    <section class="col-sm-3 sidenav">
                         <article class="mapArticle">
+                          <div class="btnMap">
                             <button class="btn btn-default" type="button">Отиди към картата</button>
+                          </div>
                         </article>
                         <article class="filterArticle">
-                            <div class="btn-group">
+                            <div class="buttons">
                                 <button type="button" class="btn btn-default">Топ филтри</button>
-                                <button type="button" class="btn btn-default">Още филтри</button>
+                                <button type="button" class="btn btn-default ">Още филтри</button>
                             </div>
                             <!-- close .btn-group -->
                             <div class="category">
@@ -110,7 +120,7 @@
                         </article>
                     </section>
                     <!-- close .sidenav -->
-                    <div class="col-sm-8 center">
+                    <div class="col-sm-9 center">
                     </div>
                     <!-- close .center -->
                 </div>
@@ -136,30 +146,30 @@
                 </div>
             </section>
             <section class="row footerDown">
-              <div class="left col-sm-4">
-                <p><a href="#">Компания</a></p>
-                <p><a href="#">Кариера</a></p>
-              <p><a href="#">Свободни позиции</a></p>
-                <p><a href="#">Пресцентър</a></p>
-                <p><a href="#">Помощен център</a></p>
-                <p><a href="#">Investor Relations</a></p>
+                <div class="left col-sm-4">
+                    <p><a href="#">Компания</a></p>
+                    <p><a href="#">Кариера</a></p>
+                    <p><a href="#">Свободни позиции</a></p>
+                    <p><a href="#">Пресцентър</a></p>
+                    <p><a href="#">Помощен център</a></p>
+                    <p><a href="#">Investor Relations</a></p>
 
-              </div>
-              <div class="middle col-sm-4">
-                <p><a href="#">Моб. приложения - търсене в движение</a></p>
-                <p><a href="#">trivago Hotel Manager - за хотелиери</a></p>
-              </div>
-              <div class="right col-sm-4">
-                <p><a href="#">Условия за ползване</a></p>
-                <p><a href="#">Правна информация</a></p>
-                <p><a href="#">Защита на данните</a></p>
-                <p><a href="#">Карта на сайта</a></p>
-                <p><a href="#">Политика за "бисквитките"</a></p>
-              </div>
+                </div>
+                <div class="middle col-sm-4">
+                    <p><a href="#">Моб. приложения - търсене в движение</a></p>
+                    <p><a href="#">trivago Hotel Manager - за хотелиери</a></p>
+                </div>
+                <div class="right col-sm-4">
+                    <p><a href="#">Условия за ползване</a></p>
+                    <p><a href="#">Правна информация</a></p>
+                    <p><a href="#">Защита на данните</a></p>
+                    <p><a href="#">Карта на сайта</a></p>
+                    <p><a href="#">Политика за "бисквитките"</a></p>
+                </div>
             </section>
             <section>
-              <h1>trivago</h1>
-              <p>Авторски права 2017 trivago | Всички права запазени.</p>
+                <h1>trivago</h1>
+                <p>Авторски права 2017 trivago | Всички права запазени.</p>
             </section>
         </footer>
     </div>
