@@ -1,0 +1,39 @@
+body {
+  margin: 0 auto;
+}
+.sidenav {
+    height: auto;
+    background: blue;
+    color: white;
+}
+.center {
+    height: auto;
+    background: red;
+}
+
+header {
+    height: auto;
+    background: green;
+}
+
+.headerUp {
+    height: auto;
+}
+
+.headerDown {
+    background: grey;
+    height: 80%;
+}
+
+footer {
+    height: 150px;
+    background: green;
+}
+
+#logo {
+    width: 150px;
+    display: block;
+    margin: -15px auto;
+
+
+}

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trivago</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style/styleIcons.css">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <header>
+            <div class="headerUp">
+                <img id="logo" src="images/logo.png" alt="trivago logo">
+                <button class="btn btn-default currency" type="button"> BGN </button>
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Моят профил<span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Вход</a></li>
+                        <li><a href="#">Регистрация</a></li>
+                    </ul>
+                </div>
+                <!-- close .dropdown-->
+            </div>
+            <!-- close .headerUp-->
+            <div class="headerDown">
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="&#x1F50D Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Търси</button>
+                </form>
+                <button class="btn btn-default">Calendar</button>
+                <button class="btn btn-default">Calendar</button>
+                <button class="btn btn-default">Двойна стая</button>
+            </div>
+            <!-- close .headerDown -->
+        </header>
+        <div class="container">
+            <main>
+                <div class="row">
+                    <section class="col-sm-4 sidenav">
+                        <article class="mapArticle">
+                            <button class="btn btn-default" type="button">Отиди към картата</button>
+                        </article>
+                        <article class="filterArticle">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default">Топ филтри</button>
+                                <button type="button" class="btn btn-default">Още филтри</button>
+                            </div>
+                            <!-- close .btn-group -->
+                            <div class="category">
+                                <h1> Категория </h1>
+                                <button type="button" class="btn btn-default btnStars oneStar">1<span class="star">&#10031;</span></button>
+                                <button type="button" class="btn btn-default btnStars twoStars">2<span class="star">&#10031;</span></button>
+                                <button type="button" class="btn btn-default btnStars threeStars">3<span class="star">&#10031;</span></button>
+                                <button type="button" class="btn btn-default btnStars fourStars">4<span class="star">&#10031;</span></button>
+                                <button type="button" class="btn btn-default btnStars fiveStars">5<span class="star">&#10031;</span></button>
+                            </div>
+                            <!-- close .category -->
+                            <div class="rating">
+                                <h1> Оценка </h1>
+                                <button type="button" class="btn btn-default zero ratingBtn">0+</button>
+                                <button type="button" class="btn btn-default seventy ratingBtn">70+</button>
+                                <button type="button" class="btn btn-default seventyFive ratingBtn">75+</button>
+                                <button type="button" class="btn btn-default eighty ratingBtn">80+</button>
+                                <button type="button" class="btn btn-default eightyFive ratingBtn">85+</button>
+                            </div>
+                            <!-- close .rating -->
+                            <div class="price">
+                                <h1>Цена</h1>
+                                <p class="currentRange"> </p>
+                                <p class="minRange">19лв </p>
+                                <p class="maxRange">207лв </p>
+                                <input type="range" min="18" max="207">
+                                <input type="checkbox" id="available"> Покажи само наличните хотели <br>
+                                <input type="checkbox" id="topOfferts"> Покажи Топ Оферти <br>
+                            </div>
+                            <!-- close .price -->
+                            <div class="facilities">
+                                <h1> Топ удобства </h1>
+                                <button type="button" class="btn btn-default spa">Спа</button>
+                                <button type="button" class="btn btn-default beach">Плаж</button>
+                                <button type="button" class="btn btn-default wiFi">Безплатен Wi-fi</button>
+                                <button type="button" class="btn btn-default breakfast">Закуска</button>
+                                <button type="button" class="btn btn-default swimmingPool">Басейн</button>
+                            </div>
+                            <!-- close .facilities -->
+                            <div class="searchByName">
+                                <h1>Търсене по име на хотел</h1>
+                                <form class="navbar-form navbar-left" role="search">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" placeholder="Search">
+                                        <button type="submit" class="btn btn-default">&#x1F50D</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- close .searchByName -->
+                            <div class="deleteFilters">
+                                <button type="button" class="btn btn-default">Премахни всички филтри</button>
+                            </div>
+                        </article>
+                    </section>
+                    <!-- close .sidenav -->
+                    <div class="col-sm-8 center">
+                    </div>
+                    <!-- close .center -->
+                </div>
+                <!-- close .row -->
+            </main>
+        </div>
+        <!-- close .container -->
+        <footer>
+            <section class="footerUp">
+                <p> Желаете да получавате ексклузивни оферти? Абонирайте се за нашия бюлетин!</p>
+                <input type="text" name="email" value="" placeholder="И-мейл адрес">
+                <button type="button" class="btn btn-default">Абонирай се</button>
+                <hr>
+            </section>
+            <section class=footerMiddle>
+                <p> <strong>trivago N.V.</strong>, Bennigsen-Platz 1, 40474 Дюселдорф, Германия </p>
+                <div class="text-center center-block">
+                    <br />
+                    <a href="https://www.facebook.com/trivago"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+                    <a href="https://twitter.com/trivago"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+                    <a href="https://plus.google.com/+trivago"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
+                    <a href="mailto:trivago@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+                </div>
+            </section>
+            <section class="row footerDown">
+              <div class="left col-sm-4">
+                <p><a href="#">Компания</a></p>
+                <p><a href="#">Кариера</a></p>
+              <p><a href="#">Свободни позиции</a></p>
+                <p><a href="#">Пресцентър</a></p>
+                <p><a href="#">Помощен център</a></p>
+                <p><a href="#">Investor Relations</a></p>
+
+              </div>
+              <div class="middle col-sm-4">
+                <p><a href="#">Моб. приложения - търсене в движение</a></p>
+                <p><a href="#">trivago Hotel Manager - за хотелиери</a></p>
+              </div>
+              <div class="right col-sm-4">
+                <p><a href="#">Условия за ползване</a></p>
+                <p><a href="#">Правна информация</a></p>
+                <p><a href="#">Защита на данните</a></p>
+                <p><a href="#">Карта на сайта</a></p>
+                <p><a href="#">Политика за "бисквитките"</a></p>
+              </div>
+            </section>
+            <section>
+              <h1>trivago</h1>
+              <p>Авторски права 2017 trivago | Всички права запазени.</p>
+            </section>
+        </footer>
+    </div>
+    <!-- close .container-fluid -->
+</body>
+
+</html>
