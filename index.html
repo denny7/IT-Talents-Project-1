@@ -63,8 +63,8 @@
                         </article>
                         <article class="filterArticle">
                             <div class="buttons">
-                                <button type="button" class="btn btn-default">Топ филтри</button>
-                                <button type="button" class="btn btn-default ">Още филтри</button>
+                                <button id="topFiltersBtn" type="button" class="btn btn-default">Топ филтри</button>
+                                <button id="moreFiltersBtn" type="button" class="btn btn-default ">Още филтри</button>
                             </div>
                             <!-- close .btn-group -->
                             <div class="topFilters">
@@ -116,6 +116,58 @@
                                 </div>
                                 <!-- close .searchByName -->
                             </div>
+                            <div class="moreFilters">
+                                <div class="hotelskiUslugi">
+                                    <h3 id="HOTELSKI_USLUGI" data-toggle="collapse" data-target="#demo1">Хотелски услуги</h3>
+                                    <ul id="demo1" class="collapse">
+                                    </ul>
+                                </div>
+                                <div class="tipNastanavqne">
+                                    <h3 id="TIP_NASTANQVANE" data-toggle="collapse" data-target="#demo2">Тип настаняване</h3>
+                                    <ul id="demo2" class="collapse">
+                                    </ul>
+                                </div>
+                                <div class="patuvashtiSDeca">
+                                    <h3 id="PATUVASHTI_S_DECA" data-toggle="collapse" data-target="#demo3">Пътуващи с деца</h3>
+                                    <ul id="demo3" class="collapse">
+                                    </ul>
+                                </div>
+                                <div class="wellnessSpa">
+                                    <h3 id="WELLNESS_SPA" data-toggle="collapse" data-target="#demo4">Уелнес/СПА</h3>
+                                    <ul id="demo4" class="collapse">
+                                    </ul>
+                                </div>
+                                <div class="numberOfRooms">
+                                    <h3 id="NUMBER_OF_ROOMS" data-toggle="collapse" data-target="#demo5">Брой стаи</h3>
+                                    <ul id="demo5" class="collapse">
+                                    </ul>
+                                </div>
+                                <div class="udobstvaVyvStaqta">
+                                    <h3 id="UDOBSTVA_VYV_STAQTA" data-toggle="collapse" data-target="#demo6">Удобства в стаята</h3>
+                                    <ul id="demo6" class="collapse">
+                                    </ul>
+                                </div>
+                                <div class="sportEquipment">
+                                    <h3 id="SPORT_EQUIPMENT" data-toggle="collapse" data-target="#demo7">Спортни съоръжения</h3>
+                                    <ul id="demo7" class="collapse">
+                                    </ul>
+                                </div>
+                                <div class="hotelProfile">
+                                    <h3 id="HOTEL_PROFILE" data-toggle="collapse" data-target="#demo8">Хотелски профил</h3>
+                                    <ul id="demo8" class="collapse">
+                                    </ul>
+                                </div>
+                                <div class="podhodqshtZa">
+                                    <h3 id="PODHODQSHT_ZA" data-toggle="collapse" data-target="#demo9">Подходящ за</h3>
+                                    <ul id="demo9" class="collapse">
+                                    </ul>
+                                </div>
+                                <div class="dostypnost">
+                                    <h3 id="DOSTYPNOST" data-toggle="collapse" data-target="#demo10">Достъпност</h3>
+                                    <ul id="demo10" class="collapse">
+                                    </ul>
+                                </div>
+                            </div>
                             <!-- close .topFilters -->
 
                             <div class="deleteFilters">
@@ -141,7 +193,7 @@
                 </div>
                 <hr>
             </section>
-            <section class=footerMiddle>
+            <section class="footerMiddle">
                 <p> <strong>trivago N.V.</strong>, Bennigsen-Platz 1, 40474 Дюселдорф, Германия </p>
                 <div class="text-center center-block">
                     <br />
@@ -180,6 +232,8 @@
         </footer>
     </div>
     <!-- close .container-fluid -->
+    <script src="scripts/script.js">
+    </script>
 </body>
 
 </html>
