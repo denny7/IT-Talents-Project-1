@@ -33,15 +33,15 @@
             </div>
             <!-- close .headerUp-->
             <div class="headerDown">
-              <div class="row">
-                  <div class="col-sm-8">
-                          <input type="text" class="form-control" placeholder="&#x1F50D Search">
-                  </div>
-                  <!-- close .col-sm-8 -->
-                  <div class="col-sm-4 ">
-                      <button type="submit" class="btn btn-default searchHeader">Търси</button>
-                  </div>
-              </div>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <input type="text" class="form-control" placeholder="&#x1F50D Search">
+                    </div>
+                    <!-- close .col-sm-8 -->
+                    <div class="col-sm-4 ">
+                        <button type="submit" class="btn btn-default searchHeader">Търси</button>
+                    </div>
+                </div>
                 <div class="buttonsHeader">
                     <button class="btn btn-default">Calendar</button>
                     <button class="btn btn-default">Calendar</button>
@@ -57,9 +57,9 @@
                 <div class="row">
                     <section class="col-sm-3 sidenav">
                         <article class="mapArticle">
-                          <div class="btnMap">
-                            <button class="btn btn-default" type="button">Отиди към картата</button>
-                          </div>
+                            <div class="btnMap">
+                                <button class="btn btn-default" type="button">Отиди към картата</button>
+                            </div>
                         </article>
                         <article class="filterArticle">
                             <div class="buttons">
@@ -67,53 +67,57 @@
                                 <button type="button" class="btn btn-default ">Още филтри</button>
                             </div>
                             <!-- close .btn-group -->
-                            <div class="category">
-                                <h1> Категория </h1>
-                                <button type="button" class="btn btn-default btnStars oneStar">1<span class="star">&#10031;</span></button>
-                                <button type="button" class="btn btn-default btnStars twoStars">2<span class="star">&#10031;</span></button>
-                                <button type="button" class="btn btn-default btnStars threeStars">3<span class="star">&#10031;</span></button>
-                                <button type="button" class="btn btn-default btnStars fourStars">4<span class="star">&#10031;</span></button>
-                                <button type="button" class="btn btn-default btnStars fiveStars">5<span class="star">&#10031;</span></button>
+                            <div class="topFilters">
+                                <div class="category">
+                                    <h3 class="filterHeading"> Категория </h3>
+                                    <button type="button" class="btn btn-default btnStars oneStar">1<span class="star">&#10031;</span></button>
+                                    <button type="button" class="btn btn-default btnStars twoStars">2<span class="star">&#10031;</span></button>
+                                    <button type="button" class="btn btn-default btnStars threeStars">3<span class="star">&#10031;</span></button>
+                                    <button type="button" class="btn btn-default btnStars fourStars">4<span class="star">&#10031;</span></button>
+                                    <button type="button" class="btn btn-default btnStars fiveStars">5<span class="star">&#10031;</span></button>
+                                </div>
+                                <!-- close .category -->
+                                <div class="rating">
+                                    <h3 class="filterHeading"> Оценка </h3>
+                                    <button type="button" class="btn btn-default zero ratingBtn">0+</button>
+                                    <button type="button" class="btn btn-default seventy ratingBtn">70+</button>
+                                    <button type="button" class="btn btn-default seventyFive ratingBtn">75+</button>
+                                    <button type="button" class="btn btn-default eighty ratingBtn">80+</button>
+                                    <button type="button" class="btn btn-default eightyFive ratingBtn">85+</button>
+                                </div>
+                                <!-- close .rating -->
+                                <div class="price">
+                                    <h3 class="filterHeading">Цена</h3>
+                                    <p class="currentRange"> </p>
+                                    <p class="minRange">19лв </p>
+                                    <p class="maxRange">207лв </p>
+                                    <input class="range" type="range" min="18" max="207">
+                                    <input type="checkbox" id="available"> Покажи само наличните хотели <br>
+                                    <input type="checkbox" id="topOfferts"> Покажи Топ Оферти <br>
+                                </div>
+                                <!-- close .price -->
+                                <div class="facilities">
+                                    <h3 class="filterHeading"> Топ удобства </h3>
+                                    <button type="button" class="btn btn-default spa">Спа</button>
+                                    <button type="button" class="btn btn-default beach">Плаж</button>
+                                    <button type="button" class="btn btn-default wiFi">Безплатен Wi-fi</button>
+                                    <button type="button" class="btn btn-default breakfast">Закуска</button>
+                                    <button type="button" class="btn btn-default swimmingPool">Басейн</button>
+                                </div>
+                                <!-- close .facilities -->
+                                <div class="searchByName">
+                                    <h3 class="filterHeading">Търсене по име на хотел</h3>
+                                    <form class="navbar-form navbar-left" role="search">
+                                        <div class="formSearch">
+                                            <input type="text" class="form-control" placeholder="Search">
+                                            <button type="submit" class="btn btn-default">&#x1F50D</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- close .searchByName -->
                             </div>
-                            <!-- close .category -->
-                            <div class="rating">
-                                <h1> Оценка </h1>
-                                <button type="button" class="btn btn-default zero ratingBtn">0+</button>
-                                <button type="button" class="btn btn-default seventy ratingBtn">70+</button>
-                                <button type="button" class="btn btn-default seventyFive ratingBtn">75+</button>
-                                <button type="button" class="btn btn-default eighty ratingBtn">80+</button>
-                                <button type="button" class="btn btn-default eightyFive ratingBtn">85+</button>
-                            </div>
-                            <!-- close .rating -->
-                            <div class="price">
-                                <h1>Цена</h1>
-                                <p class="currentRange"> </p>
-                                <p class="minRange">19лв </p>
-                                <p class="maxRange">207лв </p>
-                                <input type="range" min="18" max="207">
-                                <input type="checkbox" id="available"> Покажи само наличните хотели <br>
-                                <input type="checkbox" id="topOfferts"> Покажи Топ Оферти <br>
-                            </div>
-                            <!-- close .price -->
-                            <div class="facilities">
-                                <h1> Топ удобства </h1>
-                                <button type="button" class="btn btn-default spa">Спа</button>
-                                <button type="button" class="btn btn-default beach">Плаж</button>
-                                <button type="button" class="btn btn-default wiFi">Безплатен Wi-fi</button>
-                                <button type="button" class="btn btn-default breakfast">Закуска</button>
-                                <button type="button" class="btn btn-default swimmingPool">Басейн</button>
-                            </div>
-                            <!-- close .facilities -->
-                            <div class="searchByName">
-                                <h1>Търсене по име на хотел</h1>
-                                <form class="navbar-form navbar-left" role="search">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Search">
-                                        <button type="submit" class="btn btn-default">&#x1F50D</button>
-                                    </div>
-                                </form>
-                            </div>
-                            <!-- close .searchByName -->
+                            <!-- close .topFilters -->
+
                             <div class="deleteFilters">
                                 <button type="button" class="btn btn-default">Премахни всички филтри</button>
                             </div>
@@ -130,9 +134,11 @@
         <!-- close .container -->
         <footer>
             <section class="footerUp">
-                <p> Желаете да получавате ексклузивни оферти? Абонирайте се за нашия бюлетин!</p>
-                <input type="text" name="email" value="" placeholder="И-мейл адрес">
-                <button type="button" class="btn btn-default">Абонирай се</button>
+                <h4> Желаете да получавате ексклузивни оферти? Абонирайте се за нашия бюлетин!</h4>
+                <div class="centered">
+                    <input type="text" name="email" value="" placeholder="И-мейл адрес">
+                    <button type="button" class="btn btn-default">Абонирай се</button>
+                </div>
                 <hr>
             </section>
             <section class=footerMiddle>
@@ -167,7 +173,7 @@
                     <p><a href="#">Политика за "бисквитките"</a></p>
                 </div>
             </section>
-            <section>
+            <section class="lastSection">
                 <h1>trivago</h1>
                 <p>Авторски права 2017 trivago | Всички права запазени.</p>
             </section>

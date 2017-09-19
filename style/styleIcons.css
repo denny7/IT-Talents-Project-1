@@ -14,9 +14,10 @@
      -o-transition-duration: 0.5s;
  }
 
-/*
-    Multicoloured Hover Variations
-*/
+.footerMiddle .fa {
+  color:white;
+  margin-bottom: 10px;
+}
 
  #social-fb:hover {
      color: #3B5998;

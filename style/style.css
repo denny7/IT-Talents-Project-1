@@ -61,7 +61,8 @@ main {
 .mapArticle {
   height: 100px;
   width: 100%;
-  background-color: white;
+  border: 1px solid white;
+  border-radius: 3px;
   margin : 5px 0px;
 }
 .mapArticle button {
@@ -75,16 +76,97 @@ width: 50%;
 .filterArticle>.buttons>button:last-child{
   margin-left:-0.5em;
 }
+
+.filterHeading{
+  width: 100%;
+  text-align: center;
+}
+.category>button, .rating>button, .facilities>button{
+  width: 18%;
+  margin-left: 1.1px;
+}
+.currentRange {
+  text-align: center;
+}
+.minRange {
+  display: inline-block;
+}
+.maxRange {
+  display: inline-block;
+  float: right
+}
+.formSearch>input, .formSearch>button{
+  display: inline-block;
+}
+.formSearch>button{
+  margin-left: -0.8em;
+}
+.formSearch>input {
+  width: 14em !important;
+}
+.price>.range {
+  margin-bottom: 10px;
+}
+.deleteFilters{
+  text-align: center;
+  margin-bottom: 10px;
+}
 .sidenav {
     height: auto;
-    background: blue;
-    color: white;
+    background: #7C8079;
 }
+/* sidenav ends here */
 .center {
     height: 350px;
-    background: khaki;
+    background: rebecapurple;
 }
 footer {
     height: auto;
-    background: green;
+    background: #293339;
+}
+.footerUp>h4{
+  margin-top: 10px;
+  text-align: center;
+  padding-top: 10px;
+}
+.centered {
+  display: flex;
+  justify-content: center;
+}
+.center-block{
+  margin-top: -20px;
+}
+.footerUp button {
+  text-align: center;
+  width : 10em;
+  height: 3em;
+  margin-left: -7px;
+}
+.footerUp input{
+width : 20em;
+height: 3em;
+border-radius: 5px;
+}
+.footerUp hr{
+  width: 80%;
+}
+.footerMiddle>p{
+  text-align:right;
+  margin-right: 15px;
+  color:white;
+}
+.footerDown p {
+  text-align: center;
+}
+.footerDown a {
+  color:white;
+}
+.lastSection {
+  padding:1px 0;
+  margin-top: -5px 0px;
+  background: #7C8079;
+  color : white;
+}
+.lastSection>h1, .lastSection>p{
+  text-align: center;
 }
