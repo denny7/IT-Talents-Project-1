@@ -65,172 +65,47 @@ City.prototype.addHotel = function(name){
     this.hotels.push(new Hotel(name));
 }
 //add functions for buttons TopFilter and moreFilters
-
 var topFiltersBtn = document.getElementById("topFiltersBtn");
 var moreFiltersBtn = document.getElementById("moreFiltersBtn");
 var topFilters = document.getElementsByClassName("topFilters")[0];
 var moreFilters = document.getElementsByClassName("moreFilters")[0];
-var hotelskiUslugi = document.createDocumentFragment();
 var ulHotelskiUslugi = document.querySelector(".hotelskiUslugi>ul");
-HOTELSKI_USLUGI.forEach(function(usluga,index){
-  let li = document.createElement("li");
-  let checkbox = document.createElement("input");
-  checkbox.type = "checkbox";
-  checkbox.value = index;
-  checkbox.name = "hotelskiUslugi";
-  let label = document.createElement("label");
-  label.innerText = usluga;
-  checkbox.style.float = "left";
-  label.appendChild(checkbox)
-  li.appendChild(label);
-  hotelskiUslugi.appendChild(li);
-  ulHotelskiUslugi.appendChild(hotelskiUslugi);
-});
-var tipNastanavqne = document.createDocumentFragment();
 var ulTipNastanavqne = document.querySelector(".tipNastanavqne>ul");
-TIP_NASTANQVANE.forEach(function(usluga,index){
-  let li = document.createElement("li");
-  let checkbox = document.createElement("input");
-  checkbox.type = "checkbox";
-  checkbox.value = index;
-  checkbox.name = "tipNastanavqne";
-  let label = document.createElement("label");
-  label.innerText = usluga;
-  checkbox.style.float = "left";
-  label.appendChild(checkbox)
-  li.appendChild(label);
-  tipNastanavqne.appendChild(li);
-  ulTipNastanavqne.appendChild(tipNastanavqne);
-});
-var patuvashtiSDeca = document.createDocumentFragment();
 var ulPatuvashtiSDeca = document.querySelector(".patuvashtiSDeca>ul");
-PATUVASHTI_S_DECA.forEach(function(usluga,index){
-  let li = document.createElement("li");
-  let checkbox = document.createElement("input");
-  checkbox.type = "checkbox";
-  checkbox.value = index;
-  checkbox.name = "patuvashtiSDeca";
-  let label = document.createElement("label");
-  label.innerText = usluga;
-  checkbox.style.float = "left";
-  label.appendChild(checkbox)
-  li.appendChild(label);
-  patuvashtiSDeca.appendChild(li);
-  ulPatuvashtiSDeca.appendChild(patuvashtiSDeca);
-});
-var wellnessSpa = document.createDocumentFragment();
 var ulWellnessSpa = document.querySelector(".wellnessSpa>ul");
-WELLNESS_SPA.forEach(function(usluga,index){
-  let li = document.createElement("li");
-  let checkbox = document.createElement("input");
-  checkbox.type = "checkbox";
-  checkbox.value = index;
-  checkbox.name = "wellnessSpa";
-  let label = document.createElement("label");
-  label.innerText = usluga;
-  checkbox.style.float = "left";
-  label.appendChild(checkbox)
-  li.appendChild(label);
-  wellnessSpa.appendChild(li);
-  ulWellnessSpa.appendChild(wellnessSpa);
-});
-var numberOfRooms = document.createDocumentFragment();
 var ulNumberOfRooms = document.querySelector(".numberOfRooms>ul");
-NUMBER_OF_ROOMS.forEach(function(usluga,index){
-  let li = document.createElement("li");
-  let checkbox = document.createElement("input");
-  checkbox.type = "checkbox";
-  checkbox.value = index;
-  checkbox.name = "numberOfRooms";
-  let label = document.createElement("label");
-  label.innerText = usluga;
-  checkbox.style.float = "left";
-  label.appendChild(checkbox)
-  li.appendChild(label);
-  numberOfRooms.appendChild(li);
-  ulNumberOfRooms.appendChild(numberOfRooms);
-});
-var udobstvaVyvStaqta = document.createDocumentFragment();
 var ulUdobstvaVyvStaqta = document.querySelector(".udobstvaVyvStaqta>ul");
-UDOBSTVA_VYV_STAQTA.forEach(function(usluga,index){
-  let li = document.createElement("li");
-  let checkbox = document.createElement("input");
-  checkbox.type = "checkbox";
-  checkbox.value = index;
-  checkbox.name = "udobstvaVyvStaqta";
-  let label = document.createElement("label");
-  label.innerText = usluga;
-  checkbox.style.float = "left";
-  label.appendChild(checkbox)
-  li.appendChild(label);
-  udobstvaVyvStaqta.appendChild(li);
-  ulUdobstvaVyvStaqta.appendChild(udobstvaVyvStaqta);
-});
-
-var sportEquipment = document.createDocumentFragment();
 var ulSportEquipment = document.querySelector(".sportEquipment>ul");
-SPORT_EQUIPMENT.forEach(function(usluga,index){
-  let li = document.createElement("li");
-  let checkbox = document.createElement("input");
-  checkbox.type = "checkbox";
-  checkbox.value = index;
-  checkbox.name = "sportEquipment";
-  let label = document.createElement("label");
-  label.innerText = usluga;
-  checkbox.style.float = "left";
-  label.appendChild(checkbox)
-  li.appendChild(label);
-  sportEquipment.appendChild(li);
-  ulSportEquipment.appendChild(sportEquipment);
-});
-var hotelProfile = document.createDocumentFragment();
 var ulHotelProfile = document.querySelector(".hotelProfile>ul");
-HOTEL_PROFILE.forEach(function(usluga,index){
-  let li = document.createElement("li");
-  let checkbox = document.createElement("input");
-  checkbox.type = "checkbox";
-  checkbox.value = index;
-  checkbox.name = "hotelProfile";
-  let label = document.createElement("label");
-  label.innerText = usluga;
-  checkbox.style.float = "left";
-  label.appendChild(checkbox)
-  li.appendChild(label);
-  hotelProfile.appendChild(li);
-  ulHotelProfile.appendChild(hotelProfile);
-});
-var podhodqshtZa = document.createDocumentFragment();
 var ulPodhodqshtZa = document.querySelector(".podhodqshtZa>ul");
-PODHODQSHT_ZA.forEach(function(usluga,index){
-  let li = document.createElement("li");
-  let checkbox = document.createElement("input");
-  checkbox.type = "checkbox";
-  checkbox.value = index;
-  checkbox.name = "podhodqshtZa";
-  let label = document.createElement("label");
-  label.innerText = usluga;
-  checkbox.style.float = "left";
-  label.appendChild(checkbox)
-  li.appendChild(label);
-  podhodqshtZa.appendChild(li);
-  ulPodhodqshtZa.appendChild(podhodqshtZa);
-});
-var dostypnost = document.createDocumentFragment();
 var ulDostypnost = document.querySelector(".dostypnost>ul");
-DOSTYPNOST.forEach(function(usluga){
-  let li = document.createElement("li");
-  let checkbox = document.createElement("input");
-  checkbox.type = "checkbox";
-  let label = document.createElement("label");
-  label.innerText = usluga;
-  checkbox.style.float = "left";
-  label.appendChild(checkbox)
-  li.appendChild(label);
-  dostypnost.appendChild(li);
-  ulDostypnost.appendChild(dostypnost);
-});
-moreFilters.appendChild(hotelskiUslugi);
-
+function fillUl(arr,ul,name){
+  var holder = document.createDocumentFragment();
+  arr.forEach(function(usluga,index){
+    let li = document.createElement("li");
+    let checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.value = index;
+    checkbox.name = name;
+    let label = document.createElement("label");
+    label.innerText = usluga;
+    checkbox.style.float = "left";
+    label.appendChild(checkbox)
+    li.appendChild(label);
+    holder.appendChild(li);
+    ul.appendChild(holder);
+  });
+}
+fillUl(HOTELSKI_USLUGI,ulHotelskiUslugi,"hotelskiUslugi");
+fillUl(TIP_NASTANQVANE,ulTipNastanavqne,"tipNastanavqne");
+fillUl(PATUVASHTI_S_DECA,ulPatuvashtiSDeca,"patuvashtiSDeca");
+fillUl(WELLNESS_SPA,ulWellnessSpa,"wellnessSpa");
+fillUl(NUMBER_OF_ROOMS,ulNumberOfRooms,"numberOfRooms");
+fillUl(UDOBSTVA_VYV_STAQTA,ulUdobstvaVyvStaqta,"udobstvaVyvStaqta");
+fillUl(SPORT_EQUIPMENT,ulSportEquipment,"sportEquipment");
+fillUl(HOTEL_PROFILE,ulHotelProfile,"hotelProfile");
+fillUl(PODHODQSHT_ZA,ulPodhodqshtZa,"podhodqshtZa");
+fillUl(DOSTYPNOST,ulDostypnost,"dostypnost");
 moreFiltersBtn.addEventListener("click",function(){
   topFilters.style.display = "none";
   moreFilters.style.display = "block";
