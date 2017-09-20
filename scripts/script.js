@@ -287,3 +287,43 @@ register.addEventListener("click", function register() {
         });
     }
 });
+//login
+var users = [];
+function Register(name, password, email) {
+    this.name = name;
+    this.password = password;
+    this.email = email;
+    users.push(this);
+}
+new Register("denny", "123456", "denislav.yasenov@abv.bg");
+var registerButton = document.getElementById("registerButton");
+registerButton.addEventListener("click", function(event) {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    var email = document.getElementById("email").value;
+    new Register(username, password, email)
+    modalReg.style.display = 'none';
+    regDisplayed = false;
+    alert("Вие успешно направехте вашата регистрация! Моля влезте в системата!")
+    modal.style.display = "block";
+    logDisplayed = true;
+});
+var loginButton = document.getElementById("logButton");
+loginButton.addEventListener("click", function(event) {
+    var userValue = document.getElementById("userValue").value;
+    var password = document.getElementById("passwordValue").value;
+    var userCheck = users.find(x => x.name == userValue && x.password == password);
+    var p = document.getElementById("infoSuccess");
+    if (userCheck) {
+        var dropDown = document.getElementsByClassName("dropdown")[0]
+        dropDown.style.display = "none";
+        console.log(dropDown)
+        document.getElementById("userShowName").innerText = "  " + userValue;
+        document.getElementById("logged").style.display = "inline-block";
+        modal.style.display = 'none';
+        logDisplayed = false;
+    } else {
+        p.innerText = "Невалиден потребител или парола!";
+        p.style.color = "red";
+    }
+})

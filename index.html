@@ -27,6 +27,9 @@
                         <li id="register"><a href="#">Регистрация</a></li>
                     </ul>
                 </div>
+                <div id="logged">
+                  <img src="images/user_icon.png" alt="user"><span id="userShowName"> </p>
+                </div>
                 <!-- close .dropdown-->
                 <button class="btn btn-default currency" type="button"> BGN </button>
             </div>
@@ -50,35 +53,37 @@
             </div>
             <!-- close .headerDown -->
             <div id="id01" class="modal">
-                <form class="modal-content animate" action="/action_page.php">
+                <form class="modal-content animate">
                     <div class="imgcontainer">
                         <span class="close closeLog" title="Close Modal">&times;</span>
                         <img src="images/img_avatar2.png" alt="Avatar" class="avatar">
                     </div>
                     <div class="container">
                         <label><b>Потребител</b></label>
-                        <input type="text" placeholder="Потребител" name="uname" required>
+                        <input id="userValue" type="text" placeholder="Потребител" name="uname" required>
                         <label><b>Парола</b></label>
-                        <input type="password" placeholder="Парола" name="psw" required>
-                        <button type="submit">Вход</button>
+                        <input id="passwordValue" type="password" placeholder="Парола" name="psw" required>
+                        <p id="infoSuccess"> </p>
+                        <button id="logButton"type="button">Вход</button>
+
                     </div>
                 </form>
             </div>
             <!--close div #id01 -->
             <div id="id02" class="modal">
-                <form class="modal-content animate" action="/action_page.php">
+                <form class="modal-content animate">
                     <div class="imgcontainer">
                         <span class="close closeReg" title="Close Modal">&times;</span>
                         <img src="images/img_avatar2.png" alt="Avatar" class="avatar">
                     </div>
                     <div class="container">
                         <label><b>Потребител</b></label>
-                        <input type="text" placeholder="Потребител" name="uname" required>
+                        <input id="username"type="text" placeholder="Потребител" name="uname" required>
                         <label><b>Парола</b></label>
-                        <input type="password" placeholder="Парола" name="psw" required>
+                        <input id="password"type="password" placeholder="Парола" name="psw" required>
                         <label><b>Е-мейл</b></label>
-                        <input type="email" placeholder="Е-мейл" name="email" required>
-                        <button type="submit">Регистрация</button>
+                        <input id="email"type="email" placeholder="Е-мейл" name="email" required>
+                        <button id="registerButton"type="button">Регистрация</button>
                     </div>
                 </form>
             </div>
