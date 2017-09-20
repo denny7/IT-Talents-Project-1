@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,8 +13,8 @@
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style/styleIcons.css">
     <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="stylesheet" type="text/css" href="style/loginForm.css">
 </head>
-
 <body>
     <div class="container-fluid">
         <header>
@@ -24,8 +23,8 @@
                 <div class="dropdown">
                     <button class="btn btn-default dropdown-toggle myProfile" type="button" data-toggle="dropdown">Моят профил<span class="caret"></span></button>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Вход</a></li>
-                        <li><a href="#">Регистрация</a></li>
+                        <li id="login"><a href="#">Вход</a></li>
+                        <li id="register"><a href="#">Регистрация</a></li>
                     </ul>
                 </div>
                 <!-- close .dropdown-->
@@ -48,9 +47,42 @@
                     <button class="btn btn-default">Двойна стая</button>
                 </div>
                 <!-- close .buttonsHeader -->
-
             </div>
             <!-- close .headerDown -->
+            <div id="id01" class="modal">
+                <form class="modal-content animate" action="/action_page.php">
+                    <div class="imgcontainer">
+                        <span class="close closeLog" title="Close Modal">&times;</span>
+                        <img src="images/img_avatar2.png" alt="Avatar" class="avatar">
+                    </div>
+                    <div class="container">
+                        <label><b>Потребител</b></label>
+                        <input type="text" placeholder="Потребител" name="uname" required>
+                        <label><b>Парола</b></label>
+                        <input type="password" placeholder="Парола" name="psw" required>
+                        <button type="submit">Вход</button>
+                    </div>
+                </form>
+            </div>
+            <!--close div #id01 -->
+            <div id="id02" class="modal">
+                <form class="modal-content animate" action="/action_page.php">
+                    <div class="imgcontainer">
+                        <span class="close closeReg" title="Close Modal">&times;</span>
+                        <img src="images/img_avatar2.png" alt="Avatar" class="avatar">
+                    </div>
+                    <div class="container">
+                        <label><b>Потребител</b></label>
+                        <input type="text" placeholder="Потребител" name="uname" required>
+                        <label><b>Парола</b></label>
+                        <input type="password" placeholder="Парола" name="psw" required>
+                        <label><b>Е-мейл</b></label>
+                        <input type="email" placeholder="Е-мейл" name="email" required>
+                        <button type="submit">Регистрация</button>
+                    </div>
+                </form>
+            </div>
+            <!--close div #id02 -->
         </header>
         <div class="container">
             <main>
@@ -235,5 +267,4 @@
     <script src="scripts/script.js">
     </script>
 </body>
-
 </html>
