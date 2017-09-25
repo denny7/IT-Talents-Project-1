@@ -91,20 +91,12 @@ register.addEventListener("click", function register() {
     }
 });
 //login
-var users = [];
-function Register(name, password, email) {
-    this.name = name;
-    this.password = password;
-    this.email = email;
-    users.push(this);
-}
-new Register("denny", "123456", "denislav.yasenov@abv.bg");
 var registerButton = document.getElementById("registerButton");
 registerButton.addEventListener("click", function(event) {
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
     var email = document.getElementById("email").value;
-    new Register(username, password, email)
+    var newUser = registry.addUser(username, password, email)
     modalReg.style.display = 'none';
     regDisplayed = false;
     alert("Вие успешно направехте вашата регистрация! Моля влезте в системата!")
