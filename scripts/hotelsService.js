@@ -145,6 +145,17 @@ const DOSTYPNOST = ["Достъп инвалидни колички", "Дост�
 function Hotel(name) {
     this.name = name;
     this.imgs = [];
+    var randomForRoom = Math.random();
+    this.singleRoom = true;
+    if (randomForRoom<0.75) {
+        this.doubleRoom = true;
+    }
+    if (randomForRoom<0.50) {
+        this.familyRoom = true;
+    }
+    if (randomForRoom<0.25) {
+        this.multipleRooms = true;
+    }
     this.category = Math.floor(Math.random() * 4 + 1);
     this.price = Math.floor(Math.random() * 234 + 24);
     this.isAvailable = (Math.random() < 0.13) ?
