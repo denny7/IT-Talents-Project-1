@@ -199,3 +199,6 @@ border-radius: 5px;
 #logged img {
   width : 25px;
 }
+#id02,#id01 {
+  z-index: 500;
+}
