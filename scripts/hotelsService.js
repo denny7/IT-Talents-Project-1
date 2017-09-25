@@ -203,33 +203,10 @@ function City(name) {
 City.prototype.addHotel = function (name) {
     this.hotels.push(new Hotel(name));
 }
-//User constructors
-function User(name, password, email) {
-    this.name = name;
-    this.password = password;
-    this.email = email;
-}
-
-function UsersList() {
-    this._users = []
-}
-UsersList.prototype.checkUsername = function (name, password, email) {
-    return this._users.find(regdUser => name === regdUser.name);
-}
-UsersList.prototype.addUser = function (name, password, email) {
-    //Validation needed here or in the User constructor
-    this._users.push(new User(name, password, email));
-}
-
-
-
-//Data for the registrations
-var registry = new UsersList();
-
-registry.addUser("denny", "123456", "denislav.yasenov@abv.bg");
 
 //Image sources for hotels 
-var imgSrcs = ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRyhA2YRR9Mdpd6nv01Jzfjmkhp9azNxARNFDbpsgWMCo1nf2tZA", "http://www.memmohotels.com/media/memmo-hotels-imageLinkhotel-garden_sea-view-2-7.jpg", "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD…6qV5/ZMUVb90KFDROYLVa/nnAo1bz+6FCikdhXuewoUKHOP/Z", "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD…+XtpUqnLaLfzGj8SXyJcHpbCngD8TTL7zHh9aVKl8ivg//9k=",
+var imgSrcs = ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRyhA2YRR9Mdpd6nv01Jzfjmkhp9azNxARNFDbpsgWMCo1nf2tZA", "http://www.memmohotels.com/media/memmo-hotels-imageLinkhotel-garden_sea-view-2-7.jpg", "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD…6qV5/ZMUVb90KFDROYLVa/nnAo1bz+6FCikdhXuewoUKHOP/Z", 
+"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD…+XtpUqnLaLfzGj8SXyJcHpbCngD8TTL7zHh9aVKl8ivg//9k=",
     "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD…ynqgAuAxmqx2rCxrKyt5wJqXr1WrysroJkgnIr2srKzhEyf/Z", "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD…WcjVTCskkqJIwxqJi9JJNQtiD1IPSSWMSFRSD0kkrQ6Z//9k=",
     "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD…oxdmAVWyiCSAJ33HwpUq3EWze8MOG/dQfFqVKlR1M2lH/2Q==", "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD…Tn51E8ht51K38I9Kg9cuHgvOfX10oXufl/ap/dNeFTJpMF//Z",
     "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD…ABtDyGx16HanBj59pAfMaHQT+VZWUkMHntfhb4/1rKyspiP/Z", "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD…1KlRYqKcmz5VN0lDeDKb+sH4VCZsQuhiB8QwI9oFKlTEz/9k=",
@@ -311,6 +288,9 @@ var userList = (function() {
             this._users = [new User("denny", "dennY7", "denislav.yasenov@abv.bg")];
             localStorage.setItem("users", JSON.stringify(this._users));
         }
+    }
+    UserList.prototype.checkUsername = function(username){
+        return this._users.some(user => user.username === username);
     }
     UserList.prototype.addUser = function(username, password, email) {
       var pattern = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[\d])(?=\S+$).{6,}$/.test(password)

@@ -98,7 +98,7 @@ registerButton.addEventListener("click", function(event) {
     var email = document.getElementById("email").value;
     var pattern = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[\d])(?=\S+$).{6,}$/.test(password)
     if ((typeof username == 'string') && (username.trim().length >= 4) && (pattern)) {
-        if (!(userList._users.some(user => user.username === username))) {
+        if (!userList.checkUsername(username)) {
             userList.addUser(username, password, email)
             modalReg.style.display = 'none';
             regDisplayed = false;
