@@ -161,10 +161,8 @@ function Hotel(name) {
     this.addPlus = function (array) {
         var arrayOtPlusove = array.slice();
         var broiPlusove = Math.floor(Math.random() * arrayOtPlusove.length);
-        console.log(broiPlusove);
         for (var index = 0; index < broiPlusove; index++) {
             var nomerNaPlus = Math.floor(Math.random() * arrayOtPlusove.length);
-            console.log(arrayOtPlusove.length);
             this.plusoveZaHotela.push(arrayOtPlusove[nomerNaPlus]);
             arrayOtPlusove.splice(nomerNaPlus, 1);
         }
