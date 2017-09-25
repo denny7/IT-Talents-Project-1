@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Trivago</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
-        crossorigin="anonymous">
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.css"/>
     <link rel="stylesheet" type="text/css" href="style/styleIcons.css">
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <link rel="stylesheet" type="text/css" href="style/loginForm.css">
 </head>
+
 <body>
     <div class="container-fluid">
         <header>
@@ -28,7 +30,7 @@
                     </ul>
                 </div>
                 <div id="logged">
-                  <img src="images/user_icon.png" alt="user"><span id="userShowName"> </p>
+                    <img src="images/user_icon.png" alt="user"><span id="userShowName"> </p>
                 </div>
                 <!-- close .dropdown-->
                 <button class="btn btn-default currency" type="button"> BGN </button>
@@ -37,242 +39,259 @@
             <div class="headerDown">
                 <div class="row">
                     <div class="col-sm-8">
-                        <input type="text" class="form-control" placeholder="&#x1F50D Search">
+                        <input type="text" class="form-control form-control1" placeholder="&#x1F50D Search">
                     </div>
                     <!-- close .col-sm-8 -->
                     <div class="col-sm-4 ">
                         <button type="submit" class="btn btn-default searchHeader">Търси</button>
                     </div>
                 </div>
-                <div class="buttonsHeader">
-                    <button class="btn btn-default">Calendar</button>
-                    <button class="btn btn-default">Calendar</button>
-                    <button class="btn btn-default">Двойна стая</button>
-                </div>
-                <!-- close .buttonsHeader -->
-            </div>
-            <!-- close .headerDown -->
-            <div id="id01" class="modal">
-                <form class="modal-content animate">
-                    <div class="imgcontainer">
-                        <span class="close closeLog" title="Close Modal">&times;</span>
-                        <img src="images/img_avatar2.png" alt="Avatar" class="avatar">
-                    </div>
-                    <div class="container">
-                        <label><b>Потребител</b></label>
-                        <input id="userValue" type="text" placeholder="Потребител" name="uname" required>
-                        <label><b>Парола</b></label>
-                        <input id="passwordValue" type="password" placeholder="Парола" name="psw" required>
-                        <p id="infoSuccess"> </p>
-                        <button id="logButton"type="button">Вход</button>
-
-                    </div>
-                </form>
-            </div>
-            <!--close div #id01 -->
-            <div id="id02" class="modal">
-                <form class="modal-content animate">
-                    <div class="imgcontainer">
-                        <span class="close closeReg" title="Close Modal">&times;</span>
-                        <img src="images/img_avatar2.png" alt="Avatar" class="avatar">
-                    </div>
-                    <div class="container">
-                        <label><b>Потребител</b></label>
-                        <input id="username"type="text" placeholder="Потребител" name="uname" required>
-                        <label><b>Парола</b></label>
-                        <input id="password"type="password" placeholder="Парола" name="psw" required>
-                        <label><b>Е-мейл</b></label>
-                        <input id="email"type="email" placeholder="Е-мейл" name="email" required>
-                        <p id="failReg"> </p>
-                        <button id="registerButton"type="button">Регистрация</button>
-                    </div>
-                </form>
-            </div>
-            <!--close div #id02 -->
-        </header>
-        <div class="container">
-            <main>
                 <div class="row">
-                    <section class="col-sm-3 sidenav">
-                        <article class="mapArticle">
-                            <div class="btnMap">
-                                <button class="btn btn-default" type="button">Отиди към картата</button>
-                            </div>
-                        </article>
-                        <article class="filterArticle">
-                            <div class="buttons">
-                                <button id="topFiltersBtn" type="button" class="btn btn-default">Топ филтри</button>
-                                <button id="moreFiltersBtn" type="button" class="btn btn-default ">Още филтри</button>
-                            </div>
-                            <!-- close .btn-group -->
-                            <div class="topFilters">
-                                <div class="category">
-                                    <h3 class="filterHeading"> Категория </h3>
-                                    <button type="button" class="btn btn-default btnStars oneStar">1<span class="star">&#10031;</span></button>
-                                    <button type="button" class="btn btn-default btnStars twoStars">2<span class="star">&#10031;</span></button>
-                                    <button type="button" class="btn btn-default btnStars threeStars">3<span class="star">&#10031;</span></button>
-                                    <button type="button" class="btn btn-default btnStars fourStars">4<span class="star">&#10031;</span></button>
-                                    <button type="button" class="btn btn-default btnStars fiveStars">5<span class="star">&#10031;</span></button>
-                                </div>
-                                <!-- close .category -->
-                                <div class="rating">
-                                    <h3 class="filterHeading"> Оценка </h3>
-                                    <button type="button" class="btn btn-default zero ratingBtn">0+</button>
-                                    <button type="button" class="btn btn-default seventy ratingBtn">70+</button>
-                                    <button type="button" class="btn btn-default seventyFive ratingBtn">75+</button>
-                                    <button type="button" class="btn btn-default eighty ratingBtn">80+</button>
-                                    <button type="button" class="btn btn-default eightyFive ratingBtn">85+</button>
-                                </div>
-                                <!-- close .rating -->
-                                <div class="price">
-                                    <h3 class="filterHeading">Цена</h3>
-                                    <p class="currentRange"> </p>
-                                    <p class="minRange">19лв </p>
-                                    <p class="maxRange">207лв </p>
-                                    <input class="range" type="range" min="18" max="207">
-                                    <input type="checkbox" id="available"> Покажи само наличните хотели <br>
-                                    <input type="checkbox" id="topOfferts"> Покажи Топ Оферти <br>
-                                </div>
-                                <!-- close .price -->
-                                <div class="facilities">
-                                    <h3 class="filterHeading"> Топ удобства </h3>
-                                    <button type="button" class="btn btn-default spa">Спа</button>
-                                    <button type="button" class="btn btn-default beach">Плаж</button>
-                                    <button type="button" class="btn btn-default wiFi">Безплатен Wi-fi</button>
-                                    <button type="button" class="btn btn-default breakfast">Закуска</button>
-                                    <button type="button" class="btn btn-default swimmingPool">Басейн</button>
-                                </div>
-                                <!-- close .facilities -->
-                                <div class="searchByName">
-                                    <h3 class="filterHeading">Търсене по име на хотел</h3>
-                                    <form class="navbar-form navbar-left" role="search">
-                                        <div class="formSearch">
-                                            <input type="text" class="form-control" placeholder="Search">
-                                            <button type="submit" class="btn btn-default">&#x1F50D</button>
-                                        </div>
-                                    </form>
-                                </div>
-                                <!-- close .searchByName -->
-                            </div>
-                            <div class="moreFilters">
-                                <div class="hotelskiUslugi">
-                                    <h3 id="HOTELSKI_USLUGI" data-toggle="collapse" data-target="#demo1">Хотелски услуги</h3>
-                                    <ul id="demo1" class="collapse">
-                                    </ul>
-                                </div>
-                                <div class="tipNastanavqne">
-                                    <h3 id="TIP_NASTANQVANE" data-toggle="collapse" data-target="#demo2">Тип настаняване</h3>
-                                    <ul id="demo2" class="collapse">
-                                    </ul>
-                                </div>
-                                <div class="patuvashtiSDeca">
-                                    <h3 id="PATUVASHTI_S_DECA" data-toggle="collapse" data-target="#demo3">Пътуващи с деца</h3>
-                                    <ul id="demo3" class="collapse">
-                                    </ul>
-                                </div>
-                                <div class="wellnessSpa">
-                                    <h3 id="WELLNESS_SPA" data-toggle="collapse" data-target="#demo4">Уелнес/СПА</h3>
-                                    <ul id="demo4" class="collapse">
-                                    </ul>
-                                </div>
-                                <div class="numberOfRooms">
-                                    <h3 id="NUMBER_OF_ROOMS" data-toggle="collapse" data-target="#demo5">Брой стаи</h3>
-                                    <ul id="demo5" class="collapse">
-                                    </ul>
-                                </div>
-                                <div class="udobstvaVyvStaqta">
-                                    <h3 id="UDOBSTVA_VYV_STAQTA" data-toggle="collapse" data-target="#demo6">Удобства в стаята</h3>
-                                    <ul id="demo6" class="collapse">
-                                    </ul>
-                                </div>
-                                <div class="sportEquipment">
-                                    <h3 id="SPORT_EQUIPMENT" data-toggle="collapse" data-target="#demo7">Спортни съоръжения</h3>
-                                    <ul id="demo7" class="collapse">
-                                    </ul>
-                                </div>
-                                <div class="hotelProfile">
-                                    <h3 id="HOTEL_PROFILE" data-toggle="collapse" data-target="#demo8">Хотелски профил</h3>
-                                    <ul id="demo8" class="collapse">
-                                    </ul>
-                                </div>
-                                <div class="podhodqshtZa">
-                                    <h3 id="PODHODQSHT_ZA" data-toggle="collapse" data-target="#demo9">Подходящ за</h3>
-                                    <ul id="demo9" class="collapse">
-                                    </ul>
-                                </div>
-                                <div class="dostypnost">
-                                    <h3 id="DOSTYPNOST" data-toggle="collapse" data-target="#demo10">Достъпност</h3>
-                                    <ul id="demo10" class="collapse">
-                                    </ul>
-                                </div>
-                            </div>
-                            <!-- close .topFilters -->
-
-                            <div class="deleteFilters">
-                                <button type="button" class="btn btn-default">Премахни всички филтри</button>
-                            </div>
-                        </article>
-                    </section>
-                    <!-- close .sidenav -->
-                    <div class="col-sm-9 center">
+                <div class="buttonsHeader">
+                  <div class="col-sm-3 ">
+                  <div class="input-group date" data-provide="datepicker">
+                    <input type="text" class="form-control">
+                    <div class="input-group-addon">
+                      <span class="glyphicon glyphicon-th"></span>
                     </div>
-                    <!-- close .center -->
-                </div>
-                <!-- close .row -->
-            </main>
-        </div>
-        <!-- close .container -->
-        <footer>
-            <section class="footerUp">
-                <h4> Желаете да получавате ексклузивни оферти? Абонирайте се за нашия бюлетин!</h4>
-                <div class="centered">
-                    <input type="text" name="email" value="" placeholder="И-мейл адрес">
-                    <button type="button" class="btn btn-default">Абонирай се</button>
-                </div>
-                <hr>
-            </section>
-            <section class="footerMiddle">
-                <p> <strong>trivago N.V.</strong>, Bennigsen-Platz 1, 40474 Дюселдорф, Германия </p>
-                <div class="text-center center-block">
-                    <br />
-                    <a href="https://www.facebook.com/trivago"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
-                    <a href="https://twitter.com/trivago"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
-                    <a href="https://plus.google.com/+trivago"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
-                    <a href="mailto:trivago@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
-                </div>
-            </section>
-            <section class="row footerDown">
-                <div class="left col-sm-4">
-                    <p><a href="#">Компания</a></p>
-                    <p><a href="#">Кариера</a></p>
-                    <p><a href="#">Свободни позиции</a></p>
-                    <p><a href="#">Пресцентър</a></p>
-                    <p><a href="#">Помощен център</a></p>
-                    <p><a href="#">Investor Relations</a></p>
+                    </div>
+                  </div>
+                  <div class="col-sm-3 ">
+                  <div class="input-group date" data-provide="datepicker">
+                    <input type="text" class="form-control">
+                    <div class="input-group-addon">
+                      <span class="glyphicon glyphicon-th"></span>
+                    </div>
+                  </div>
+                  </div>
+                  <div class="col-sm-3 ">
+            <button class="btn btn-default">Двойна стая</button>
+            </div>
+    </div>
+  </div>
+    <!-- close .buttonsHeader -->
+    </div>
+    <!-- close .headerDown -->
+    <div id="id01" class="modal">
+        <form class="modal-content animate">
+            <div class="imgcontainer">
+                <span class="close closeLog" title="Close Modal">&times;</span>
+                <img src="images/img_avatar2.png" alt="Avatar" class="avatar">
+            </div>
+            <div class="container">
+                <label><b>Потребител</b></label>
+                <input id="userValue" type="text" placeholder="Потребител" name="uname" required>
+                <label><b>Парола</b></label>
+                <input id="passwordValue" type="password" placeholder="Парола" name="psw" required>
+                <p id="infoSuccess"> </p>
+                <button id="logButton" type="button">Вход</button>
 
+            </div>
+        </form>
+    </div>
+    <!--close div #id01 -->
+    <div id="id02" class="modal">
+        <form class="modal-content animate">
+            <div class="imgcontainer">
+                <span class="close closeReg" title="Close Modal">&times;</span>
+                <img src="images/img_avatar2.png" alt="Avatar" class="avatar">
+            </div>
+            <div class="container">
+                <label><b>Потребител</b></label>
+                <input id="username" type="text" placeholder="Потребител" name="uname" required>
+                <label><b>Парола</b></label>
+                <input id="password" type="password" placeholder="Парола" name="psw" required>
+                <label><b>Е-мейл</b></label>
+                <input id="email" type="email" placeholder="Е-мейл" name="email" required>
+                <p id="failReg"> </p>
+                <button id="registerButton" type="button">Регистрация</button>
+            </div>
+        </form>
+    </div>
+    <!--close div #id02 -->
+    </header>
+    <div class="container">
+        <main>
+            <div class="row">
+                <section class="col-sm-3 sidenav">
+                    <article class="mapArticle">
+                        <div class="btnMap">
+                            <button class="btn btn-default" type="button">Отиди към картата</button>
+                        </div>
+                    </article>
+                    <article class="filterArticle">
+                        <div class="buttons">
+                            <button id="topFiltersBtn" type="button" class="btn btn-default">Топ филтри</button>
+                            <button id="moreFiltersBtn" type="button" class="btn btn-default ">Още филтри</button>
+                        </div>
+                        <!-- close .btn-group -->
+                        <div class="topFilters">
+                            <div class="category">
+                                <h3 class="filterHeading"> Категория </h3>
+                                <button type="button" class="btn btn-default btnStars oneStar">1<span class="star">&#10031;</span></button>
+                                <button type="button" class="btn btn-default btnStars twoStars">2<span class="star">&#10031;</span></button>
+                                <button type="button" class="btn btn-default btnStars threeStars">3<span class="star">&#10031;</span></button>
+                                <button type="button" class="btn btn-default btnStars fourStars">4<span class="star">&#10031;</span></button>
+                                <button type="button" class="btn btn-default btnStars fiveStars">5<span class="star">&#10031;</span></button>
+                            </div>
+                            <!-- close .category -->
+                            <div class="rating">
+                                <h3 class="filterHeading"> Оценка </h3>
+                                <button type="button" class="btn btn-default zero ratingBtn">0+</button>
+                                <button type="button" class="btn btn-default seventy ratingBtn">70+</button>
+                                <button type="button" class="btn btn-default seventyFive ratingBtn">75+</button>
+                                <button type="button" class="btn btn-default eighty ratingBtn">80+</button>
+                                <button type="button" class="btn btn-default eightyFive ratingBtn">85+</button>
+                            </div>
+                            <!-- close .rating -->
+                            <div class="price">
+                                <h3 class="filterHeading">Цена</h3>
+                                <p class="currentRange"> </p>
+                                <p class="minRange">19лв </p>
+                                <p class="maxRange">207лв </p>
+                                <input class="range" type="range" min="18" max="207">
+                                <input type="checkbox" id="available"> Покажи само наличните хотели <br>
+                                <input type="checkbox" id="topOfferts"> Покажи Топ Оферти <br>
+                            </div>
+                            <!-- close .price -->
+                            <div class="facilities">
+                                <h3 class="filterHeading"> Топ удобства </h3>
+                                <button type="button" class="btn btn-default spa">Спа</button>
+                                <button type="button" class="btn btn-default beach">Плаж</button>
+                                <button type="button" class="btn btn-default wiFi">Безплатен Wi-fi</button>
+                                <button type="button" class="btn btn-default breakfast">Закуска</button>
+                                <button type="button" class="btn btn-default swimmingPool">Басейн</button>
+                            </div>
+                            <!-- close .facilities -->
+                            <div class="searchByName">
+                                <h3 class="filterHeading">Търсене по име на хотел</h3>
+                                <form class="navbar-form navbar-left" role="search">
+                                    <div class="formSearch">
+                                        <input type="text" class="form-control" placeholder="Search">
+                                        <button type="submit" class="btn btn-default">&#x1F50D</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- close .searchByName -->
+                        </div>
+                        <div class="moreFilters">
+                            <div class="hotelskiUslugi">
+                                <h3 id="HOTELSKI_USLUGI" data-toggle="collapse" data-target="#demo1">Хотелски услуги</h3>
+                                <ul id="demo1" class="collapse">
+                                </ul>
+                            </div>
+                            <div class="tipNastanavqne">
+                                <h3 id="TIP_NASTANQVANE" data-toggle="collapse" data-target="#demo2">Тип настаняване</h3>
+                                <ul id="demo2" class="collapse">
+                                </ul>
+                            </div>
+                            <div class="patuvashtiSDeca">
+                                <h3 id="PATUVASHTI_S_DECA" data-toggle="collapse" data-target="#demo3">Пътуващи с деца</h3>
+                                <ul id="demo3" class="collapse">
+                                </ul>
+                            </div>
+                            <div class="wellnessSpa">
+                                <h3 id="WELLNESS_SPA" data-toggle="collapse" data-target="#demo4">Уелнес/СПА</h3>
+                                <ul id="demo4" class="collapse">
+                                </ul>
+                            </div>
+                            <div class="numberOfRooms">
+                                <h3 id="NUMBER_OF_ROOMS" data-toggle="collapse" data-target="#demo5">Брой стаи</h3>
+                                <ul id="demo5" class="collapse">
+                                </ul>
+                            </div>
+                            <div class="udobstvaVyvStaqta">
+                                <h3 id="UDOBSTVA_VYV_STAQTA" data-toggle="collapse" data-target="#demo6">Удобства в стаята</h3>
+                                <ul id="demo6" class="collapse">
+                                </ul>
+                            </div>
+                            <div class="sportEquipment">
+                                <h3 id="SPORT_EQUIPMENT" data-toggle="collapse" data-target="#demo7">Спортни съоръжения</h3>
+                                <ul id="demo7" class="collapse">
+                                </ul>
+                            </div>
+                            <div class="hotelProfile">
+                                <h3 id="HOTEL_PROFILE" data-toggle="collapse" data-target="#demo8">Хотелски профил</h3>
+                                <ul id="demo8" class="collapse">
+                                </ul>
+                            </div>
+                            <div class="podhodqshtZa">
+                                <h3 id="PODHODQSHT_ZA" data-toggle="collapse" data-target="#demo9">Подходящ за</h3>
+                                <ul id="demo9" class="collapse">
+                                </ul>
+                            </div>
+                            <div class="dostypnost">
+                                <h3 id="DOSTYPNOST" data-toggle="collapse" data-target="#demo10">Достъпност</h3>
+                                <ul id="demo10" class="collapse">
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- close .topFilters -->
+
+                        <div class="deleteFilters">
+                            <button type="button" class="btn btn-default">Премахни всички филтри</button>
+                        </div>
+                    </article>
+                </section>
+                <!-- close .sidenav -->
+                <div class="col-sm-9 center">
                 </div>
-                <div class="middle col-sm-4">
-                    <p><a href="#">Моб. приложения - търсене в движение</a></p>
-                    <p><a href="#">trivago Hotel Manager - за хотелиери</a></p>
-                </div>
-                <div class="right col-sm-4">
-                    <p><a href="#">Условия за ползване</a></p>
-                    <p><a href="#">Правна информация</a></p>
-                    <p><a href="#">Защита на данните</a></p>
-                    <p><a href="#">Карта на сайта</a></p>
-                    <p><a href="#">Политика за "бисквитките"</a></p>
-                </div>
-            </section>
-            <section class="lastSection">
-                <h1>trivago</h1>
-                <p>Авторски права 2017 trivago | Всички права запазени.</p>
-            </section>
-        </footer>
+                <!-- close .center -->
+            </div>
+            <!-- close .row -->
+        </main>
+    </div>
+    <!-- close .container -->
+    <footer>
+        <section class="footerUp">
+            <h4> Желаете да получавате ексклузивни оферти? Абонирайте се за нашия бюлетин!</h4>
+            <div class="centered">
+                <input type="text" name="email" value="" placeholder="И-мейл адрес">
+                <button type="button" class="btn btn-default">Абонирай се</button>
+            </div>
+            <hr>
+        </section>
+        <section class="footerMiddle">
+            <p> <strong>trivago N.V.</strong>, Bennigsen-Platz 1, 40474 Дюселдорф, Германия </p>
+            <div class="text-center center-block">
+                <br />
+                <a href="https://www.facebook.com/trivago"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+                <a href="https://twitter.com/trivago"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+                <a href="https://plus.google.com/+trivago"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
+                <a href="mailto:trivago@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+            </div>
+        </section>
+        <section class="row footerDown">
+            <div class="left col-sm-4">
+                <p><a href="#">Компания</a></p>
+                <p><a href="#">Кариера</a></p>
+                <p><a href="#">Свободни позиции</a></p>
+                <p><a href="#">Пресцентър</a></p>
+                <p><a href="#">Помощен център</a></p>
+                <p><a href="#">Investor Relations</a></p>
+
+            </div>
+            <div class="middle col-sm-4">
+                <p><a href="#">Моб. приложения - търсене в движение</a></p>
+                <p><a href="#">trivago Hotel Manager - за хотелиери</a></p>
+            </div>
+            <div class="right col-sm-4">
+                <p><a href="#">Условия за ползване</a></p>
+                <p><a href="#">Правна информация</a></p>
+                <p><a href="#">Защита на данните</a></p>
+                <p><a href="#">Карта на сайта</a></p>
+                <p><a href="#">Политика за "бисквитките"</a></p>
+            </div>
+        </section>
+        <section class="lastSection">
+            <h1>trivago</h1>
+            <p>Авторски права 2017 trivago | Всички права запазени.</p>
+        </section>
+    </footer>
     </div>
     <!-- close .container-fluid -->
-    <script src="scripts/script.js">
-    </script>
     <script src="scripts/hotelsService.js"></script>
     <script src="scripts/hotelsController.js"></script>
 </body>
+
 </html>

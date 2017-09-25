@@ -132,3 +132,7 @@ loginButton.addEventListener("click", function(event) {
         p.style.color = "red";
     }
 })
+
+
+//Calendar
+$(".datepicker").datepicker();

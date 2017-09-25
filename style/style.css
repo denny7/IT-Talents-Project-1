@@ -30,25 +30,30 @@ body {
     background: #37454d;
     height: auto;
 }
-.headerDown .form-control, .headerDown .searchHeader {
+.headerDown .form-control1, .headerDown .searchHeader {
   margin-top: 15px;
   margin-bottom: 7px;
   height: 40px;
   margin-left: 23%;
+}
+.buttonsHeader{
+  margin-left:250px;
 }
 .headerDown .searchHeader{
   margin-top: 15px;
   height: 40px;
   margin-left: 30%;
 }
-.buttonsHeader button:first-child{
-  margin-left:15.1%;
-}
+
 .buttonsHeader button {
 display: inline-block;
-height: 40px;
-width: 22.38%;
+width: 100%;
+height: 35px;
 margin-bottom: 15px;
+}
+.buttonsHeader .datepicker{
+  height: 40px;
+  width: 22.38%;
 }
 .dropdown,.currency {
   display: inline-block;

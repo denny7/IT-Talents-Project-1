@@ -204,8 +204,8 @@ City.prototype.addHotel = function (name) {
     this.hotels.push(new Hotel(name));
 }
 
-//Image sources for hotels 
-var imgSrcs = ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRyhA2YRR9Mdpd6nv01Jzfjmkhp9azNxARNFDbpsgWMCo1nf2tZA", "http://www.memmohotels.com/media/memmo-hotels-imageLinkhotel-garden_sea-view-2-7.jpg", "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD…6qV5/ZMUVb90KFDROYLVa/nnAo1bz+6FCikdhXuewoUKHOP/Z", 
+//Image sources for hotels
+var imgSrcs = ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRyhA2YRR9Mdpd6nv01Jzfjmkhp9azNxARNFDbpsgWMCo1nf2tZA", "http://www.memmohotels.com/media/memmo-hotels-imageLinkhotel-garden_sea-view-2-7.jpg", "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD…6qV5/ZMUVb90KFDROYLVa/nnAo1bz+6FCikdhXuewoUKHOP/Z",
 "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD…+XtpUqnLaLfzGj8SXyJcHpbCngD8TTL7zHh9aVKl8ivg//9k=",
     "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD…ynqgAuAxmqx2rCxrKyt5wJqXr1WrysroJkgnIr2srKzhEyf/Z", "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD…WcjVTCskkqJIwxqJi9JJNQtiD1IPSSWMSFRSD0kkrQ6Z//9k=",
     "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD…oxdmAVWyiCSAJ33HwpUq3EWze8MOG/dQfFqVKlR1M2lH/2Q==", "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD…Tn51E8ht51K38I9Kg9cuHgvOfX10oXufl/ap/dNeFTJpMF//Z",

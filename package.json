@@ -1,0 +1,23 @@
+{
+  "name": "it-talents-project-1",
+  "version": "1.0.0",
+  "description": "It Talents first project - Trivago",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/denny7/IT-Talents-Project-1.git"
+  },
+  "author": "Denislav Yasenov and Stoyan Takov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/denny7/IT-Talents-Project-1/issues"
+  },
+  "homepage": "https://github.com/denny7/IT-Talents-Project-1#readme",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "bootstrap-datepicker": "^1.7.1"
+  }
+}
