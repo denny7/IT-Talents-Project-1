@@ -132,7 +132,6 @@ loginButton.addEventListener("click", function(event) {
         p.style.color = "red";
     }
 })
-
-
 //Calendar
-$(".datepicker").datepicker();
+$.fn.datepicker.defaults.format = "dd/mm/yyyy";
+$.fn.datepicker.defaults.startDate = "0";
