@@ -204,18 +204,26 @@ Hotel.prototype.addImg = function(src){
 //Country constructor
 function Country(name) {
     this.name = name;
-    this.cities = [];
+    this._cities = [];
 }
-Country.prototype.addCity = function (name) {
-    this.cities.push(new City(name));
+Country.prototype.addCity = function (city) {
+    this._cities.push(city);
+    this._cities.sort((city1,city2)=>city1.name>city2.name);
+}
+Country.prototype.getCities = function(){
+    return this._cities;
 }
 //City constructor
 function City(name) {
     this.name = name;
-    this.hotels = [];
+    this._hotels = [];
 }
-City.prototype.addHotel = function (name) {
-    this.hotels.push(new Hotel(name));
+City.prototype.addHotel = function (hotel) {
+    this._hotels.push(hotel);
+    this._hotels.sort((hotel1,hotel2)=>hotel1.name>hotel2.name);
+}
+City.prototype.getHotels = function(){
+    return this._hotels;
 }
 
 // Examples for hotels,imgs,cities 
@@ -573,3 +581,16 @@ var userList = (function () {
     }
     return new UserList();
 })();
+
+//Filters
+function filterByCity(city){
+        try {
+            var findCity = bulgaria.getCities().find(bgCity => city.toLowerCase()===bgCity.name.toLowerCase());
+            if (!findCity) {
+                throw new Error("Invalid city");
+            }
+            return findCity.getHotels();
+        } catch (error) {
+            console.error(error.message);
+        } 
+}
