@@ -133,6 +133,11 @@ loginButton.addEventListener("click", function(event) {
     }
 })
 
+//Filters
+function filterByMoreFilters(){
+    var checkedFilters = document.querySelectorAll("input[type='checkbox']");
+    checkedFilters = Array.prototype.filter.call(checkedFilters,filter=>filter.checked);   
+}
 
 //Calendar
 $(".datepicker").datepicker();
