@@ -132,6 +132,7 @@ loginButton.addEventListener("click", function(event) {
         p.style.color = "red";
     }
 })
+<<<<<<< HEAD
 
 //Filters
 function filterByMoreFilters(){
@@ -139,5 +140,8 @@ function filterByMoreFilters(){
     checkedFilters = Array.prototype.filter.call(checkedFilters,filter=>filter.checked);   
 }
 
+=======
+>>>>>>> d3a85d4229a2fa7f8ffac8d1f955f1d3f6a282e1
 //Calendar
-$(".datepicker").datepicker();
+$.fn.datepicker.defaults.format = "dd/mm/yyyy";
+$.fn.datepicker.defaults.startDate = "0";
