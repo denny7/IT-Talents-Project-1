@@ -206,19 +206,17 @@ function Country(name) {
     this.name = name;
     this._cities = [];
 }
-<<<<<<< HEAD
 Country.prototype.addCity = function (city) {
-    this._cities.push(city);
-    this._cities.sort((city1,city2)=>city1.name>city2.name);
+    if (city instanceof City) {
+        this._cities.push(city);
+        this._cities.sort((city1,city2)=>city1.name>city2.name);
+    }else{
+        throw new Error("Invalid city.");
+    }
+    
 }
 Country.prototype.getCities = function(){
     return this._cities;
-=======
-Country.prototype.addCity = function (name) {
-  if(name instanceof City){
-    this.cities.push(name);
-  }
->>>>>>> 90f97dd35013e75c9e8eeeccd123e4c49cece3b4
 }
 //City constructor
 function City(name) {
@@ -226,19 +224,16 @@ function City(name) {
     this._hotels = [];
 }
 City.prototype.addHotel = function (hotel) {
-    this._hotels.push(hotel);
-    this._hotels.sort((hotel1,hotel2)=>hotel1.name>hotel2.name);
+    if (hotel instanceof Hotel) {
+        this._hotels.push(hotel);
+        this._hotels.sort((hotel1,hotel2)=>hotel1.name>hotel2.name);
+    }else{
+        throw new Error("Invalid hotel.");
+    }
+    
 }
-<<<<<<< HEAD
 City.prototype.getHotels = function(){
     return this._hotels;
-=======
-City.prototype.addHotel = function (name) {
-  if(name instanceof Hotel){
-    this.hotels.push(name);
-    name.city = this;
-  }
->>>>>>> 90f97dd35013e75c9e8eeeccd123e4c49cece3b4
 }
 
 // Examples for hotels,imgs,cities
@@ -562,41 +557,40 @@ for (var cities = 0; cities < 12; cities++) {
     }
 }
 
-// User constructor
-var userList = (function () {
-    function User(username, password, email) {
-        this.username = username;
-        this.password = password;
-        this.email = email;
-    }
+// // User constructor
+// var userList = (function () {
+//     function User(username, password, email) {
+//         this.username = username;
+//         this.password = password;
+//         this.email = email;
+//     }
 
-    function UserList() {
-        if (localStorage.getItem("users") != null) {
-            this._users = JSON.parse(localStorage.getItem("users"));
-        } else {
-            this._users = [new User("denny", "dennY7", "denislav.yasenov@abv.bg")];
-            localStorage.setItem("users", JSON.stringify(this._users));
-        }
-    }
-    UserList.prototype.checkUsername = function (username) {
-        return this._users.some(user => user.username === username);
-    }
-    UserList.prototype.addUser = function (username, password, email) {
-        var pattern = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[\d])(?=\S+$).{6,}$/.test(password)
-        if ((typeof username == 'string') && (username.trim().length >= 4) && (pattern)) {
-            if (!(this._users.some(user => user.username === username))) {
-                this._users.push(new User(username, password, email));
-                localStorage.setItem('users', JSON.stringify(this._users));
-            }
-        }
-    }
-    UserList.prototype.login = function (username, password) {
-        return this._users.some(user => user.username === username &&
-            user.password === password);
-    }
-    return new UserList();
-})();
-<<<<<<< HEAD
+//     function UserList() {
+//         if (localStorage.getItem("users") != null) {
+//             this._users = JSON.parse(localStorage.getItem("users"));
+//         } else {
+//             this._users = [new User("denny", "dennY7", "denislav.yasenov@abv.bg")];
+//             localStorage.setItem("users", JSON.stringify(this._users));
+//         }
+//     }
+//     UserList.prototype.checkUsername = function (username) {
+//         return this._users.some(user => user.username === username);
+//     }
+//     UserList.prototype.addUser = function (username, password, email) {
+//         var pattern = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[\d])(?=\S+$).{6,}$/.test(password)
+//         if ((typeof username == 'string') && (username.trim().length >= 4) && (pattern)) {
+//             if (!(this._users.some(user => user.username === username))) {
+//                 this._users.push(new User(username, password, email));
+//                 localStorage.setItem('users', JSON.stringify(this._users));
+//             }
+//         }
+//     }
+//     UserList.prototype.login = function (username, password) {
+//         return this._users.some(user => user.username === username &&
+//             user.password === password);
+//     }
+//     return new UserList();
+// })();
 
 //Filters
 function filterByCity(city){
@@ -610,6 +604,3 @@ function filterByCity(city){
             console.error(error.message);
         } 
 }
-=======
-console.log(bulgaria.cities[0])
->>>>>>> 90f97dd35013e75c9e8eeeccd123e4c49cece3b4
