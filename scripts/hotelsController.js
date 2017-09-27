@@ -21,6 +21,9 @@ function fillUl(arr, ul, name) {
         checkbox.type = "checkbox";
         checkbox.value = index;
         checkbox.name = name;
+        checkbox.addEventListener("click",function(event){
+
+        })
         let label = document.createElement("label");
         label.innerText = usluga;
         checkbox.style.float = "left";
