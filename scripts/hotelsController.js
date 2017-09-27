@@ -134,6 +134,22 @@ loginButton.addEventListener("click", function(event) {
 })
 
 //Filters
+//Searching for a city in the search bar
+document.querySelector("button.searchHeader").addEventListener("keypress",function(){
+    var searchValue = document.querySelector("input.form-control").value;
+    if (hotels) {
+        hotels.forEach(hotel=>console.log(hotel.name));
+   }
+},false)
+document.querySelector("button.searchHeader").addEventListener("click",function(){
+    var searchValue = document.querySelector("input.form-control").value;
+    var hotels = filterByCity(searchValue);
+    if (hotels) {
+         hotels.forEach(hotel=>console.log(hotel.name));
+    }
+   
+},false)
+
 function filterByMoreFilters(){
     var checkedFilters = document.querySelectorAll("input[type='checkbox']");
     checkedFilters = Array.prototype.filter.call(checkedFilters,filter=>filter.checked);
