@@ -1,147 +1,149 @@
-const HOTELSKI_USLUGI = [
-    "24 ч. Румсървиз",
-    "24 ч. Рецепция",
-    "Асансьор",
-    "Бар в хотела",
-    "Бар при басейна",
-    "Безплатно Wi-Fi в лоби",
-    "Бизнес център",
-    "Бунгала",
-    "Външен плувен басейн",
-    "Вътрешен плувен басейн",
-    "Дискотека/Нощен клуб",
-    "Дом. любимци",
-    "Експресна регистрация",
-    "Здравен център/Спа",
-    "Компютър с интернет",
-    "Консиерж",
-    "Конферентна зала",
-    "Лекарски кабинет",
-    "Минимаркет",
-    "Обслужване по стаите",
-    "Бунгала",
-    "Директен излаз на плаж",
-    "Казино",
-    "Компютър с интернет",
-    "Лекарски кабинет",
-    "Организирани дейности",
-    "Паркинг към хотела",
-    "Перална машина",
-    "Пиколо",
-    "Плажни чадъри",
-    "Пране и хим. чистене",
-    "Превоз до летището",
-    "Ресторант",
-    "Сейф в хотела (рецепция)",
-    "Стаи за непушачи",
-    "Тераса",
-    "Фитнес",
-    "Фризьор",
-    "Хавлии при басейн/ плаж",
-    "Хипоалергични стаи",
-    "Шезлонги",
-    "Wi-Fi в лоби"
-];
-const TIP_NASTANQVANE = [
-    "Апартхотел",
-    "Ваканционен дом",
-    "Къмпинг",
-    "Къща за гости",
-    "Мотел",
-    "Нощувка + закуска",
-    "Ризорт",
-    "Старовремска къща",
-    "Хостел",
-    "Хотел",
-    "Hostal",
-    "Pousada"
-];
-const PATUVASHTI_S_DECA = ["Детегледачка", "Детска площадка", "Детско/ Бебешко легло"];
-const WELLNESS_SPA = [
-    "Джакузи/ Хидромас. вана",
-    "Масаж",
-    "Масаж с горещи камъни",
-    "Парна баня",
-    "Процедури за тяло",
-    "Салон за красота",
-    "Сауна",
-    "Солариум",
-    "Турска баня/ Хамам спа",
-    "Хидротерапия"
-];
-const NUMBER_OF_ROOMS = ["1-50", "51-150", "150+"];
-const UDOBSTVA_VYV_STAQTA = [
-    "Баня с вана",
-    "Баня с душ",
-    "Безплатно Wi-Fi в стаите",
-    "Бюро",
-    "Вентилатор",
-    "Ел. чайник",
-    "Интернет",
-    "Кабелна телевизия",
-    "Климатик",
-    "Козметично огледало",
-    "Кухня/ Кухненски бокс",
-    "Микровълнова печка",
-    "Отопление",
-    "Сейф в стаята",
-    "Сешоар",
-    "Стаи с балкон/ тераса",
-    "Телевизор",
-    "Телефон",
-    "Хипоалергично спално бельо",
-    "Хладилник",
-    "Ютия/ Дъска за гладене",
-    "Wi-Fi в стаята"
-];
-const SPORT_EQUIPMENT = [
-    "Бадминтон",
-    "Билярд",
-    "Боулинг",
-    "Волейбол",
-    "Гмуркане",
-    "Голф",
-    "Колела под наем",
-    "Мини голф",
-    "Плаване",
-    "Ски",
-    "Скуош",
-    "Стрелба с лък/ пушка",
-    "Сърфиране",
-    "Тенис корт",
-    "Тенис на маса",
-    "Туристическа пътека",
-    "Яздене"
-];
-const HOTEL_PROFILE = [
-    "Градски хотел (център)",
-    "Дизайнерски хотел",
-    "Еко-хотел",
-    "Здравен ризорт/ Санаториум",
-    "Клуб хотел",
-    "Конгресен хотел",
-    "Луксозен хотел",
-    "Провинциален хотел",
-    "Спа хотел",
-    "Тематичен хотел",
-    "Ферма",
-    "Хотел до летище",
-    "Хотел за пенсионери",
-    "Хотел на плажа"
-];
-const PODHODQSHT_ZA = [
-    "Бизнесмени",
-    "Гей двойки",
-    "Големи групи",
-    "Зимни туристи",
-    "Купонджии",
-    "Младоженци",
-    "Само за възрастни",
-    "Семейно необвързани",
-    "Семейства"
-];
-
-const DOSTYPNOST = ["Достъп инвалидни колички", "Достъпен паркинг", "Достъпни коридори"];
+var UDOBSTVA_V_HOTELA = 
+    {
+        HOTELSKI_USLUGI : [
+            "24 ч. Румсървиз",
+            "24 ч. Рецепция",
+            "Асансьор",
+            "Бар в хотела",
+            "Бар при басейна",
+            "Безплатно Wi-Fi в лоби",
+            "Бизнес център",
+            "Бунгала",
+            "Външен плувен басейн",
+            "Вътрешен плувен басейн",
+            "Дискотека/Нощен клуб",
+            "Дом. любимци",
+            "Експресна регистрация",
+            "Здравен център/Спа",
+            "Компютър с интернет",
+            "Консиерж",
+            "Конферентна зала",
+            "Лекарски кабинет",
+            "Минимаркет",
+            "Обслужване по стаите",
+            "Бунгала",
+            "Директен излаз на плаж",
+            "Казино",
+            "Компютър с интернет",
+            "Лекарски кабинет",
+            "Организирани дейности",
+            "Паркинг към хотела",
+            "Перална машина",
+            "Пиколо",
+            "Плажни чадъри",
+            "Пране и хим. чистене",
+            "Превоз до летището",
+            "Ресторант",
+            "Сейф в хотела (рецепция)",
+            "Стаи за непушачи",
+            "Тераса",
+            "Фитнес",
+            "Фризьор",
+            "Хавлии при басейн/ плаж",
+            "Хипоалергични стаи",
+            "Шезлонги",
+            "Wi-Fi в лоби"
+        ],
+        TIP_NASTANQVANE : [
+            "Апартхотел",
+            "Ваканционен дом",
+            "Къмпинг",
+            "Къща за гости",
+            "Мотел",
+            "Нощувка + закуска",
+            "Ризорт",
+            "Старовремска къща",
+            "Хостел",
+            "Хотел",
+            "Hostal",
+            "Pousada"
+        ],
+        PATUVASHTI_S_DECA : ["Детегледачка", "Детска площадка", "Детско/ Бебешко легло"],
+        WELLNESS_SPA : [
+            "Джакузи/ Хидромас. вана",
+            "Масаж",
+            "Масаж с горещи камъни",
+            "Парна баня",
+            "Процедури за тяло",
+            "Салон за красота",
+            "Сауна",
+            "Солариум",
+            "Турска баня/ Хамам спа",
+            "Хидротерапия"
+        ],
+        NUMBER_OF_ROOMS : ["1-50", "51-150", "150+"],
+        UDOBSTVA_VYV_STAQTA : [
+            "Баня с вана",
+            "Баня с душ",
+            "Безплатно Wi-Fi в стаите",
+            "Бюро",
+            "Вентилатор",
+            "Ел. чайник",
+            "Интернет",
+            "Кабелна телевизия",
+            "Климатик",
+            "Козметично огледало",
+            "Кухня/ Кухненски бокс",
+            "Микровълнова печка",
+            "Отопление",
+            "Сейф в стаята",
+            "Сешоар",
+            "Стаи с балкон/ тераса",
+            "Телевизор",
+            "Телефон",
+            "Хипоалергично спално бельо",
+            "Хладилник",
+            "Ютия/ Дъска за гладене",
+            "Wi-Fi в стаята"
+        ],
+        SPORT_EQUIPMENT : [
+            "Бадминтон",
+            "Билярд",
+            "Боулинг",
+            "Волейбол",
+            "Гмуркане",
+            "Голф",
+            "Колела под наем",
+            "Мини голф",
+            "Плаване",
+            "Ски",
+            "Скуош",
+            "Стрелба с лък/ пушка",
+            "Сърфиране",
+            "Тенис корт",
+            "Тенис на маса",
+            "Туристическа пътека",
+            "Яздене"
+        ],
+        HOTEL_PROFILE : [
+            "Градски хотел (център)",
+            "Дизайнерски хотел",
+            "Еко-хотел",
+            "Здравен ризорт/ Санаториум",
+            "Клуб хотел",
+            "Конгресен хотел",
+            "Луксозен хотел",
+            "Провинциален хотел",
+            "Спа хотел",
+            "Тематичен хотел",
+            "Ферма",
+            "Хотел до летище",
+            "Хотел за пенсионери",
+            "Хотел на плажа"
+        ],
+        PODHODQSHT_ZA : [
+            "Бизнесмени",
+            "Гей двойки",
+            "Големи групи",
+            "Зимни туристи",
+            "Купонджии",
+            "Младоженци",
+            "Само за възрастни",
+            "Семейно необвързани",
+            "Семейства"
+        ],
+        DOSTYPNOST : ["Достъп инвалидни колички", "Достъпен паркинг", "Достъпни коридори"]
+    };
 //Hotel constructor
 function Hotel(name) {
     this.name = name;
@@ -175,36 +177,35 @@ function Hotel(name) {
             priceOffer: this.price + Math.floor(Math.random() * 30)
         }
     ];
-    var typesOfRatings = ["Слаб","Среден","Добър","Много добър","Отличен"];
-    this.ratings = [
-        {
+    var typesOfRatings = ["Слаб", "Среден", "Добър", "Много добър", "Отличен"];
+    this.ratings = [{
             typeOfRating: "Разположение",
-            rating: Math.floor(Math.random()*100 + 1),
+            rating: Math.floor(Math.random() * 100 + 1),
             ratingWithWords: '',
         },
         {
             typeOfRating: "Стаи",
-            rating: Math.floor(Math.random()*100 + 1),
+            rating: Math.floor(Math.random() * 100 + 1),
             ratingWithWords: ''
         },
         {
             typeOfRating: "Обслужване",
-            rating: Math.floor(Math.random()*100 + 1),
+            rating: Math.floor(Math.random() * 100 + 1),
             ratingWithWords: ''
         },
         {
             typeOfRating: "Чистота",
-            rating: Math.floor(Math.random()*100 + 1),
+            rating: Math.floor(Math.random() * 100 + 1),
             ratingWithWords: ''
         },
         {
             typeOfRating: "Качество срещу пари",
-            rating: Math.floor(Math.random()*100 + 1),
+            rating: Math.floor(Math.random() * 100 + 1),
             ratingWithWords: ''
         }
     ]
-    this.ratings.forEach(rating=>rating.ratingWithWords=typesOfRatings[Math.ceil(rating.rating/20)-1]);
-    this.avgRating = Math.floor(this.ratings.reduce((sum,rating)=>sum+rating.rating,0)/this.ratings.length);
+    this.ratings.forEach(rating => rating.ratingWithWords = typesOfRatings[Math.ceil(rating.rating / 20) - 1]);
+    this.avgRating = Math.floor(this.ratings.reduce((sum, rating) => sum + rating.rating, 0) / this.ratings.length);
     this.offers.sort((offer1, offer2) => offer1.priceOffer - offer2.priceOffer);
     this.isAvailable = (Math.random() < 0.13) ?
         false :
@@ -226,15 +227,15 @@ function Hotel(name) {
             arrayOtPlusove.splice(nomerNaPlus, 1);
         }
     }
-    this.addPlus(HOTELSKI_USLUGI);
-    this.addPlus(TIP_NASTANQVANE);
-    this.addPlus(PATUVASHTI_S_DECA);
-    this.addPlus(WELLNESS_SPA);
-    this.addPlus(UDOBSTVA_VYV_STAQTA);
-    this.addPlus(SPORT_EQUIPMENT);
-    this.addPlus(HOTEL_PROFILE);
-    this.addPlus(PODHODQSHT_ZA);
-    this.addPlus(DOSTYPNOST);
+    this.addPlus(UDOBSTVA_V_HOTELA.HOTELSKI_USLUGI);
+    this.addPlus(UDOBSTVA_V_HOTELA.TIP_NASTANQVANE);
+    this.addPlus(UDOBSTVA_V_HOTELA.PATUVASHTI_S_DECA);
+    this.addPlus(UDOBSTVA_V_HOTELA.WELLNESS_SPA);
+    this.addPlus(UDOBSTVA_V_HOTELA.UDOBSTVA_VYV_STAQTA);
+    this.addPlus(UDOBSTVA_V_HOTELA.SPORT_EQUIPMENT);
+    this.addPlus(UDOBSTVA_V_HOTELA.HOTEL_PROFILE);
+    this.addPlus(UDOBSTVA_V_HOTELA.PODHODQSHT_ZA);
+    this.addPlus(UDOBSTVA_V_HOTELA.DOSTYPNOST);
     this.freeWifi = (this.plusoveZaHotela.find(plus => plus.toLowerCase().indexOf("безплатно wi-fi") !== -1)) ?
         true :
         false;
@@ -607,39 +608,39 @@ for (var cities = 0; cities < 12; cities++) {
     }
 }
 // // User constructor
-var userList = (function () {
-    function User(username, password, email) {
-        this.username = username;
-        this.password = password;
-        this.email = email;
-    }
+// var userList = (function () {
+//     function User(username, password, email) {
+//         this.username = username;
+//         this.password = password;
+//         this.email = email;
+//     }
 
-    function UserList() {
-        if (localStorage.getItem("users") != null) {
-            this._users = JSON.parse(localStorage.getItem("users"));
-        } else {
-            this._users = [new User("denny", "dennY7", "denislav.yasenov@abv.bg")];
-            localStorage.setItem("users", JSON.stringify(this._users));
-        }
-    }
-    UserList.prototype.checkUsername = function (username) {
-        return this._users.some(user => user.username === username);
-    }
-    UserList.prototype.addUser = function (username, password, email) {
-        var pattern = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[\d])(?=\S+$).{6,}$/.test(password)
-        if ((typeof username == 'string') && (username.trim().length >= 4) && (pattern)) {
-            if (!(this._users.some(user => user.username === username))) {
-                this._users.push(new User(username, password, email));
-                localStorage.setItem('users', JSON.stringify(this._users));
-            }
-        }
-    }
-    UserList.prototype.login = function (username, password) {
-        return this._users.some(user => user.username === username &&
-            user.password === password);
-    }
-    return new UserList();
-})();
+//     function UserList() {
+//         if (localStorage.getItem("users") != null) {
+//             this._users = JSON.parse(localStorage.getItem("users"));
+//         } else {
+//             this._users = [new User("denny", "dennY7", "denislav.yasenov@abv.bg")];
+//             localStorage.setItem("users", JSON.stringify(this._users));
+//         }
+//     }
+//     UserList.prototype.checkUsername = function (username) {
+//         return this._users.some(user => user.username === username);
+//     }
+//     UserList.prototype.addUser = function (username, password, email) {
+//         var pattern = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[\d])(?=\S+$).{6,}$/.test(password)
+//         if ((typeof username == 'string') && (username.trim().length >= 4) && (pattern)) {
+//             if (!(this._users.some(user => user.username === username))) {
+//                 this._users.push(new User(username, password, email));
+//                 localStorage.setItem('users', JSON.stringify(this._users));
+//             }
+//         }
+//     }
+//     UserList.prototype.login = function (username, password) {
+//         return this._users.some(user => user.username === username &&
+//             user.password === password);
+//     }
+//     return new UserList();
+// })();
 
 //Filters
 function filterByCity(city) {
@@ -653,6 +654,7 @@ function filterByCity(city) {
         console.error(error.message);
     }
 }
-function filterByUdobstvo(udobstvoID,hotels){
-    return hotels.filter(hotel => hotel.plusoveZaHotela.find(plus=>plus===vsichkiUdobstva[udobstvoID]));
+
+function filterByUdobstvo(categoriqUdobstvo,udobstvoID, hotels) {
+    return hotels.filter(hotel => hotel.plusoveZaHotela.find(plus => plus === UDOBSTVA_V_HOTELA[categoriqUdobstvo][udobstvoID]));
 }

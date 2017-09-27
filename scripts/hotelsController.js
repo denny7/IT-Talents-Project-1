@@ -22,7 +22,14 @@ function fillUl(arr, ul, name) {
         checkbox.value = index;
         checkbox.name = name;
         checkbox.addEventListener("click",function(event){
-
+            if (checkbox.hasAttribute("checked")) {
+                checkbox.removeAttribute("checked");
+            }else{
+                checkbox.setAttribute("checked","checked");
+            }
+            
+            var hotelsToDisplay = filterByMoreFilters();
+            console.log(hotelsToDisplay);
         })
         let label = document.createElement("label");
         label.innerText = usluga;
@@ -33,16 +40,16 @@ function fillUl(arr, ul, name) {
         ul.appendChild(holder);
     });
 }
-fillUl(HOTELSKI_USLUGI, ulHotelskiUslugi, "hotelskiUslugi");
-fillUl(TIP_NASTANQVANE, ulTipNastanavqne, "tipNastanavqne");
-fillUl(PATUVASHTI_S_DECA, ulPatuvashtiSDeca, "patuvashtiSDeca");
-fillUl(WELLNESS_SPA, ulWellnessSpa, "wellnessSpa");
-fillUl(NUMBER_OF_ROOMS, ulNumberOfRooms, "numberOfRooms");
-fillUl(UDOBSTVA_VYV_STAQTA, ulUdobstvaVyvStaqta, "udobstvaVyvStaqta");
-fillUl(SPORT_EQUIPMENT, ulSportEquipment, "sportEquipment");
-fillUl(HOTEL_PROFILE, ulHotelProfile, "hotelProfile");
-fillUl(PODHODQSHT_ZA, ulPodhodqshtZa, "podhodqshtZa");
-fillUl(DOSTYPNOST, ulDostypnost, "dostypnost");
+fillUl(UDOBSTVA_V_HOTELA.HOTELSKI_USLUGI, ulHotelskiUslugi, "hotelskiUslugi");
+fillUl(UDOBSTVA_V_HOTELA.TIP_NASTANQVANE, ulTipNastanavqne, "tipNastanavqne");
+fillUl(UDOBSTVA_V_HOTELA.PATUVASHTI_S_DECA, ulPatuvashtiSDeca, "patuvashtiSDeca");
+fillUl(UDOBSTVA_V_HOTELA.WELLNESS_SPA, ulWellnessSpa, "wellnessSpa");
+fillUl(UDOBSTVA_V_HOTELA.NUMBER_OF_ROOMS, ulNumberOfRooms, "numberOfRooms");
+fillUl(UDOBSTVA_V_HOTELA.UDOBSTVA_VYV_STAQTA, ulUdobstvaVyvStaqta, "udobstvaVyvStaqta");
+fillUl(UDOBSTVA_V_HOTELA.SPORT_EQUIPMENT, ulSportEquipment, "sportEquipment");
+fillUl(UDOBSTVA_V_HOTELA.HOTEL_PROFILE, ulHotelProfile, "hotelProfile");
+fillUl(UDOBSTVA_V_HOTELA.PODHODQSHT_ZA, ulPodhodqshtZa, "podhodqshtZa");
+fillUl(UDOBSTVA_V_HOTELA.DOSTYPNOST, ulDostypnost, "dostypnost");
 moreFiltersBtn.addEventListener("click", function() {
     topFilters.style.display = "none";
     moreFilters.style.display = "block";
@@ -138,24 +145,41 @@ loginButton.addEventListener("click", function(event) {
 
 //Filters
 //Searching for a city in the search bar
-document.querySelector("button.searchHeader").addEventListener("keypress",function(){
-    var searchValue = document.querySelector("input.form-control").value;
-    if (hotels) {
-        hotels.forEach(hotel=>console.log(hotel.name));
-   }
-},false)
-document.querySelector("button.searchHeader").addEventListener("click",function(){
+function getHotelsInSearchBar(){
     var searchValue = document.querySelector("input.form-control").value;
     var hotels = filterByCity(searchValue);
     if (hotels) {
-         hotels.forEach(hotel=>console.log(hotel.name));
-    }
-
+        hotels.forEach(hotel=>console.log(hotel.name));
+        return hotels;
+   }
+}
+//Events for the search bar
+document.querySelector("button.searchHeader").addEventListener("keypress",function(){
+     var hotels = getHotelsInSearchBar();
 },false)
-
+document.querySelector("button.searchHeader").addEventListener("click",function(){
+    var hotels = getHotelsInSearchBar();
+},false)
+//Function for the More filters section
 function filterByMoreFilters(){
-    var checkedFilters = document.querySelectorAll("input[type='checkbox']");
-    checkedFilters = Array.prototype.filter.call(checkedFilters,filter=>filter.checked);
+    var checkedFilters = document.querySelectorAll("input[checked='checked']");
+    try {
+        var filteredHotels = getHotelsInSearchBar();
+        if (!filteredHotels) {
+            throw new Error("You haven't entered a city.");
+        }
+        if (checkedFilters.length!=0) {
+            for (var index = 0; index < checkedFilters.length; index++) {
+                var categoryUdobstvo = checkedFilters[index].parentNode.parentNode.parentNode.parentNode.firstElementChild.id;
+                var udobstvoID = checkedFilters[index].value;
+                filteredHotels = filterByUdobstvo(categoryUdobstvo,udobstvoID,filteredHotels); 
+            }
+        }
+        return filteredHotels;
+    } catch (error) {
+        console.error(error.message);
+    }
+    
 }
 
 //Calendar
