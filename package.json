@@ -18,6 +18,8 @@
   "homepage": "https://github.com/denny7/IT-Talents-Project-1#readme",
   "dependencies": {
     "bootstrap": "^3.3.7",
-    "bootstrap-datepicker": "^1.7.1"
-  }
+    "bootstrap-datepicker": "^1.7.1",
+    "handlebars": "^4.0.10"
+  },
+  "devDependencies": {}
 }

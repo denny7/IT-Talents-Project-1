@@ -136,9 +136,16 @@ loginButton.addEventListener("click", function(event) {
 //Filters
 function filterByMoreFilters(){
     var checkedFilters = document.querySelectorAll("input[type='checkbox']");
-    checkedFilters = Array.prototype.filter.call(checkedFilters,filter=>filter.checked);   
+    checkedFilters = Array.prototype.filter.call(checkedFilters,filter=>filter.checked);
 }
 
 //Calendar
 $.fn.datepicker.defaults.format = "dd/mm/yyyy";
 $.fn.datepicker.defaults.startDate = "0";
+
+//handlebars
+var hbTemplate = document.getElementById("entry-template").innerHTML;
+var template = Handlebars.compile(hbTemplate)
+var container = document.getElementById("hotelsContainer")
+container.innerHTML = template(bulgaria._cities[0]._hotels[0])
+console.log(bulgaria._cities[0]._hotels[0])

@@ -213,7 +213,7 @@ Country.prototype.addCity = function (city) {
     }else{
         throw new Error("Invalid city.");
     }
-    
+
 }
 Country.prototype.getCities = function(){
     return this._cities;
@@ -230,7 +230,7 @@ City.prototype.addHotel = function (hotel) {
     }else{
         throw new Error("Invalid hotel.");
     }
-    
+
 }
 City.prototype.getHotels = function(){
     return this._hotels;

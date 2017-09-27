@@ -10,6 +10,7 @@
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="node_modules/handlebars/dist/handlebars.min.js"></script>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css"/>
     <link rel="stylesheet" href="node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.css"/>
     <link rel="stylesheet" type="text/css" href="style/styleIcons.css">
@@ -235,7 +236,38 @@
                 </section>
                 <!-- close .sidenav -->
                 <div class="col-sm-9 center">
+                  <script id="entry-template" type="text/x-handlebars-template">
+                    <div class="row">
+                      <div class="col-sm-7">
+                        <img src="{{imgs.[0]}}" alt="hotelImg">
+                        <p id="nameHotel">{{name}}</p>
+                        <p id="categoryHotel"> {{category}} stars </p>
+                        <p id="distanceFromCentre">{{distanceFromCentre}} км. до центъра на града</p>
+                        {{#if freeWifi}}
+                        <p>Безплатен WiFi</p>
+                        {{/if}}
+                      </div>
+                      <div class="col-sm-2">
+                        <div class="oferti"></div>
+                        <div class="oferti"></div>
+                        <div class="oferti"></div>
+                      </div>
+                      <div class="col-sm-3">
+                        <p></p>
+                        <p></p>
+                        <p></p>
+                        {{#if breakfast}}
+                        <p id="breakfast">Безплатна закуска</p>
+                        {{/if}}
+                        <button type="button" class="btn btn-default">Виж оферта</button>
+                      </div>
+                    </div>
+                  </script>
+                  <div id="hotelsContainer">
+
+                  </div>
                 </div>
+
                 <!-- close .center -->
             </div>
             <!-- close .row -->
