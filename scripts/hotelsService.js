@@ -167,7 +167,7 @@ function Hotel(name) {
             priceOffer: this.price + Math.floor(Math.random() * 30)
         },
         {
-            nameOffer: "ESky",
+            nameOffer: "ESky.bg",
             priceOffer: this.price + Math.floor(Math.random() * 30)
         },
         {
@@ -653,7 +653,6 @@ function filterByCity(city) {
         console.error(error.message);
     }
 }
-
 function filterByUdobstvo(udobstvoID,hotels){
     return hotels.filter(hotel => hotel.plusoveZaHotela.find(plus=>plus===vsichkiUdobstva[udobstvoID]));
 }
