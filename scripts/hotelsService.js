@@ -602,5 +602,5 @@ function filterByCity(city){
             return findCity.getHotels();
         } catch (error) {
             console.error(error.message);
-        } 
+        }
 }
