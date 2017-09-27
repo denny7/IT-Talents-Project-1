@@ -147,17 +147,31 @@ function Hotel(name) {
     this.imgs = [];
     var randomForRoom = Math.random();
     this.singleRoom = true;
-    if (randomForRoom<0.75) {
+    if (randomForRoom < 0.75) {
         this.doubleRoom = true;
     }
-    if (randomForRoom<0.50) {
+    if (randomForRoom < 0.50) {
         this.familyRoom = true;
     }
-    if (randomForRoom<0.25) {
+    if (randomForRoom < 0.25) {
         this.multipleRooms = true;
     }
     this.category = Math.floor(Math.random() * 4 + 1);
-    this.price = Math.floor(Math.random() * 234 + 24);
+    this.price = Math.floor(Math.random() * 967 + 27);
+    this.offers = [{
+            nameOffer: "Booking.com",
+            priceOffer: this.price + Math.floor(Math.random() * 30)
+        },
+        {
+            nameOffer: "ESky",
+            priceOffer: this.price + Math.floor(Math.random() * 30)
+        },
+        {
+            nameOffer: "Hotels.com",
+            priceOffer: this.price + Math.floor(Math.random() * 30)
+        }
+    ]
+    this.offers.sort((offer1, offer2) => offer1.priceOffer - offer2.priceOffer);
     this.isAvailable = (Math.random() < 0.13) ?
         false :
         true;
@@ -198,7 +212,7 @@ function Hotel(name) {
         true :
         false;
 }
-Hotel.prototype.addImg = function(src){
+Hotel.prototype.addImg = function (src) {
     this.imgs.push(src);
 }
 //Country constructor
@@ -209,13 +223,13 @@ function Country(name) {
 Country.prototype.addCity = function (city) {
     if (city instanceof City) {
         this._cities.push(city);
-        this._cities.sort((city1,city2)=>city1.name>city2.name);
-    }else{
+        this._cities.sort((city1, city2) => city1.name > city2.name);
+    } else {
         throw new Error("Invalid city.");
     }
-    
+
 }
-Country.prototype.getCities = function(){
+Country.prototype.getCities = function () {
     return this._cities;
 }
 //City constructor
@@ -226,13 +240,13 @@ function City(name) {
 City.prototype.addHotel = function (hotel) {
     if (hotel instanceof Hotel) {
         this._hotels.push(hotel);
-        this._hotels.sort((hotel1,hotel2)=>hotel1.name>hotel2.name);
-    }else{
+        this._hotels.sort((hotel1, hotel2) => hotel1.name > hotel2.name);
+    } else {
         throw new Error("Invalid hotel.");
     }
-    
+
 }
-City.prototype.getHotels = function(){
+City.prototype.getHotels = function () {
     return this._hotels;
 }
 
@@ -543,16 +557,16 @@ for (var cities = 0; cities < 12; cities++) {
     var randomCityNumber = Math.floor(Math.random() * nameOfCities.length);
     var city = new City(nameOfCities[randomCityNumber]);
     bulgaria.addCity(city);
-    nameOfCities.splice(randomCityNumber,1);
+    nameOfCities.splice(randomCityNumber, 1);
     for (var hotels = 0; hotels < 5; hotels++) {
-        var randomHotelName = Math.floor(Math.random()*namesHotels.length);
+        var randomHotelName = Math.floor(Math.random() * namesHotels.length);
         var hotel = new Hotel(namesHotels[randomHotelName]);
         city.addHotel(hotel);
-        namesHotels.splice(randomHotelName,1);
+        namesHotels.splice(randomHotelName, 1);
         for (var imgs = 0; imgs < 3; imgs++) {
-            var randomIMG = Math.floor(Math.random()*imgSrcs.length);
+            var randomIMG = Math.floor(Math.random() * imgSrcs.length);
             hotel.addImg(imgSrcs[randomIMG]);
-            imgSrcs.splice(randomIMG,1);
+            imgSrcs.splice(randomIMG, 1);
         }
     }
 }
@@ -593,14 +607,15 @@ for (var cities = 0; cities < 12; cities++) {
 // })();
 
 //Filters
-function filterByCity(city){
-        try {
-            var findCity = bulgaria.getCities().find(bgCity => city.toLowerCase()===bgCity.name.toLowerCase());
-            if (!findCity) {
-                throw new Error("Invalid city");
-            }
-            return findCity.getHotels();
-        } catch (error) {
-            console.error(error.message);
+function filterByCity(city) {
+    try {
+        var findCity = bulgaria.getCities().find(bgCity => city.toLowerCase() === bgCity.name.toLowerCase());
+        if (!findCity) {
+            throw new Error("Invalid city");
         }
+        return findCity.getHotels();
+    } catch (error) {
+        console.error(error.message);
+    }
 }
+console.log(bulgaria.getCities().forEach(city=>city.getHotels().forEach(hotel=>hotel.offers.forEach(offer=>console.log(offer.nameOffer+" "+offer.priceOffer)))));
