@@ -21,6 +21,9 @@ function fillUl(arr, ul, name) {
         checkbox.type = "checkbox";
         checkbox.value = index;
         checkbox.name = name;
+        checkbox.addEventListener("click",function(event){
+
+        })
         let label = document.createElement("label");
         label.innerText = usluga;
         checkbox.style.float = "left";
@@ -164,4 +167,5 @@ var hbTemplate = document.getElementById("entry-template").innerHTML;
 var template = Handlebars.compile(hbTemplate)
 var container = document.getElementById("hotelsContainer")
 container.innerHTML = template(bulgaria._cities[0]._hotels[0])
-console.log(bulgaria._cities[0]._hotels[0])
+
+console.log(bulgaria._cities[0]._hotels[0]);

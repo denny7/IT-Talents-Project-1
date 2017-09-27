@@ -142,8 +142,6 @@ const PODHODQSHT_ZA = [
 ];
 
 const DOSTYPNOST = ["Достъп инвалидни колички", "Достъпен паркинг", "Достъпни коридори"];
-var vsichkiUdobstva = HOTELSKI_USLUGI.concat(TIP_NASTANQVANE,PATUVASHTI_S_DECA,WELLNESS_SPA,UDOBSTVA_VYV_STAQTA,SPORT_EQUIPMENT,
-    HOTEL_PROFILE,PODHODQSHT_ZA,DOSTYPNOST);
 //Hotel constructor
 function Hotel(name) {
     this.name = name;
@@ -176,7 +174,37 @@ function Hotel(name) {
             nameOffer: "Hotels.com",
             priceOffer: this.price + Math.floor(Math.random() * 30)
         }
+    ];
+    var typesOfRatings = ["Слаб","Среден","Добър","Много добър","Отличен"];
+    this.ratings = [
+        {
+            typeOfRating: "Разположение",
+            rating: Math.floor(Math.random()*100 + 1),
+            ratingWithWords: '',
+        },
+        {
+            typeOfRating: "Стаи",
+            rating: Math.floor(Math.random()*100 + 1),
+            ratingWithWords: ''
+        },
+        {
+            typeOfRating: "Обслужване",
+            rating: Math.floor(Math.random()*100 + 1),
+            ratingWithWords: ''
+        },
+        {
+            typeOfRating: "Чистота",
+            rating: Math.floor(Math.random()*100 + 1),
+            ratingWithWords: ''
+        },
+        {
+            typeOfRating: "Качество срещу пари",
+            rating: Math.floor(Math.random()*100 + 1),
+            ratingWithWords: ''
+        }
     ]
+    this.ratings.forEach(rating=>rating.ratingWithWords=typesOfRatings[Math.ceil(rating.rating/20)-1]);
+    this.avgRating = Math.floor(this.ratings.reduce((sum,rating)=>sum+rating.rating,0)/this.ratings.length);
     this.offers.sort((offer1, offer2) => offer1.priceOffer - offer2.priceOffer);
     this.isAvailable = (Math.random() < 0.13) ?
         false :
