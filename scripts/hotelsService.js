@@ -206,12 +206,19 @@ function Country(name) {
     this.name = name;
     this._cities = [];
 }
+<<<<<<< HEAD
 Country.prototype.addCity = function (city) {
     this._cities.push(city);
     this._cities.sort((city1,city2)=>city1.name>city2.name);
 }
 Country.prototype.getCities = function(){
     return this._cities;
+=======
+Country.prototype.addCity = function (name) {
+  if(name instanceof City){
+    this.cities.push(name);
+  }
+>>>>>>> 90f97dd35013e75c9e8eeeccd123e4c49cece3b4
 }
 //City constructor
 function City(name) {
@@ -222,11 +229,19 @@ City.prototype.addHotel = function (hotel) {
     this._hotels.push(hotel);
     this._hotels.sort((hotel1,hotel2)=>hotel1.name>hotel2.name);
 }
+<<<<<<< HEAD
 City.prototype.getHotels = function(){
     return this._hotels;
+=======
+City.prototype.addHotel = function (name) {
+  if(name instanceof Hotel){
+    this.hotels.push(name);
+    name.city = this;
+  }
+>>>>>>> 90f97dd35013e75c9e8eeeccd123e4c49cece3b4
 }
 
-// Examples for hotels,imgs,cities 
+// Examples for hotels,imgs,cities
 var namesHotels = ['Princess Hostel Leidse Square',
     'Inner Amsterdam',
     'Hotel Villa Flora',
@@ -547,7 +562,7 @@ for (var cities = 0; cities < 12; cities++) {
     }
 }
 
-// User constructor 
+// User constructor
 var userList = (function () {
     function User(username, password, email) {
         this.username = username;
@@ -581,6 +596,7 @@ var userList = (function () {
     }
     return new UserList();
 })();
+<<<<<<< HEAD
 
 //Filters
 function filterByCity(city){
@@ -594,3 +610,6 @@ function filterByCity(city){
             console.error(error.message);
         } 
 }
+=======
+console.log(bulgaria.cities[0])
+>>>>>>> 90f97dd35013e75c9e8eeeccd123e4c49cece3b4
