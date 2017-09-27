@@ -207,7 +207,9 @@ function Country(name) {
     this.cities = [];
 }
 Country.prototype.addCity = function (name) {
-    this.cities.push(new City(name));
+  if(name instanceof City){
+    this.cities.push(name);
+  }
 }
 //City constructor
 function City(name) {
@@ -215,10 +217,13 @@ function City(name) {
     this.hotels = [];
 }
 City.prototype.addHotel = function (name) {
-    this.hotels.push(new Hotel(name));
+  if(name instanceof Hotel){
+    this.hotels.push(name);
+    name.city = this;
+  }
 }
 
-// Examples for hotels,imgs,cities 
+// Examples for hotels,imgs,cities
 var namesHotels = ['Princess Hostel Leidse Square',
     'Inner Amsterdam',
     'Hotel Villa Flora',
@@ -539,7 +544,7 @@ for (var cities = 0; cities < 12; cities++) {
     }
 }
 
-// User constructor 
+// User constructor
 var userList = (function () {
     function User(username, password, email) {
         this.username = username;
@@ -573,3 +578,4 @@ var userList = (function () {
     }
     return new UserList();
 })();
+console.log(bulgaria.cities[0])
