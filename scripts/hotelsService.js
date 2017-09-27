@@ -163,7 +163,7 @@ function Hotel(name) {
             priceOffer: this.price + Math.floor(Math.random() * 30)
         },
         {
-            nameOffer: "ESky",
+            nameOffer: "ESky.bg",
             priceOffer: this.price + Math.floor(Math.random() * 30)
         },
         {
@@ -618,4 +618,3 @@ function filterByCity(city) {
         console.error(error.message);
     }
 }
-console.log(bulgaria.getCities().forEach(city=>city.getHotels().forEach(hotel=>hotel.offers.forEach(offer=>console.log(offer.nameOffer+" "+offer.priceOffer)))));
