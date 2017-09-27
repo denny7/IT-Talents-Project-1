@@ -239,7 +239,7 @@
                   <script id="entry-template" type="text/x-handlebars-template">
                     <div class="row">
                       <div class="col-sm-7">
-                        <img src="{{imgs.[0]}}" alt="hotelImg">
+                        <img id="profilePicture" src="{{imgs.[0]}}" alt="hotelImg">
                         <p id="nameHotel">{{name}}</p>
                         <p id="categoryHotel"> {{category}} stars </p>
                         <p id="distanceFromCentre">{{distanceFromCentre}} км. до центъра на града</p>
@@ -262,24 +262,24 @@
                         {{#if breakfast}}
                         <p id="breakfast">Безплатна закуска</p>
                         {{/if}}
-                        <button type="button" class="btn btn-default">Виж оферта</button>
+                        <button type="button" class="btn btn-default"><a href="http://www.{{offers.[0].nameOffer}}">Виж оферта</a></button>
                       </div>
                     </div>
                     <div class="moreAboutHotel">
                       <nav class="navbar navbar-default">
                         <div class="container-fluid">
                           <ul class="nav navbar-nav">
-                            <li><a href="#">Снимки</a></li>
-                            <li><a href="#">Инфо</a></li>
-                            <li><a href="#">Мнения</a></li>
-                            <li><a href="#">Оферти</a></li>
+                            <li id="menuPhotos"><a href="#">Снимки</a></li>
+                            <li id="menuInfo"><a href="#">Инфо</a></li>
+                            <li id="menuOpinions"><a href="#">Мнения</a></li>
+                            <li id="menuOfferts"><a href="#">Оферти</a></li>
                           </ul>
                               <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#">X</a></li>
+                                <li id="closeMenu"><a href="#"> X </a></li>
                           </ul>
                         </div>
                       </nav>
-                      <div class="photos">
+                      <div id="photos">
                         <div class="containerPhotos">
                           <div id="myCarousel" class="carousel slide" data-ride="carousel">
                             <!-- Indicators -->

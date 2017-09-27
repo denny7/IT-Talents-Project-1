@@ -202,10 +202,19 @@ border-radius: 5px;
 #id02,#id01 {
   z-index: 500;
 }
-.photos img {
+.center{
+  height: auto
+}
+/* handlebars*/
+#profilePicture {
+  width: 250px;
+  height: 200px;
+  cursor: pointer;
+}
+#photos img {
   width : 100%;
   height: 300px !important;
 }
-.center{
-  height: auto
+.moreAboutHotel, #infoHotel, #opinions, #offerts {
+  display: none;
 }

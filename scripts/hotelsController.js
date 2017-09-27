@@ -147,7 +147,7 @@ document.querySelector("button.searchHeader").addEventListener("click",function(
     if (hotels) {
          hotels.forEach(hotel=>console.log(hotel.name));
     }
-   
+
 },false)
 
 function filterByMoreFilters(){
@@ -164,4 +164,56 @@ var hbTemplate = document.getElementById("entry-template").innerHTML;
 var template = Handlebars.compile(hbTemplate)
 var container = document.getElementById("hotelsContainer")
 container.innerHTML = template(bulgaria._cities[0]._hotels[0])
-console.log(bulgaria._cities[0]._hotels[0])
+console.log(bulgaria._cities)
+
+//handlebars events
+var profilePicture = document.getElementById("profilePicture");
+var moreAboutHotel = document.getElementsByClassName("moreAboutHotel")[0];
+var menuPhotos = document.getElementById("menuPhotos");
+var menuInfo = document.getElementById("menuInfo");
+var menuOpinions = document.getElementById("menuOpinions");
+var menuOfferts = document.getElementById("menuOfferts");
+var infoHotel = document.getElementById("infoHotel");
+var opinions = document.getElementById("opinions");
+var offerts = document.getElementById("offerts");
+var photos = document.getElementById("photos");
+var closeMenu = document.getElementById("closeMenu");
+profilePicture.addEventListener("click",function(){
+  if(moreAboutHotel.style.display == "none"){
+  moreAboutHotel.style.display = "block";
+} else {
+  moreAboutHotel.style.display = "none";
+}
+});
+closeMenu.addEventListener("click",function(){
+  event.preventDefault()
+  moreAboutHotel.style.display = "none";
+});
+menuPhotos.addEventListener("click",function(event){
+  event.preventDefault()
+  photos.style.display = "block";
+  infoHotel.style.display = "none";
+  opinions.style.display = "none";
+  offerts.style.display = "none";
+})
+menuInfo.addEventListener("click",function(event){
+  event.preventDefault()
+  photos.style.display = "none";
+  infoHotel.style.display = "block";
+  opinions.style.display = "none";
+  offerts.style.display = "none";
+})
+menuOpinions.addEventListener("click",function(event){
+  event.preventDefault()
+  photos.style.display = "none";
+  infoHotel.style.display = "none";
+  opinions.style.display = "block";
+  offerts.style.display = "none";
+})
+menuOfferts.addEventListener("click",function(event){
+  event.preventDefault()
+  photos.style.display = "none";
+  infoHotel.style.display = "none";
+  opinions.style.display = "none";
+  offerts.style.display = "block";
+})
