@@ -140,13 +140,19 @@ const PODHODQSHT_ZA = [
     "Семейно необвързани",
     "Семейства"
 ];
+
 const DOSTYPNOST = ["Достъп инвалидни колички", "Достъпен паркинг", "Достъпни коридори"];
+var vsichkiUdobstva = HOTELSKI_USLUGI.concat(TIP_NASTANQVANE,PATUVASHTI_S_DECA,WELLNESS_SPA,UDOBSTVA_VYV_STAQTA,SPORT_EQUIPMENT,
+    HOTEL_PROFILE,PODHODQSHT_ZA,DOSTYPNOST);
 //Hotel constructor
 function Hotel(name) {
     this.name = name;
     this.imgs = [];
     var randomForRoom = Math.random();
     this.singleRoom = true;
+    this.doubleRoom = false;
+    this.familyRoom = false;
+    this.multipleRooms = false;
     if (randomForRoom < 0.75) {
         this.doubleRoom = true;
     }
@@ -195,8 +201,10 @@ function Hotel(name) {
     this.addPlus(HOTELSKI_USLUGI);
     this.addPlus(TIP_NASTANQVANE);
     this.addPlus(PATUVASHTI_S_DECA);
+    this.addPlus(WELLNESS_SPA);
     this.addPlus(UDOBSTVA_VYV_STAQTA);
     this.addPlus(SPORT_EQUIPMENT);
+    this.addPlus(HOTEL_PROFILE);
     this.addPlus(PODHODQSHT_ZA);
     this.addPlus(DOSTYPNOST);
     this.freeWifi = (this.plusoveZaHotela.find(plus => plus.toLowerCase().indexOf("безплатно wi-fi") !== -1)) ?
@@ -570,7 +578,6 @@ for (var cities = 0; cities < 12; cities++) {
         }
     }
 }
-
 // // User constructor
 // var userList = (function () {
 //     function User(username, password, email) {
@@ -617,4 +624,7 @@ function filterByCity(city) {
     } catch (error) {
         console.error(error.message);
     }
+}
+function filterByUdobstvo(udobstvoID,hotels){
+    return hotels.filter(hotel => hotel.plusoveZaHotela.find(plus=>plus===vsichkiUdobstva[udobstvoID]));
 }
