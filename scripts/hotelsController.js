@@ -27,8 +27,9 @@ function fillUl(arr, ul, name) {
             }else{
                 checkbox.setAttribute("checked","checked");
             }
-            
+
             var hotelsToDisplay = filterByMoreFilters();
+            showHotels(hotelsToDisplay);
             console.log(hotelsToDisplay);
         })
         let label = document.createElement("label");
@@ -150,6 +151,7 @@ function getHotelsInSearchBar(){
     var hotels = filterByCity(searchValue);
     if (hotels) {
         hotels.forEach(hotel=>console.log(hotel.name));
+        showHotels(hotels)
         return hotels;
    }
 }
@@ -172,14 +174,14 @@ function filterByMoreFilters(){
             for (var index = 0; index < checkedFilters.length; index++) {
                 var categoryUdobstvo = checkedFilters[index].parentNode.parentNode.parentNode.parentNode.firstElementChild.id;
                 var udobstvoID = checkedFilters[index].value;
-                filteredHotels = filterByUdobstvo(categoryUdobstvo,udobstvoID,filteredHotels); 
+                filteredHotels = filterByUdobstvo(categoryUdobstvo,udobstvoID,filteredHotels);
             }
         }
         return filteredHotels;
     } catch (error) {
         console.error(error.message);
     }
-    
+
 }
 
 //Calendar
@@ -187,60 +189,66 @@ $.fn.datepicker.defaults.format = "dd/mm/yyyy";
 $.fn.datepicker.defaults.startDate = "0";
 
 //handlebars
-var hbTemplate = document.getElementById("entry-template").innerHTML;
-var template = Handlebars.compile(hbTemplate)
-var container = document.getElementById("hotelsContainer")
-container.innerHTML = template(bulgaria._cities[0]._hotels[0])
+
+function showHotels(hotels){
+  var hbTemplate = document.getElementById("entry-template").innerHTML;
+  var template = Handlebars.compile(hbTemplate)
+  var container = document.getElementById("hotelsContainer")
+  container.innerHTML = "";
+  hotels.forEach(function(hotel){
+    container.innerHTML += template(hotel)
+  })
+}
 console.log(bulgaria._cities)
 
 //handlebars events
-var profilePicture = document.getElementById("profilePicture");
-var moreAboutHotel = document.getElementsByClassName("moreAboutHotel")[0];
-var menuPhotos = document.getElementById("menuPhotos");
-var menuInfo = document.getElementById("menuInfo");
-var menuOpinions = document.getElementById("menuOpinions");
-var menuOfferts = document.getElementById("menuOfferts");
-var infoHotel = document.getElementById("infoHotel");
-var opinions = document.getElementById("opinions");
-var offerts = document.getElementById("offerts");
-var photos = document.getElementById("photos");
-var closeMenu = document.getElementById("closeMenu");
-profilePicture.addEventListener("click",function(){
-  if(moreAboutHotel.style.display == "none"){
-  moreAboutHotel.style.display = "block";
-} else {
-  moreAboutHotel.style.display = "none";
-}
-});
-closeMenu.addEventListener("click",function(){
-  event.preventDefault()
-  moreAboutHotel.style.display = "none";
-});
-menuPhotos.addEventListener("click",function(event){
-  event.preventDefault()
-  photos.style.display = "block";
-  infoHotel.style.display = "none";
-  opinions.style.display = "none";
-  offerts.style.display = "none";
-})
-menuInfo.addEventListener("click",function(event){
-  event.preventDefault()
-  photos.style.display = "none";
-  infoHotel.style.display = "block";
-  opinions.style.display = "none";
-  offerts.style.display = "none";
-})
-menuOpinions.addEventListener("click",function(event){
-  event.preventDefault()
-  photos.style.display = "none";
-  infoHotel.style.display = "none";
-  opinions.style.display = "block";
-  offerts.style.display = "none";
-})
-menuOfferts.addEventListener("click",function(event){
-  event.preventDefault()
-  photos.style.display = "none";
-  infoHotel.style.display = "none";
-  opinions.style.display = "none";
-  offerts.style.display = "block";
-})
+// var profilePicture = document.getElementById("profilePicture");
+// var moreAboutHotel = document.getElementsByClassName("moreAboutHotel")[0];
+// var menuPhotos = document.getElementById("menuPhotos");
+// var menuInfo = document.getElementById("menuInfo");
+// var menuOpinions = document.getElementById("menuOpinions");
+// var menuOfferts = document.getElementById("menuOfferts");
+// var infoHotel = document.getElementById("infoHotel");
+// var opinions = document.getElementById("opinions");
+// var offerts = document.getElementById("offerts");
+// var photos = document.getElementById("photos");
+// var closeMenu = document.getElementById("closeMenu");
+// profilePicture.addEventListener("click",function(){
+//   if(moreAboutHotel.style.display == "none"){
+//   moreAboutHotel.style.display = "block";
+// } else {
+//   moreAboutHotel.style.display = "none";
+// }
+// });
+// closeMenu.addEventListener("click",function(){
+//   event.preventDefault()
+//   moreAboutHotel.style.display = "none";
+// });
+// menuPhotos.addEventListener("click",function(event){
+//   event.preventDefault()
+//   photos.style.display = "block";
+//   infoHotel.style.display = "none";
+//   opinions.style.display = "none";
+//   offerts.style.display = "none";
+// })
+// menuInfo.addEventListener("click",function(event){
+//   event.preventDefault()
+//   photos.style.display = "none";
+//   infoHotel.style.display = "block";
+//   opinions.style.display = "none";
+//   offerts.style.display = "none";
+// })
+// menuOpinions.addEventListener("click",function(event){
+//   event.preventDefault()
+//   photos.style.display = "none";
+//   infoHotel.style.display = "none";
+//   opinions.style.display = "block";
+//   offerts.style.display = "none";
+// })
+// menuOfferts.addEventListener("click",function(event){
+//   event.preventDefault()
+//   photos.style.display = "none";
+//   infoHotel.style.display = "none";
+//   opinions.style.display = "none";
+//   offerts.style.display = "block";
+// })

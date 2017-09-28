@@ -1,4 +1,4 @@
-var UDOBSTVA_V_HOTELA = 
+var UDOBSTVA_V_HOTELA =
     {
         HOTELSKI_USLUGI : [
             "24 ч. Румсървиз",
@@ -608,39 +608,39 @@ for (var cities = 0; cities < 12; cities++) {
     }
 }
 // // User constructor
-// var userList = (function () {
-//     function User(username, password, email) {
-//         this.username = username;
-//         this.password = password;
-//         this.email = email;
-//     }
+var userList = (function () {
+    function User(username, password, email) {
+        this.username = username;
+        this.password = password;
+        this.email = email;
+    }
 
-//     function UserList() {
-//         if (localStorage.getItem("users") != null) {
-//             this._users = JSON.parse(localStorage.getItem("users"));
-//         } else {
-//             this._users = [new User("denny", "dennY7", "denislav.yasenov@abv.bg")];
-//             localStorage.setItem("users", JSON.stringify(this._users));
-//         }
-//     }
-//     UserList.prototype.checkUsername = function (username) {
-//         return this._users.some(user => user.username === username);
-//     }
-//     UserList.prototype.addUser = function (username, password, email) {
-//         var pattern = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[\d])(?=\S+$).{6,}$/.test(password)
-//         if ((typeof username == 'string') && (username.trim().length >= 4) && (pattern)) {
-//             if (!(this._users.some(user => user.username === username))) {
-//                 this._users.push(new User(username, password, email));
-//                 localStorage.setItem('users', JSON.stringify(this._users));
-//             }
-//         }
-//     }
-//     UserList.prototype.login = function (username, password) {
-//         return this._users.some(user => user.username === username &&
-//             user.password === password);
-//     }
-//     return new UserList();
-// })();
+    function UserList() {
+        if (localStorage.getItem("users") != null) {
+            this._users = JSON.parse(localStorage.getItem("users"));
+        } else {
+            this._users = [new User("denny", "dennY7", "denislav.yasenov@abv.bg")];
+            localStorage.setItem("users", JSON.stringify(this._users));
+        }
+    }
+    UserList.prototype.checkUsername = function (username) {
+        return this._users.some(user => user.username === username);
+    }
+    UserList.prototype.addUser = function (username, password, email) {
+        var pattern = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[\d])(?=\S+$).{6,}$/.test(password)
+        if ((typeof username == 'string') && (username.trim().length >= 4) && (pattern)) {
+            if (!(this._users.some(user => user.username === username))) {
+                this._users.push(new User(username, password, email));
+                localStorage.setItem('users', JSON.stringify(this._users));
+            }
+        }
+    }
+    UserList.prototype.login = function (username, password) {
+        return this._users.some(user => user.username === username &&
+            user.password === password);
+    }
+    return new UserList();
+})();
 
 //Filters
 function filterByCity(city) {
