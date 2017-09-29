@@ -177,30 +177,31 @@ function Hotel(name) {
             priceOffer: this.price + Math.floor(Math.random() * 30)
         }
     ];
+
     var typesOfRatings = ["Слаб", "Среден", "Добър", "Много добър", "Отличен"];
     this.ratings = [{
             typeOfRating: "Разположение",
-            rating: Math.floor(Math.random() * 100 + 1),
-            ratingWithWords: '',
+            rating: Math.floor(Math.random() * 90 + 10),
+            ratingWithWords:''
         },
         {
             typeOfRating: "Стаи",
-            rating: Math.floor(Math.random() * 100 + 1),
-            ratingWithWords: ''
+            rating: Math.floor(Math.random() * 90 + 10),
+            ratingWithWords:''
         },
         {
             typeOfRating: "Обслужване",
-            rating: Math.floor(Math.random() * 100 + 1),
-            ratingWithWords: ''
+            rating: Math.floor(Math.random() * 90 + 10),
+            ratingWithWords:''
         },
         {
             typeOfRating: "Чистота",
-            rating: Math.floor(Math.random() * 100 + 1),
-            ratingWithWords: ''
+            rating: Math.floor(Math.random() * 90 + 10),
+            ratingWithWords:''
         },
         {
             typeOfRating: "Качество срещу пари",
-            rating: Math.floor(Math.random() * 100 + 1),
+            rating: Math.floor(Math.random() * 90 + 10),
             ratingWithWords: ''
         }
     ]

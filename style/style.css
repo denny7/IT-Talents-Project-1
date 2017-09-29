@@ -206,15 +206,20 @@ border-radius: 5px;
   height: auto
 }
 /* handlebars*/
-#profilePicture {
+.templateHotels {
+  border : 2px dashed white;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.profilePicture {
   width: 250px;
   height: 200px;
   cursor: pointer;
 }
-#photos img {
+.photos img {
   width : 100%;
   height: 300px !important;
 }
-.moreAboutHotel, #infoHotel, #opinions, #offerts {
+.moreAboutHotel, .infoHotel, .opinions, .offerts {
   display: none;
 }
