@@ -659,3 +659,6 @@ function filterByCity(city) {
 function filterByUdobstvo(categoriqUdobstvo,udobstvoID, hotels) {
     return hotels.filter(hotel => hotel.plusoveZaHotela.find(plus => plus === UDOBSTVA_V_HOTELA[categoriqUdobstvo][udobstvoID]));
 }
+function filterByCategory(category,hotels){
+  return hotels.filter(hotel=> hotel.category == category)
+}
