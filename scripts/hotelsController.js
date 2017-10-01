@@ -149,7 +149,6 @@ function getHotelsInSearchBar() {
     var searchValue = document.querySelector("input.form-control").value;
     var hotels = filterByCity(searchValue);
     if (hotels) {
-        hotels.forEach(hotel => console.log(hotel.name));
         showHotels(hotels);
         return hotels;
     }
@@ -184,23 +183,18 @@ function filterByMoreFilters() {
         switch (clickedCategory) {
             case "oneStar":
                 filteredHotels = filterByCategory(ONE_STAR, filteredHotels);
-                showHotels(filteredHotels);
                 break;
             case "twoStars":
                 filteredHotels = filterByCategory(TWO_STARS, filteredHotels);
-                showHotels(filteredHotels);
                 break;
             case "threeStars":
                 filteredHotels = filterByCategory(THREE_STARS, filteredHotels);
-                showHotels(filteredHotels);
                 break;
             case "fourStars":
                 filteredHotels = filterByCategory(FOUR_STARS, filteredHotels);
-                showHotels(filteredHotels);
                 break;
             case "fiveStars":
                 filteredHotels = filterByCategory(FIVE_STARS, filteredHotels);
-                showHotels(filteredHotels);
                 break;
             default:
                 break;
@@ -213,31 +207,41 @@ function filterByMoreFilters() {
         switch (clickedRating) {
             case "zero":
                 filteredHotels = filterByRating(RATING_0, filteredHotels);
-                showHotels(filteredHotels);
                 break;
             case "twenty":
                 filteredHotels = filterByRating(RATING_20, filteredHotels);
-                showHotels(filteredHotels);
                 break;
             case "fourthy":
                 filteredHotels = filterByRating(RATING_40, filteredHotels);
-                showHotels(filteredHotels);
                 break;
             case "sixty":
                 filteredHotels = filterByRating(RATING_60, filteredHotels);
-                showHotels(filteredHotels);
                 break;
             case "eighty":
                 filteredHotels = filterByRating(RATING_80, filteredHotels);
-                showHotels(filteredHotels);
                 break;
             default:
                 break;
         }
         if (filterPrice) {
             filteredHotels = filterByPrice(filterPrice, filteredHotels);
-            showHotels(filteredHotels);
         }
+        if (clickedSpa) {
+            filteredHotels = filterBySpa(filteredHotels)
+        }
+        if (clickedBeach) {
+            filteredHotels = filterByBeach(filteredHotels)
+        }
+        if (clickedWiFi) {
+            filteredHotels = filterByWiFi(filteredHotels)
+        }
+        if (clickedBreakfast) {
+            filteredHotels = filterByBreakfast(filteredHotels)
+        }
+        if (clickedSwimmingPool) {
+            filteredHotels = filterBySwimmingPool(filteredHotels)
+        }
+        showHotels(filteredHotels);
 
     } catch (error) {
         console.error(error.message);
@@ -257,7 +261,6 @@ var rating = document.getElementsByClassName("ratingBtn");
 var ratingArr = Array.from(rating);
 ratingArr.forEach(rating => rating.addEventListener('click', function() {
     clickedRating = rating.id;
-    console.log(clickedRating)
     filterByMoreFilters();
 }))
 var slider = document.getElementById("rangePrice");
@@ -270,11 +273,6 @@ slider.addEventListener("mouseup", function() {
     filterPrice = this.value;
     filterByMoreFilters();
 })
-var topFacilities = document.getElementsByClassName("facilities")
-var topFacilitiesArr = Array.from(topFacilities);
-topFacilitiesArr.forEach(facility => facility.addEventListener('click', function() {
-    console.log(facility.id);
-}))
 //topFilters
 var clickedSpa = false;
 var clickedBeach = false;

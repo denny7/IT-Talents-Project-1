@@ -1,149 +1,152 @@
-var UDOBSTVA_V_HOTELA =
-    {
-        HOTELSKI_USLUGI : [
-            "24 ч. Румсървиз",
-            "24 ч. Рецепция",
-            "Асансьор",
-            "Бар в хотела",
-            "Бар при басейна",
-            "Безплатно Wi-Fi в лоби",
-            "Бизнес център",
-            "Бунгала",
-            "Външен плувен басейн",
-            "Вътрешен плувен басейн",
-            "Дискотека/Нощен клуб",
-            "Дом. любимци",
-            "Експресна регистрация",
-            "Здравен център/Спа",
-            "Компютър с интернет",
-            "Консиерж",
-            "Конферентна зала",
-            "Лекарски кабинет",
-            "Минимаркет",
-            "Обслужване по стаите",
-            "Бунгала",
-            "Директен излаз на плаж",
-            "Казино",
-            "Компютър с интернет",
-            "Лекарски кабинет",
-            "Организирани дейности",
-            "Паркинг към хотела",
-            "Перална машина",
-            "Пиколо",
-            "Плажни чадъри",
-            "Пране и хим. чистене",
-            "Превоз до летището",
-            "Ресторант",
-            "Сейф в хотела (рецепция)",
-            "Стаи за непушачи",
-            "Тераса",
-            "Фитнес",
-            "Фризьор",
-            "Хавлии при басейн/ плаж",
-            "Хипоалергични стаи",
-            "Шезлонги",
-            "Wi-Fi в лоби"
-        ],
-        TIP_NASTANQVANE : [
-            "Апартхотел",
-            "Ваканционен дом",
-            "Къмпинг",
-            "Къща за гости",
-            "Мотел",
-            "Нощувка + закуска",
-            "Ризорт",
-            "Старовремска къща",
-            "Хостел",
-            "Хотел",
-            "Hostal",
-            "Pousada"
-        ],
-        PATUVASHTI_S_DECA : ["Детегледачка", "Детска площадка", "Детско/ Бебешко легло"],
-        WELLNESS_SPA : [
-            "Джакузи/ Хидромас. вана",
-            "Масаж",
-            "Масаж с горещи камъни",
-            "Парна баня",
-            "Процедури за тяло",
-            "Салон за красота",
-            "Сауна",
-            "Солариум",
-            "Турска баня/ Хамам спа",
-            "Хидротерапия"
-        ],
-        NUMBER_OF_ROOMS : ["1-50", "51-150", "150+"],
-        UDOBSTVA_VYV_STAQTA : [
-            "Баня с вана",
-            "Баня с душ",
-            "Безплатно Wi-Fi в стаите",
-            "Бюро",
-            "Вентилатор",
-            "Ел. чайник",
-            "Интернет",
-            "Кабелна телевизия",
-            "Климатик",
-            "Козметично огледало",
-            "Кухня/ Кухненски бокс",
-            "Микровълнова печка",
-            "Отопление",
-            "Сейф в стаята",
-            "Сешоар",
-            "Стаи с балкон/ тераса",
-            "Телевизор",
-            "Телефон",
-            "Хипоалергично спално бельо",
-            "Хладилник",
-            "Ютия/ Дъска за гладене",
-            "Wi-Fi в стаята"
-        ],
-        SPORT_EQUIPMENT : [
-            "Бадминтон",
-            "Билярд",
-            "Боулинг",
-            "Волейбол",
-            "Гмуркане",
-            "Голф",
-            "Колела под наем",
-            "Мини голф",
-            "Плаване",
-            "Ски",
-            "Скуош",
-            "Стрелба с лък/ пушка",
-            "Сърфиране",
-            "Тенис корт",
-            "Тенис на маса",
-            "Туристическа пътека",
-            "Яздене"
-        ],
-        HOTEL_PROFILE : [
-            "Градски хотел (център)",
-            "Дизайнерски хотел",
-            "Еко-хотел",
-            "Здравен ризорт/ Санаториум",
-            "Клуб хотел",
-            "Конгресен хотел",
-            "Луксозен хотел",
-            "Провинциален хотел",
-            "Спа хотел",
-            "Тематичен хотел",
-            "Ферма",
-            "Хотел до летище",
-            "Хотел за пенсионери",
-            "Хотел на плажа"
-        ],
-        PODHODQSHT_ZA : [
-            "Бизнесмени",
-            "Гей двойки",
-            "Големи групи",
-            "Зимни туристи",
-            "Купонджии",
-            "Младоженци",
-            "Само за възрастни",
-            "Семейно необвързани",
-            "Семейства"
-        ],
-        DOSTYPNOST : ["Достъп инвалидни колички", "Достъпен паркинг", "Достъпни коридори"]
-    };
+var UDOBSTVA_V_HOTELA = {
+    HOTELSKI_USLUGI: [
+        "24 ч. Румсървиз",
+        "24 ч. Рецепция",
+        "Асансьор",
+        "Бар в хотела",
+        "Бар при басейна",
+        "Безплатно Wi-Fi в лоби",
+        "Бизнес център",
+        "Бунгала",
+        "Външен плувен басейн",
+        "Вътрешен плувен басейн",
+        "Дискотека/Нощен клуб",
+        "Дом. любимци",
+        "Експресна регистрация",
+        "Здравен център/Спа",
+        "Компютър с интернет",
+        "Консиерж",
+        "Конферентна зала",
+        "Лекарски кабинет",
+        "Минимаркет",
+        "Обслужване по стаите",
+        "Бунгала",
+        "Директен излаз на плаж",
+        "Казино",
+        "Компютър с интернет",
+        "Лекарски кабинет",
+        "Организирани дейности",
+        "Паркинг към хотела",
+        "Перална машина",
+        "Пиколо",
+        "Плажни чадъри",
+        "Пране и хим. чистене",
+        "Превоз до летището",
+        "Ресторант",
+        "Сейф в хотела (рецепция)",
+        "Стаи за непушачи",
+        "Тераса",
+        "Фитнес",
+        "Фризьор",
+        "Хавлии при басейн/ плаж",
+        "Хипоалергични стаи",
+        "Шезлонги",
+        "Wi-Fi в лоби"
+    ],
+    TIP_NASTANQVANE: [
+        "Апартхотел",
+        "Ваканционен дом",
+        "Къмпинг",
+        "Къща за гости",
+        "Мотел",
+        "Нощувка + закуска",
+        "Ризорт",
+        "Старовремска къща",
+        "Хостел",
+        "Хотел",
+        "Hostal",
+        "Pousada"
+    ],
+    PATUVASHTI_S_DECA: [
+        "Детегледачка", "Детска площадка", "Детско/ Бебешко легло"
+    ],
+    WELLNESS_SPA: [
+        "Джакузи/ Хидромас. вана",
+        "Масаж",
+        "Масаж с горещи камъни",
+        "Парна баня",
+        "Процедури за тяло",
+        "Салон за красота",
+        "Сауна",
+        "Солариум",
+        "Турска баня/ Хамам спа",
+        "Хидротерапия"
+    ],
+    NUMBER_OF_ROOMS: [
+        "1-50", "51-150", "150+"
+    ],
+    UDOBSTVA_VYV_STAQTA: [
+        "Баня с вана",
+        "Баня с душ",
+        "Безплатно Wi-Fi в стаите",
+        "Бюро",
+        "Вентилатор",
+        "Ел. чайник",
+        "Интернет",
+        "Кабелна телевизия",
+        "Климатик",
+        "Козметично огледало",
+        "Кухня/ Кухненски бокс",
+        "Микровълнова печка",
+        "Отопление",
+        "Сейф в стаята",
+        "Сешоар",
+        "Стаи с балкон/ тераса",
+        "Телевизор",
+        "Телефон",
+        "Хипоалергично спално бельо",
+        "Хладилник",
+        "Ютия/ Дъска за гладене",
+        "Wi-Fi в стаята"
+    ],
+    SPORT_EQUIPMENT: [
+        "Бадминтон",
+        "Билярд",
+        "Боулинг",
+        "Волейбол",
+        "Гмуркане",
+        "Голф",
+        "Колела под наем",
+        "Мини голф",
+        "Плаване",
+        "Ски",
+        "Скуош",
+        "Стрелба с лък/ пушка",
+        "Сърфиране",
+        "Тенис корт",
+        "Тенис на маса",
+        "Туристическа пътека",
+        "Яздене"
+    ],
+    HOTEL_PROFILE: [
+        "Градски хотел (център)",
+        "Дизайнерски хотел",
+        "Еко-хотел",
+        "Здравен ризорт/ Санаториум",
+        "Клуб хотел",
+        "Конгресен хотел",
+        "Луксозен хотел",
+        "Провинциален хотел",
+        "Спа хотел",
+        "Тематичен хотел",
+        "Ферма",
+        "Хотел до летище",
+        "Хотел за пенсионери",
+        "Хотел на плажа"
+    ],
+    PODHODQSHT_ZA: [
+        "Бизнесмени",
+        "Гей двойки",
+        "Големи групи",
+        "Зимни туристи",
+        "Купонджии",
+        "Младоженци",
+        "Само за възрастни",
+        "Семейно необвързани",
+        "Семейства"
+    ],
+    DOSTYPNOST: ["Достъп инвалидни колички", "Достъпен паркинг", "Достъпни коридори"]
+};
 //Hotel constructor
 function Hotel(name) {
     this.name = name;
@@ -164,42 +167,38 @@ function Hotel(name) {
     }
     this.category = Math.floor(Math.random() * 4 + 1);
     this.price = Math.floor(Math.random() * 967 + 27);
-    this.offers = [{
+    this.offers = [
+        {
             nameOffer: "Booking.com",
             priceOffer: this.price + Math.floor(Math.random() * 30)
-        },
-        {
+        }, {
             nameOffer: "ESky.bg",
             priceOffer: this.price + Math.floor(Math.random() * 30)
-        },
-        {
+        }, {
             nameOffer: "Hotels.com",
             priceOffer: this.price + Math.floor(Math.random() * 30)
         }
     ];
 
     var typesOfRatings = ["Слаб", "Среден", "Добър", "Много добър", "Отличен"];
-    this.ratings = [{
+    this.ratings = [
+        {
             typeOfRating: "Разположение",
             rating: Math.floor(Math.random() * 90 + 10),
-            ratingWithWords:''
-        },
-        {
+            ratingWithWords: ''
+        }, {
             typeOfRating: "Стаи",
             rating: Math.floor(Math.random() * 90 + 10),
-            ratingWithWords:''
-        },
-        {
+            ratingWithWords: ''
+        }, {
             typeOfRating: "Обслужване",
             rating: Math.floor(Math.random() * 90 + 10),
-            ratingWithWords:''
-        },
-        {
+            ratingWithWords: ''
+        }, {
             typeOfRating: "Чистота",
             rating: Math.floor(Math.random() * 90 + 10),
-            ratingWithWords:''
-        },
-        {
+            ratingWithWords: ''
+        }, {
             typeOfRating: "Качество срещу пари",
             rating: Math.floor(Math.random() * 90 + 10),
             ratingWithWords: ''
@@ -208,9 +207,9 @@ function Hotel(name) {
     this.ratings.forEach(rating => rating.ratingWithWords = typesOfRatings[Math.ceil(rating.rating / 20) - 1]);
     this.avgRating = Math.floor(this.ratings.reduce((sum, rating) => sum + rating.rating, 0) / this.ratings.length);
     this.offers.sort((offer1, offer2) => offer1.priceOffer - offer2.priceOffer);
-    this.isAvailable = (Math.random() < 0.13) ?
-        false :
-        true;
+    this.isAvailable = (Math.random() < 0.13)
+        ? false
+        : true;
     this.distanceFromCentre = Math.floor(Math.random() * 19.5 + 0.5);
     this.spa;
     this.beach;
@@ -219,7 +218,7 @@ function Hotel(name) {
     this.pool;
     this.numberOfRooms = Math.floor(Math.random() * 150 + 1);
     this.plusoveZaHotela = [];
-    this.addPlus = function (array) {
+    this.addPlus = function(array) {
         var arrayOtPlusove = array.slice();
         var broiPlusove = Math.floor(Math.random() * arrayOtPlusove.length);
         for (var index = 0; index < broiPlusove; index++) {
@@ -237,20 +236,20 @@ function Hotel(name) {
     this.addPlus(UDOBSTVA_V_HOTELA.HOTEL_PROFILE);
     this.addPlus(UDOBSTVA_V_HOTELA.PODHODQSHT_ZA);
     this.addPlus(UDOBSTVA_V_HOTELA.DOSTYPNOST);
-    this.freeWifi = (this.plusoveZaHotela.find(plus => plus.toLowerCase().indexOf("безплатно wi-fi") !== -1)) ?
-        true :
-        false;
-    this.spa = (this.plusoveZaHotela.find(plus => plus.toLowerCase().indexOf("спа") !== -1)) ?
-        true :
-        false;
-    this.breakfast = (this.plusoveZaHotela.find(plus => plus.toLowerCase().indexOf("закуска") !== -1)) ?
-        true :
-        false;
-    this.pool = (this.plusoveZaHotela.find(plus => plus.toLowerCase().indexOf("басейн") !== -1)) ?
-        true :
-        false;
+    this.freeWifi = (this.plusoveZaHotela.find(plus => plus.toLowerCase().indexOf("безплатно wi-fi") !== -1))
+        ? true
+        : false;
+    this.spa = (this.plusoveZaHotela.find(plus => plus.toLowerCase().indexOf("спа") !== -1))
+        ? true
+        : false;
+    this.breakfast = (this.plusoveZaHotela.find(plus => plus.toLowerCase().indexOf("закуска") !== -1))
+        ? true
+        : false;
+    this.pool = (this.plusoveZaHotela.find(plus => plus.toLowerCase().indexOf("басейн") !== -1))
+        ? true
+        : false;
 }
-Hotel.prototype.addImg = function (src) {
+Hotel.prototype.addImg = function(src) {
     this.imgs.push(src);
 }
 //Country constructor
@@ -258,7 +257,7 @@ function Country(name) {
     this.name = name;
     this._cities = [];
 }
-Country.prototype.addCity = function (city) {
+Country.prototype.addCity = function(city) {
     if (city instanceof City) {
         this._cities.push(city);
         this._cities.sort((city1, city2) => city1.name > city2.name);
@@ -267,7 +266,7 @@ Country.prototype.addCity = function (city) {
     }
 
 }
-Country.prototype.getCities = function () {
+Country.prototype.getCities = function() {
     return this._cities;
 }
 //City constructor
@@ -275,7 +274,7 @@ function City(name) {
     this.name = name;
     this._hotels = [];
 }
-City.prototype.addHotel = function (hotel) {
+City.prototype.addHotel = function(hotel) {
     if (hotel instanceof Hotel) {
         this._hotels.push(hotel);
         this._hotels.sort((hotel1, hotel2) => hotel1.name > hotel2.name);
@@ -284,12 +283,13 @@ City.prototype.addHotel = function (hotel) {
     }
 
 }
-City.prototype.getHotels = function () {
+City.prototype.getHotels = function() {
     return this._hotels;
 }
 
 // Examples for hotels,imgs,cities
-var namesHotels = ['Princess Hostel Leidse Square',
+var namesHotels = [
+    'Princess Hostel Leidse Square',
     'Inner Amsterdam',
     'Hotel Villa Flora',
     'Dutch Design Hotel Artemis',
@@ -582,13 +582,71 @@ var imgSrcs = [
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-1YSJUbyuqOZ9lBPSZ-uFQgfDWGtI8SXO7iVE6TgyH88Dklrf_A',
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoxHgX1sLwBVz9BlbsqGSjzU8PehkUvf3cdVA-b1ZEziurXeG6dg"
 ]
-var nameOfCities = ["Айтос", "Аксаково", "Алфатар", "Антоново", "Априлци", "Ардино", "Асеновград", "Ахелой",
-    "Ахтопол", "Балчик", "Банкя", "Банско", "Баня", "Батак", "Батановци", "Белене", "Белица", "Белово", "Белоградчик",
-    "Белослав", "Берковица", "Благоевград", "Бобов дол", "Бобошево", "Божурище", "Бойчиновци", "Болярово", "Борово",
-    "Ботевград", "Брацигово", "Брегово", "Брезник", "Брезово", "Брусарци", "Бургас", "Бухово", "Българово", "Бяла", "Бяла Слатина",
-    "Бяла Черква", "Варна", "Велики Преслав", "Велико Търново", "Велинград", "Ветово", "Ветрен", "Видин", "Враца", "Вълчедръм", "Вълчи дол",
-    "Върбица", "Вършец", "Габрово", "Генерал Тошево", "Главиница", "Глоджево", "Годеч", "Горна Оряховица", "Гоце Делчев", "Грамада",
-    "Гулянци", "Гурково", "Гълъбово", "Две могили"
+var nameOfCities = [
+    "Айтос",
+    "Аксаково",
+    "Алфатар",
+    "Антоново",
+    "Априлци",
+    "Ардино",
+    "Асеновград",
+    "Ахелой",
+    "Ахтопол",
+    "Балчик",
+    "Банкя",
+    "Банско",
+    "Баня",
+    "Батак",
+    "Батановци",
+    "Белене",
+    "Белица",
+    "Белово",
+    "Белоградчик",
+    "Белослав",
+    "Берковица",
+    "Благоевград",
+    "Бобов дол",
+    "Бобошево",
+    "Божурище",
+    "Бойчиновци",
+    "Болярово",
+    "Борово",
+    "Ботевград",
+    "Брацигово",
+    "Брегово",
+    "Брезник",
+    "Брезово",
+    "Брусарци",
+    "Бургас",
+    "Бухово",
+    "Българово",
+    "Бяла",
+    "Бяла Слатина",
+    "Бяла Черква",
+    "Варна",
+    "Велики Преслав",
+    "Велико Търново",
+    "Велинград",
+    "Ветово",
+    "Ветрен",
+    "Видин",
+    "Враца",
+    "Вълчедръм",
+    "Вълчи дол",
+    "Върбица",
+    "Вършец",
+    "Габрово",
+    "Генерал Тошево",
+    "Главиница",
+    "Глоджево",
+    "Годеч",
+    "Горна Оряховица",
+    "Гоце Делчев",
+    "Грамада",
+    "Гулянци",
+    "Гурково",
+    "Гълъбово",
+    "Две могили"
 ];
 var bulgaria = new Country("Bulgaria");
 for (var cities = 0; cities < 12; cities++) {
@@ -609,7 +667,7 @@ for (var cities = 0; cities < 12; cities++) {
     }
 }
 // // User constructor
-var userList = (function () {
+var userList = (function() {
     function User(username, password, email) {
         this.username = username;
         this.password = password;
@@ -624,10 +682,10 @@ var userList = (function () {
             localStorage.setItem("users", JSON.stringify(this._users));
         }
     }
-    UserList.prototype.checkUsername = function (username) {
+    UserList.prototype.checkUsername = function(username) {
         return this._users.some(user => user.username === username);
     }
-    UserList.prototype.addUser = function (username, password, email) {
+    UserList.prototype.addUser = function(username, password, email) {
         var pattern = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[\d])(?=\S+$).{6,}$/.test(password)
         if ((typeof username == 'string') && (username.trim().length >= 4) && (pattern)) {
             if (!(this._users.some(user => user.username === username))) {
@@ -636,9 +694,8 @@ var userList = (function () {
             }
         }
     }
-    UserList.prototype.login = function (username, password) {
-        return this._users.some(user => user.username === username &&
-            user.password === password);
+    UserList.prototype.login = function(username, password) {
+        return this._users.some(user => user.username === username && user.password === password);
     }
     return new UserList();
 })();
@@ -656,18 +713,30 @@ function filterByCity(city) {
     }
 }
 
-function filterByUdobstvo(categoriqUdobstvo,udobstvoID, hotels) {
+function filterByUdobstvo(categoriqUdobstvo, udobstvoID, hotels) {
     return hotels.filter(hotel => hotel.plusoveZaHotela.find(plus => plus === UDOBSTVA_V_HOTELA[categoriqUdobstvo][udobstvoID]));
 }
-function filterByCategory(category,hotels){
-  return hotels.filter(hotel=> hotel.category == category)
+function filterByCategory(category, hotels) {
+    return hotels.filter(hotel => hotel.category == category)
 }
-function filterByRating(rating,hotels){
-  return hotels.filter(hotel=> hotel.avgRating >= rating)
+function filterByRating(rating, hotels) {
+    return hotels.filter(hotel => hotel.avgRating >= rating)
 }
-function filterByPrice(price,hotels){
-  return hotels.filter(hotel => hotel.price >= price)
+function filterByPrice(price, hotels) {
+    return hotels.filter(hotel => hotel.price <= price)
 }
-// function filterBySpa(hotels){
-// return hotels.filter(hotel => hotel.spa);
-// }
+function filterBySpa(hotels) {
+    return hotels.filter(hotel => hotel.spa);
+}
+function filterByBeach(hotels) {
+    return hotels.filter(hotel => hotel.beach);
+}
+function filterByWiFi(hotels) {
+    return hotels.filter(hotel => hotel.freeWifi);
+}
+function filterByBreakfast(hotels) {
+    return hotels.filter(hotel => hotel.breakfast);
+}
+function filterBySwimmingPool(hotels) {
+    return hotels.filter(hotel => hotel.pool);
+}
