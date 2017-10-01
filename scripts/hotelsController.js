@@ -202,12 +202,43 @@ function filterByMoreFilters() {
                 filteredHotels = filterByCategory(FIVE_STARS, filteredHotels);
                 showHotels(filteredHotels);
                 break;
-
             default:
                 break;
         }
+        const RATING_0 = 0;
+        const RATING_20 = 20;
+        const RATING_40 = 40;
+        const RATING_60 = 60;
+        const RATING_80 = 80;
+        switch (clickedRating) {
+            case "zero":
+                filteredHotels = filterByRating(RATING_0, filteredHotels);
+                showHotels(filteredHotels);
+                break;
+            case "twenty":
+                filteredHotels = filterByRating(RATING_20, filteredHotels);
+                showHotels(filteredHotels);
+                break;
+            case "fourthy":
+                filteredHotels = filterByRating(RATING_40, filteredHotels);
+                showHotels(filteredHotels);
+                break;
+            case "sixty":
+                filteredHotels = filterByRating(RATING_60, filteredHotels);
+                showHotels(filteredHotels);
+                break;
+            case "eighty":
+                filteredHotels = filterByRating(RATING_80, filteredHotels);
+                showHotels(filteredHotels);
+                break;
+            default:
+                break;
+        }
+        if (filterPrice) {
+            filteredHotels = filterByPrice(filterPrice, filteredHotels);
+            showHotels(filteredHotels);
+        }
 
-        return filteredHotels;
     } catch (error) {
         console.error(error.message);
     }
@@ -218,9 +249,98 @@ var category = document.getElementsByClassName("btnStars");
 var categoryArr = Array.from(category);
 categoryArr.forEach(category => category.addEventListener('click', function() {
     clickedCategory = category.id;
-    filterByMoreFilters()
+    filterByMoreFilters();
 }));
 
+var clickedRating;
+var rating = document.getElementsByClassName("ratingBtn");
+var ratingArr = Array.from(rating);
+ratingArr.forEach(rating => rating.addEventListener('click', function() {
+    clickedRating = rating.id;
+    console.log(clickedRating)
+    filterByMoreFilters();
+}))
+var slider = document.getElementById("rangePrice");
+var currentRange = document.getElementsByClassName("currentRange")[0];
+var filterPrice;
+slider.addEventListener("input", function() {
+    currentRange.innerText = this.value;
+})
+slider.addEventListener("mouseup", function() {
+    filterPrice = this.value;
+    filterByMoreFilters();
+})
+var topFacilities = document.getElementsByClassName("facilities")
+var topFacilitiesArr = Array.from(topFacilities);
+topFacilitiesArr.forEach(facility => facility.addEventListener('click', function() {
+    console.log(facility.id);
+}))
+//topFilters
+var clickedSpa = false;
+var clickedBeach = false;
+var clickedWiFi = false;
+var clickedBreakfast = false;
+var clickedSwimmingPool = false;
+var spa = document.getElementById("spa");
+var beach = document.getElementById("beach");
+var wiFi = document.getElementById("wiFi");
+var breakfast = document.getElementById("breakfast");
+var swimmingPool = document.getElementById("swimmingPool");
+spa.addEventListener("click", function() {
+    clickedSpa = !clickedSpa
+    if (clickedSpa) {
+        spa.classList.add("btn-primary")
+        spa.classList.remove("btn-default")
+    } else {
+        spa.classList.remove("btn-primary")
+        spa.classList.add("btn-default")
+    }
+    filterByMoreFilters();
+})
+beach.addEventListener("click", function() {
+    clickedBeach = !clickedBeach
+    if (clickedBeach) {
+        beach.classList.add("btn-primary")
+        beach.classList.remove("btn-default")
+    } else {
+        beach.classList.remove("btn-primary")
+        beach.classList.add("btn-default")
+    }
+    filterByMoreFilters();
+})
+wiFi.addEventListener("click", function() {
+    clickedWiFi = !clickedWiFi
+    if (clickedWiFi) {
+        wiFi.classList.add("btn-primary")
+        wiFi.classList.remove("btn-default")
+    } else {
+        wiFi.classList.remove("btn-primary")
+        wiFi.classList.add("btn-default")
+    }
+    filterByMoreFilters();
+})
+breakfast.addEventListener("click", function() {
+    clickedBreakfast = !clickedBreakfast
+    if (clickedBreakfast) {
+        breakfast.classList.add("btn-primary")
+        breakfast.classList.remove("btn-default")
+    } else {
+        breakfast.classList.remove("btn-primary")
+        breakfast.classList.add("btn-default")
+    }
+    filterByMoreFilters();
+})
+swimmingPool.addEventListener("click", function() {
+    clickedSwimmingPool = !clickedSwimmingPool
+    if (clickedSwimmingPool) {
+        swimmingPool.classList.add("btn-primary")
+        swimmingPool.classList.remove("btn-default")
+    } else {
+        swimmingPool.classList.remove("btn-primary")
+        swimmingPool.classList.add("btn-default")
+    }
+    filterByMoreFilters();
+})
 //Calendar
 $.fn.datepicker.defaults.format = "dd/mm/yyyy";
 $.fn.datepicker.defaults.startDate = "0";

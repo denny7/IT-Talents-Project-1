@@ -662,3 +662,12 @@ function filterByUdobstvo(categoriqUdobstvo,udobstvoID, hotels) {
 function filterByCategory(category,hotels){
   return hotels.filter(hotel=> hotel.category == category)
 }
+function filterByRating(rating,hotels){
+  return hotels.filter(hotel=> hotel.avgRating >= rating)
+}
+function filterByPrice(price,hotels){
+  return hotels.filter(hotel => hotel.price >= price)
+}
+// function filterBySpa(hotels){
+// return hotels.filter(hotel => hotel.spa);
+// }
