@@ -149,6 +149,7 @@ function getHotelsInSearchBar() {
     var searchValue = document.querySelector("input.form-control").value;
     var hotels = filterByCity(searchValue);
     if (hotels) {
+        hotels.forEach(hotel => console.log(hotel.name));
         showHotels(hotels);
         return hotels;
     }
@@ -242,7 +243,7 @@ function filterByMoreFilters() {
             filteredHotels = filterBySwimmingPool(filteredHotels)
         }
         showHotels(filteredHotels);
-
+        return filteredHotels;
     } catch (error) {
         console.error(error.message);
     }
