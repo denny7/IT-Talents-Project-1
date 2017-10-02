@@ -719,7 +719,12 @@ function findHotel(hotelName){
             hotels = hotels.concat(bulgaria.getCities()[indexCity].getHotels()[indexHotel]);
         }
     }
-    var foundHotel = hotels.find(hotel=>hotel.name.toLowerCase()==hotel.name.toLowerCase());
+    var foundHotel = null;
+    if (!hotelName) {
+        foundHotel = hotels[Math.floor(Math.random()*hotels.length)];
+    }else{
+        foundHotel = hotels.find(hotel=>hotel.name.toLowerCase()==hotel.name.toLowerCase());
+    }
     return foundHotel;
 }
 function filterByUdobstvo(categoriqUdobstvo, udobstvoID, hotels) {
