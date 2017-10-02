@@ -712,7 +712,16 @@ function filterByCity(city) {
         console.error(error.message);
     }
 }
-
+function findHotel(hotelName){
+    var hotels = [];
+    for (var indexCity = 0; indexCity < bulgaria.getCities().length; indexCity++) {
+        for (var indexHotel = 0; indexHotel < bulgaria.getCities()[indexCity].getHotels().length; indexHotel++) {
+            hotels = hotels.concat(bulgaria.getCities()[indexCity].getHotels()[indexHotel]);
+        }
+    }
+    var foundHotel = hotels.find(hotel=>hotel.name.toLowerCase()==hotel.name.toLowerCase());
+    return foundHotel;
+}
 function filterByUdobstvo(categoriqUdobstvo, udobstvoID, hotels) {
     return hotels.filter(hotel => hotel.plusoveZaHotela.find(plus => plus === UDOBSTVA_V_HOTELA[categoriqUdobstvo][udobstvoID]));
 }

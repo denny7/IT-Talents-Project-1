@@ -158,11 +158,15 @@ function getHotelsInSearchBar() {
     }
 }
 //Events for the search bar
-document.querySelector("button.searchHeader").addEventListener("keypress", function() {
-    var hotels = getHotelsInSearchBar();
+document.querySelector("input.form-control1").addEventListener("keypress", function(event) {
+    if (event.keyCode==13) {
+        var hotels = getHotelsInSearchBar();
+        filterByMoreFilters();
+    }
 }, false)
 document.querySelector("button.searchHeader").addEventListener("click", function() {
     var hotels = getHotelsInSearchBar();
+    filterByMoreFilters();
 }, false)
 //Function for the More filters section
 function filterByMoreFilters() {
