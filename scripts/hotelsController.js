@@ -146,8 +146,11 @@ loginButton.addEventListener("click", function(event) {
 //Filters
 //Searching for a city in the search bar
 function getHotelsInSearchBar() {
-    var searchValue = document.querySelector("input.form-control").value;
-    var hotels = filterByCity(searchValue);
+    var searchValue = document.querySelector("input.form-control");
+    if (!searchValue.value) {
+        searchValue.value = ""+bulgaria.getCities()[Math.floor((Math.random()*bulgaria.getCities().length)+1)].name; 
+    }
+    var hotels = filterByCity(searchValue.value);
     if (hotels) {
         hotels.forEach(hotel => console.log(hotel.name));
         showHotels(hotels);
@@ -166,9 +169,6 @@ function filterByMoreFilters() {
     var checkedFilters = document.querySelectorAll("input[checked='checked']");
     try {
         var filteredHotels = getHotelsInSearchBar();
-        if (!filteredHotels) {
-            throw new Error("You haven't entered a city.");
-        }
         if (checkedFilters.length != 0) {
             for (var index = 0; index < checkedFilters.length; index++) {
                 var categoryUdobstvo = checkedFilters[index].parentNode.parentNode.parentNode.parentNode.firstElementChild.id;
