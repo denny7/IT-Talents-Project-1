@@ -170,16 +170,13 @@ document.querySelector("button.searchHeader").addEventListener("click", function
     filterByMoreFilters();
 }, false)
 //Event for the hotel search bar
-document.getElementById("searchByName").addEventListener("keydown", function (event) {
-    event.preventDefault();
-    if (event.keyCode == 13) {
+document.getElementById("searchByName").addEventListener("blur", function (event) {
         var nameHotel = this.value;
         var hotel = findHotel(nameHotel);
         if (nameHotel.length < 0) {
             this.value = hotel.name;
         }
         showHotels(hotel);
-    }
 }, false)
 document.getElementById("searchByNameButton").addEventListener("click", function (event) {
     event.preventDefault();
