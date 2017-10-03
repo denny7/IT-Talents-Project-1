@@ -148,12 +148,10 @@ loginButton.addEventListener("click", function (event) {
 //Searching for a city in the search bar
 function getHotelsInSearchBar() {
     var searchValue = document.querySelector("input.form-control");
-    if (!searchValue.value) {
-        searchValue.value = "" + bulgaria.getCities()[Math.floor((Math.random() * bulgaria.getCities().length))].name;
-    }
-    var hotels = filterByCity(searchValue.value);
-        hotels.forEach(hotel => console.log(hotel.name));
-        return hotels;
+    var city = filterByCity(searchValue.value);
+    searchValue.value = city.name;
+        // city.getHotels().forEach(hotel => console.log(hotel.name));
+        return city.getHotels();
 }
 //Events for the search bar
 document.querySelector("input.form-control1").addEventListener("keypress", function (event) {
@@ -238,7 +236,7 @@ function filterByMoreFilters() {
             default:
                 break;
         }
-        if (filterPrice) {
+        if (filterPrice) { 
             filteredHotels = filterByPrice(filterPrice, filteredHotels);
         }
         if (clickedSpa) {
@@ -402,11 +400,13 @@ function showHotels(hotels) {
             container.innerHTML = '';
             if (hotels.length > 1) {
                 hotels.forEach(function (hotel) {
+                    console.log(hotel);
                     container.innerHTML += templateFunc(hotel)
                     addEventsForHotels();
                 })
             } else {
                 if (hotels.length==1) {
+                    console.log(hotels);
                     container.innerHTML += templateFunc(hotels)
                     addEventsForHotels();
                 }

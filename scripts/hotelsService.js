@@ -166,7 +166,7 @@ function Hotel(name) {
         this.multipleRooms = true;
     }
     this.category = Math.floor(Math.random() * 4 + 1);
-    this.price = Math.floor(Math.random() * 967 + 27);
+    this.price = Math.floor(Math.random() * 951 + 20);
     this.offers = [
         {
             nameOffer: "Booking.com",
@@ -702,15 +702,13 @@ var userList = (function() {
 
 //Filters
 function filterByCity(city) {
-    try {
-        var findCity = bulgaria.getCities().find(bgCity => city.toLowerCase() === bgCity.name.toLowerCase());
-        if (!findCity) {
-            throw new Error("Invalid city");
-        }
-        return findCity.getHotels();
-    } catch (error) {
-        console.error(error.message);
+    var findCity = null;
+    if (city) {
+        findCity = bulgaria.getCities().find(bgCity => city.toLowerCase() === bgCity.name.toLowerCase());
+    }else{
+       findCity = bulgaria.getCities()[Math.floor((Math.random() * bulgaria.getCities().length))];
     }
+    return findCity;
 }
 function findHotel(hotelName) {
     var hotels = [];
