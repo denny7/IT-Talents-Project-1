@@ -152,39 +152,30 @@ function getHotelsInSearchBar() {
         searchValue.value = "" + bulgaria.getCities()[Math.floor((Math.random() * bulgaria.getCities().length))].name;
     }
     var hotels = filterByCity(searchValue.value);
-    if (hotels) {
         hotels.forEach(hotel => console.log(hotel.name));
-        showHotels(hotels);
         return hotels;
-    }
 }
 //Events for the search bar
 document.querySelector("input.form-control1").addEventListener("keypress", function (event) {
     if (event.keyCode == 13) {
-        var hotels = getHotelsInSearchBar();
         filterByMoreFilters();
     }
 }, false)
 document.querySelector("button.searchHeader").addEventListener("click", function () {
-    var hotels = getHotelsInSearchBar();
     filterByMoreFilters();
 }, false)
 //Event for the hotel search bar
 document.getElementById("searchByName").addEventListener("blur", function (event) {
-        var nameHotel = this.value;
-        var hotel = findHotel(nameHotel);
-        if (nameHotel.length < 0) {
-            this.value = hotel.name;
-        }
+        var searchHotel = document.getElementById("searchByName");
+        var hotel = findHotel(searchHotel.value);
+        searchHotel.value = hotel.name;
         showHotels(hotel);
 }, false)
 document.getElementById("searchByNameButton").addEventListener("click", function (event) {
     event.preventDefault();
     var searchHotel = document.getElementById("searchByName");
     var hotel = findHotel(searchHotel.value);
-    if (searchHotel.value.length < 0) {
-        searchHotel.value = hotel.name;
-    }
+    searchHotel.value = hotel.name;
     showHotels(hotel);
 }, false)
 //Function for the More filters section
@@ -395,8 +386,11 @@ function showHotels(hotels) {
                     addEventsForHotels();
                 })
             } else {
-                container.innerHTML += templateFunc(hotel)
-                addEventsForHotels();
+                if (hotels.length==1) {
+                    container.innerHTML += templateFunc(hotels)
+                    addEventsForHotels();
+                }
+                
             }
 
         })
