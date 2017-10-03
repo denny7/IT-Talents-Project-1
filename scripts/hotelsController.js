@@ -371,7 +371,46 @@ selectRoom.addEventListener("change",function(){
   selectedValue = selectRoom.value;
   filterByMoreFilters();
 })
-
+//Reset filters
+function resetFilters(){
+    var checkedFilters = document.querySelectorAll("input[checked='checked']");
+    checkedFilters.forEach(filter=>filter.removeAttribute("checked"));
+    selectedValue = '';
+    clickedCategory = '';
+    clickedRating = '';
+    slider.value = 510;
+    currentRange.innerText = '';
+    filterPrice = '';
+    if (clickedSpa) {
+        spa.classList.add("btn-default")
+        spa.classList.remove("btn-primary")
+        clickedSpa = !clickedSpa;
+    }
+    if (clickedBeach) {
+        beach.classList.add("btn-default")
+        beach.classList.remove("btn-primary")
+        clickedBeach = !clickedBeach;
+    }
+    if (clickedBreakfast) {
+        breakfast.classList.add("btn-default")
+        breakfast.classList.remove("btn-primary")
+        clickedBreakfast = !clickedBreakfast;
+    }
+    if (clickedWiFi) {
+        wiFi.classList.add("btn-default")
+        wiFi.classList.remove("btn-primary")
+        clickedWiFi = !clickedWiFi;
+    }
+    if (clickedSwimmingPool) {
+        swimmingPool.classList.add("btn-default")
+        swimmingPool.classList.remove("btn-primary")
+        clickedSwimmingPool = !clickedSwimmingPool;
+    }
+    filterByMoreFilters();
+}
+document.querySelector("button.deleteFiltersBtn").addEventListener("click",function(){
+    resetFilters();
+})
 //Calendar
 $.fn.datepicker.defaults.format = "dd/mm/yyyy";
 $.fn.datepicker.defaults.startDate = "0";
