@@ -437,21 +437,10 @@ function showHotels(hotels) {
             var templateFunc = Handlebars.compile(templateText);
             var container = document.getElementById("hotelsContainer");
             container.innerHTML = '';
-            if (hotels.length > 1) {
-                hotels.forEach(function (hotel) {
-                    console.log(hotel);
-                    container.innerHTML += templateFunc(hotel)
-                    addEventsForHotels();
-                })
-            } else {
-                if (hotels.length==1) {
-                    console.log(hotels);
-                    container.innerHTML += templateFunc(hotels)
-                    addEventsForHotels();
-                }
-                
+            for (var index = 0; index < hotels.length; index++) {
+                container.innerHTML += templateFunc(hotels[index]);
             }
-
+            addEventsForHotels();
         })
     };
     putTemplate(template, hotels);
