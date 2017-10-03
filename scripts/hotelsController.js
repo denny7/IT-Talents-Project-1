@@ -256,8 +256,21 @@ function filterByMoreFilters() {
         if (clickedSwimmingPool) {
             filteredHotels = filterBySwimmingPool(filteredHotels)
         }
+        if(selectedValue == 'singleRoom'){
+          filteredHotels = filterBySingleRoom(filteredHotels)
+        }
+        if(selectedValue == 'doubleRoom'){
+          filteredHotels = filterByDoubleRoom(filteredHotels)
+        }
+        if(selectedValue == 'familyRoom'){
+          filteredHotels = filterByFamilyRoom(filteredHotels)
+        }
+        if(selectedValue == 'multipleRooms'){
+          filteredHotels = filterByMultipleRoom(filteredHotels)
+        }
         showHotels(filteredHotels);
         return filteredHotels;
+
     } catch (error) {
         console.error(error.message);
     }
@@ -354,6 +367,13 @@ swimmingPool.addEventListener("click", function () {
     }
     filterByMoreFilters();
 })
+var selectedValue='';
+var selectRoom = document.getElementById("sel1");
+selectRoom.addEventListener("change",function(){
+  selectedValue = selectRoom.value;
+  filterByMoreFilters();
+})
+
 //Calendar
 $.fn.datepicker.defaults.format = "dd/mm/yyyy";
 $.fn.datepicker.defaults.startDate = "0";

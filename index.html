@@ -11,8 +11,8 @@
     <script src="node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="node_modules/handlebars/dist/handlebars.min.js"></script>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css"/>
-    <link rel="stylesheet" href="node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.css"/>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker.css" />
     <link rel="stylesheet" type="text/css" href="style/styleIcons.css">
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <link rel="stylesheet" type="text/css" href="style/loginForm.css">
@@ -34,8 +34,13 @@
                     <img src="images/user_icon.png" alt="user"><span id="userShowName"> </p>
                 </div>
                 <!-- close .dropdown-->
-                <button class="btn btn-default currency" type="button"> BGN </button>
-            </div>
+                <div class="form-group currency">
+                    <select class="form-control currency" id="currency">
+                        <option value="bgn">BGN</option>
+                        <option value="eur">EUR</option>
+                    </select>
+                </div>
+              </div>
             <!-- close .headerUp-->
             <div class="headerDown">
                 <div class="row">
@@ -54,22 +59,29 @@
                     <input type="text" class="form-control">
                     <div class="input-group-addon">
                       <span class="glyphicon glyphicon-th"></span>
-                    </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-3 ">
-                  <div class="input-group date" data-provide="datepicker">
-                    <input type="text" class="form-control">
-                    <div class="input-group-addon">
-                      <span class="glyphicon glyphicon-th"></span>
-                    </div>
-                  </div>
-                  </div>
-                  <div class="col-sm-3 ">
-            <button class="btn btn-default">Двойна стая</button>
+                </div>
             </div>
     </div>
-  </div>
+    <div class="col-sm-3 ">
+        <div class="input-group date" data-provide="datepicker">
+            <input type="text" class="form-control">
+            <div class="input-group-addon">
+                <span class="glyphicon glyphicon-th"></span>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-3 ">
+        <div class="form-group">
+            <select class="form-control" id="sel1">
+                <option value="singleRoom">Единична стая</option>
+                <option value="doubleRoom" selected>Двойна стая</option>
+                <option value="familyRoom">Семейна стая</option>
+                <option value="multipleRooms">Апартамент</option>
+            </select>
+        </div>
+    </div>
+    </div>
+    </div>
     <!-- close .buttonsHeader -->
     </div>
     <!-- close .headerDown -->
@@ -169,7 +181,7 @@
                                 <form class="navbar-form navbar-left" role="search">
                                     <div class="formSearch">
                                         <input type="text" id="searchByName" class="form-control" placeholder="Search">
-                                        <button id="searchByNameButton"type="button" class="btn btn-default">&#x1F50D</button>
+                                        <button id="searchByNameButton" type="button" class="btn btn-default">&#x1F50D</button>
                                     </div>
                                 </form>
                             </div>
@@ -230,16 +242,16 @@
                         <!-- close .topFilters -->
 
                         <div class="deleteFilters">
-                            <button type="button" class="btn btn-default">Премахни всички филтри</button>
+                            <button type="button" class="btn btn-default deleteFiltersBtn">Премахни всички филтри</button>
                         </div>
                     </article>
                 </section>
                 <!-- close .sidenav -->
                 <div class="col-sm-9 center">
 
-                  <div id="hotelsContainer">
+                    <div id="hotelsContainer">
 
-                  </div>
+                    </div>
                 </div>
 
                 <!-- close .center -->

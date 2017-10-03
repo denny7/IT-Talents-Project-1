@@ -712,7 +712,7 @@ function filterByCity(city) {
         console.error(error.message);
     }
 }
-function findHotel(hotelName){
+function findHotel(hotelName) {
     var hotels = [];
     for (var indexCity = 0; indexCity < bulgaria.getCities().length; indexCity++) {
         for (var indexHotel = 0; indexHotel < bulgaria.getCities()[indexCity].getHotels().length; indexHotel++) {
@@ -721,9 +721,9 @@ function findHotel(hotelName){
     }
     var foundHotel = null;
     if (!hotelName) {
-        foundHotel = hotels[Math.floor(Math.random()*hotels.length)];
-    }else{
-        foundHotel = hotels.find(hotel=>hotel.name.toLowerCase()==hotel.name.toLowerCase());
+        foundHotel = hotels[Math.floor(Math.random() * hotels.length)];
+    } else {
+        foundHotel = hotels.find(hotel => hotel.name.toLowerCase() == hotel.name.toLowerCase());
     }
     return foundHotel;
 }
@@ -753,4 +753,16 @@ function filterByBreakfast(hotels) {
 }
 function filterBySwimmingPool(hotels) {
     return hotels.filter(hotel => hotel.pool);
+}
+function filterBySingleRoom(hotels) {
+    return hotels.filter(hotel => hotel.singleRoom);
+}
+function filterByDoubleRoom(hotels) {
+    return hotels.filter(hotel => hotel.doubleRoom);
+}
+function filterByFamilyRoom(hotels) {
+    return hotels.filter(hotel => hotel.familyRoom);
+}
+function filterByMultipleRoom(hotels) {
+    return hotels.filter(hotel => hotel.multipleRooms);
 }
