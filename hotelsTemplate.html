@@ -13,14 +13,14 @@
             {{#each offers}}
             <div class="oferti">
                 <a class="ofertiLink" href="http://www.{{nameOffer}}">{{nameOffer}}</a>
-                <p>{{priceOffer}} лв</p>
+                <p>{{priceOffer}} {{../currency}}</p>
             </div>
             {{/each}}
         </div>
         <div class="col-sm-3">
             <p>{{offers.[0].nameOffer}}</p>
-            <p class="oldPrice">{{offers.[2].priceOffer}}</p>
-            <p class="newPrice">{{offers.[0].priceOffer}}</p>
+            <p class="oldPrice">{{offers.[2].priceOffer}} {{currency}}</p>
+            <p class="newPrice">{{offers.[0].priceOffer}} {{currency}}</p>
             {{#if breakfast}}
             <p class="breakfast">Безплатна закуска</p>
             {{/if}}
@@ -154,7 +154,7 @@
             {{#each offers}}
             <div class="oferti">
                 <a class="ofertiLink" href="http://www.{{nameOffer}}">{{nameOffer}}</a>
-                <p>{{priceOffer}} лв</p>
+                <p>{{priceOffer}}  {{currency}}</p>
             </div>
             {{/each}}
         </div>

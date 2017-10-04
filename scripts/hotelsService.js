@@ -166,7 +166,9 @@ function Hotel(name) {
         this.multipleRooms = true;
     }
     this.category = Math.floor(Math.random() * 4 + 1);
-    this.price = Math.floor(Math.random() * 951 + 20);
+    this.coef = 1;
+    this.currency = "BGN";
+    this.price = (Math.floor(Math.random() * 951 + 20));
     this.offers = [
         {
             nameOffer: "Booking.com",
@@ -763,4 +765,27 @@ function filterByFamilyRoom(hotels) {
 }
 function filterByMultipleRoom(hotels) {
     return hotels.filter(hotel => hotel.multipleRooms);
+}
+function getCurrency(){
+  return new Promise(function(resolve,reject){
+    var url = "http://api.fixer.io/latest?base=BGN";
+    var xhr;
+    if(XMLHttpRequest == undefined){
+      xhr = new ActiveXObject();
+    }else {
+      xhr = new XMLHttpRequest();
+    }
+    xhr.open("GET",url,true);
+    xhr.send(null);
+    xhr.addEventListener('load',function(){
+      if(xhr.status == 200){
+        var response = xhr.responseText;
+        var currencyData = JSON.parse(response);
+        var result = currencyData.rates.EUR;
+      resolve(result);
+    } else {
+      reject ({error : xhr.status, errorText : xhr.statusText});
+    }
+    })
+  })
 }

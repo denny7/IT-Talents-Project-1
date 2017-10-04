@@ -16,13 +16,13 @@ var ulDostypnost = document.querySelector(".dostypnost>ul");
 
 function fillUl(arr, ul, name) {
     var holder = document.createDocumentFragment();
-    arr.forEach(function (usluga, index) {
+    arr.forEach(function(usluga, index) {
         let li = document.createElement("li");
         let checkbox = document.createElement("input");
         checkbox.type = "checkbox";
         checkbox.value = index;
         checkbox.name = name;
-        checkbox.addEventListener("click", function (event) {
+        checkbox.addEventListener("click", function(event) {
             if (checkbox.hasAttribute("checked")) {
                 checkbox.removeAttribute("checked");
             } else {
@@ -51,11 +51,11 @@ fillUl(UDOBSTVA_V_HOTELA.SPORT_EQUIPMENT, ulSportEquipment, "sportEquipment");
 fillUl(UDOBSTVA_V_HOTELA.HOTEL_PROFILE, ulHotelProfile, "hotelProfile");
 fillUl(UDOBSTVA_V_HOTELA.PODHODQSHT_ZA, ulPodhodqshtZa, "podhodqshtZa");
 fillUl(UDOBSTVA_V_HOTELA.DOSTYPNOST, ulDostypnost, "dostypnost");
-moreFiltersBtn.addEventListener("click", function () {
+moreFiltersBtn.addEventListener("click", function() {
     topFilters.style.display = "none";
     moreFilters.style.display = "block";
 });
-topFiltersBtn.addEventListener("click", function () {
+topFiltersBtn.addEventListener("click", function() {
     moreFilters.style.display = "none";
     topFilters.style.display = "block";
 });
@@ -65,7 +65,7 @@ var login = document.getElementById("login");
 var modal = document.getElementById('id01');
 var closeLog = document.getElementsByClassName("closeLog")[0];
 var logDisplayed = false;
-closeLog.addEventListener("click", function () {
+closeLog.addEventListener("click", function() {
     modal.style.display = 'none';
     logDisplayed = false;
 });
@@ -73,7 +73,7 @@ login.addEventListener("click", function logIn() {
     modal.style.display = "block";
     logDisplayed = true;
     if (logDisplayed) {
-        window.addEventListener("click", function (event) {
+        window.addEventListener("click", function(event) {
             if (event.target == modal) {
                 modal.style.display = "none";
                 logDisplayed = false;
@@ -89,13 +89,13 @@ register.addEventListener("click", function register() {
     modalReg.style.display = "block";
     regDisplayed = true;
     if (regDisplayed) {
-        window.addEventListener("click", function (event) {
+        window.addEventListener("click", function(event) {
             if (event.target == modalReg) {
                 modalReg.style.display = "none";
                 regDisplayed = false;
             }
         });
-        closeReg.addEventListener("click", function () {
+        closeReg.addEventListener("click", function() {
             modalReg.style.display = 'none';
             regDisplayed = false;
         });
@@ -103,7 +103,7 @@ register.addEventListener("click", function register() {
 });
 //login
 var registerButton = document.getElementById("registerButton");
-registerButton.addEventListener("click", function (event) {
+registerButton.addEventListener("click", function(event) {
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
     var email = document.getElementById("email").value;
@@ -127,7 +127,7 @@ registerButton.addEventListener("click", function (event) {
     }
 });
 var loginButton = document.getElementById("logButton");
-loginButton.addEventListener("click", function (event) {
+loginButton.addEventListener("click", function(event) {
     var username = document.getElementById("userValue").value;
     var password = document.getElementById("passwordValue").value;
     var p = document.getElementById("infoSuccess");
@@ -150,26 +150,26 @@ function getHotelsInSearchBar() {
     var searchValue = document.querySelector("input.form-control");
     var city = filterByCity(searchValue.value);
     searchValue.value = city.name;
-        // city.getHotels().forEach(hotel => console.log(hotel.name));
-        return city.getHotels();
+    // city.getHotels().forEach(hotel => console.log(hotel.name));
+    return city.getHotels();
 }
 //Events for the search bar
-document.querySelector("input.form-control1").addEventListener("keypress", function (event) {
+document.querySelector("input.form-control1").addEventListener("keypress", function(event) {
     if (event.keyCode == 13) {
         filterByMoreFilters();
     }
 }, false)
-document.querySelector("button.searchHeader").addEventListener("click", function () {
+document.querySelector("button.searchHeader").addEventListener("click", function() {
     filterByMoreFilters();
 }, false)
 //Event for the hotel search bar
-document.getElementById("searchByName").addEventListener("blur", function (event) {
-        var searchHotel = document.getElementById("searchByName");
-        var hotel = findHotel(searchHotel.value);
-        searchHotel.value = hotel.name;
-        showHotels(hotel);
+document.getElementById("searchByName").addEventListener("blur", function(event) {
+    var searchHotel = document.getElementById("searchByName");
+    var hotel = findHotel(searchHotel.value);
+    searchHotel.value = hotel.name;
+    showHotels(hotel);
 }, false)
-document.getElementById("searchByNameButton").addEventListener("click", function (event) {
+document.getElementById("searchByNameButton").addEventListener("click", function(event) {
     event.preventDefault();
     var searchHotel = document.getElementById("searchByName");
     var hotel = findHotel(searchHotel.value);
@@ -236,7 +236,7 @@ function filterByMoreFilters() {
             default:
                 break;
         }
-        if (filterPrice) { 
+        if (filterPrice) {
             filteredHotels = filterByPrice(filterPrice, filteredHotels);
         }
         if (clickedSpa) {
@@ -254,18 +254,55 @@ function filterByMoreFilters() {
         if (clickedSwimmingPool) {
             filteredHotels = filterBySwimmingPool(filteredHotels)
         }
-        if(selectedValue == 'singleRoom'){
-          filteredHotels = filterBySingleRoom(filteredHotels)
+        if (selectedValue == 'singleRoom') {
+            filteredHotels = filterBySingleRoom(filteredHotels)
         }
-        if(selectedValue == 'doubleRoom'){
-          filteredHotels = filterByDoubleRoom(filteredHotels)
+        if (selectedValue == 'doubleRoom') {
+            filteredHotels = filterByDoubleRoom(filteredHotels)
         }
-        if(selectedValue == 'familyRoom'){
-          filteredHotels = filterByFamilyRoom(filteredHotels)
+        if (selectedValue == 'familyRoom') {
+            filteredHotels = filterByFamilyRoom(filteredHotels)
         }
-        if(selectedValue == 'multipleRooms'){
-          filteredHotels = filterByMultipleRoom(filteredHotels)
+        if (selectedValue == 'multipleRooms') {
+            filteredHotels = filterByMultipleRoom(filteredHotels)
         }
+        if (selectedCurrency == "eur") {
+            var coef;
+            getCurrency().then(function(result) {
+                coef = result;
+                filteredHotels.forEach(function(hotel) {
+                    hotel.coef = coef;
+                    hotel.currency = 'EUR';
+                    hotel.price = Math.round(hotel.price * hotel.coef)
+                    hotel.offers.forEach(function(offer) {
+                        offer.priceOffer = Math.round(offer.priceOffer * coef)
+                    })
+                })
+                $(".minRange").html("10 EUR");
+                $(".maxRange").html("500 EUR");
+                $("#rangePrice").attr("min", "10").attr("max", "500");
+                selectedCurrency = '';
+            })
+        }
+        if (selectedCurrency == "bgn") {
+            var coef;
+            getCurrency().then(function(result) {
+                coef = result;
+                filteredHotels.forEach(function(hotel) {
+                    hotel.coef = coef;
+                    hotel.currency = 'BGN';
+                    hotel.price = Math.round(hotel.price / hotel.coef)
+                    hotel.offers.forEach(function(offer) {
+                        offer.priceOffer = Math.round(offer.priceOffer / coef)
+                    })
+                })
+            })
+            $(".minRange").html("20 BGN");
+            $(".maxRange").html("1000 BGN");
+            $("#rangePrice").attr("min", "20").attr("max", "1000");
+            selectedCurrency = '';
+        }
+        console.log(filteredHotels)
         showHotels(filteredHotels);
         return filteredHotels;
 
@@ -277,7 +314,7 @@ function filterByMoreFilters() {
 var clickedCategory;
 var category = document.getElementsByClassName("btnStars");
 var categoryArr = Array.from(category);
-categoryArr.forEach(category => category.addEventListener('click', function () {
+categoryArr.forEach(category => category.addEventListener('click', function() {
     clickedCategory = category.id;
     filterByMoreFilters();
 }));
@@ -285,17 +322,17 @@ categoryArr.forEach(category => category.addEventListener('click', function () {
 var clickedRating;
 var rating = document.getElementsByClassName("ratingBtn");
 var ratingArr = Array.from(rating);
-ratingArr.forEach(rating => rating.addEventListener('click', function () {
+ratingArr.forEach(rating => rating.addEventListener('click', function() {
     clickedRating = rating.id;
     filterByMoreFilters();
 }))
 var slider = document.getElementById("rangePrice");
 var currentRange = document.getElementsByClassName("currentRange")[0];
 var filterPrice;
-slider.addEventListener("input", function () {
+slider.addEventListener("input", function() {
     currentRange.innerText = this.value;
 })
-slider.addEventListener("mouseup", function () {
+slider.addEventListener("mouseup", function() {
     filterPrice = this.value;
     filterByMoreFilters();
 })
@@ -310,7 +347,7 @@ var beach = document.getElementById("beach");
 var wiFi = document.getElementById("wiFi");
 var breakfast = document.getElementById("breakfast");
 var swimmingPool = document.getElementById("swimmingPool");
-spa.addEventListener("click", function () {
+spa.addEventListener("click", function() {
     clickedSpa = !clickedSpa
     if (clickedSpa) {
         spa.classList.add("btn-primary")
@@ -321,7 +358,7 @@ spa.addEventListener("click", function () {
     }
     filterByMoreFilters();
 })
-beach.addEventListener("click", function () {
+beach.addEventListener("click", function() {
     clickedBeach = !clickedBeach
     if (clickedBeach) {
         beach.classList.add("btn-primary")
@@ -332,7 +369,7 @@ beach.addEventListener("click", function () {
     }
     filterByMoreFilters();
 })
-wiFi.addEventListener("click", function () {
+wiFi.addEventListener("click", function() {
     clickedWiFi = !clickedWiFi
     if (clickedWiFi) {
         wiFi.classList.add("btn-primary")
@@ -343,7 +380,7 @@ wiFi.addEventListener("click", function () {
     }
     filterByMoreFilters();
 })
-breakfast.addEventListener("click", function () {
+breakfast.addEventListener("click", function() {
     clickedBreakfast = !clickedBreakfast
     if (clickedBreakfast) {
         breakfast.classList.add("btn-primary")
@@ -354,7 +391,7 @@ breakfast.addEventListener("click", function () {
     }
     filterByMoreFilters();
 })
-swimmingPool.addEventListener("click", function () {
+swimmingPool.addEventListener("click", function() {
     clickedSwimmingPool = !clickedSwimmingPool
     if (clickedSwimmingPool) {
         swimmingPool.classList.add("btn-primary")
@@ -365,16 +402,22 @@ swimmingPool.addEventListener("click", function () {
     }
     filterByMoreFilters();
 })
-var selectedValue='';
+var selectedValue = '';
 var selectRoom = document.getElementById("sel1");
-selectRoom.addEventListener("change",function(){
-  selectedValue = selectRoom.value;
-  filterByMoreFilters();
+selectRoom.addEventListener("change", function() {
+    selectedValue = selectRoom.value;
+    filterByMoreFilters();
+})
+var selectedCurrency = '';
+var selectCurrency = document.getElementById("currency");
+selectCurrency.addEventListener("change", function() {
+    selectedCurrency = selectCurrency.value;
+    filterByMoreFilters();
 })
 //Reset filters
-function resetFilters(){
+function resetFilters() {
     var checkedFilters = document.querySelectorAll("input[checked='checked']");
-    checkedFilters.forEach(filter=>filter.removeAttribute("checked"));
+    checkedFilters.forEach(filter => filter.removeAttribute("checked"));
     selectedValue = '';
     clickedCategory = '';
     clickedRating = '';
@@ -408,7 +451,7 @@ function resetFilters(){
     }
     filterByMoreFilters();
 }
-document.querySelector("button.deleteFiltersBtn").addEventListener("click",function(){
+document.querySelector("button.deleteFiltersBtn").addEventListener("click", function() {
     resetFilters();
 })
 //Calendar
@@ -419,10 +462,10 @@ console.log(bulgaria._cities)
 //handlebars
 // show Hotel
 function loadTemplate(url) {
-    return new Promise(function (resolve, reject) {
+    return new Promise(function(resolve, reject) {
         var xhr = new XMLHttpRequest();
         xhr.open('GET', url, true);
-        xhr.onload = function () {
+        xhr.onload = function() {
             resolve(xhr.responseText);
         }
         xhr.send(null);
@@ -433,7 +476,7 @@ function showHotels(hotels) {
     var template = "hotelsTemplate.html";
 
     function putTemplate(template, hotels) {
-        loadTemplate(template).then(function (templateText) {
+        loadTemplate(template).then(function(templateText) {
             var templateFunc = Handlebars.compile(templateText);
             var container = document.getElementById("hotelsContainer");
             container.innerHTML = '';
@@ -448,8 +491,8 @@ function showHotels(hotels) {
 
 function addEventsForHotels() {
     var profilePictures = document.getElementsByClassName("profilePicture");
-    Array.from(profilePictures).forEach(function (img) {
-        img.addEventListener("click", function () {
+    Array.from(profilePictures).forEach(function(img) {
+        img.addEventListener("click", function() {
             var moreAboutHotel = this.parentNode.parentNode.nextElementSibling;
             if (moreAboutHotel.style.display == "none") {
                 moreAboutHotel.style.display = "block";
@@ -459,16 +502,16 @@ function addEventsForHotels() {
         });
     });
     var closeMenu = document.getElementsByClassName("closeMenu");
-    Array.from(closeMenu).forEach(function (close) {
-        close.addEventListener("click", function () {
+    Array.from(closeMenu).forEach(function(close) {
+        close.addEventListener("click", function() {
             event.preventDefault()
             var moreAboutHotel = this.parentNode.parentNode.parentNode.parentNode
             moreAboutHotel.style.display = "none";
         });
     })
     var menuPhotos = document.getElementsByClassName("menuPhotos");
-    Array.from(menuPhotos).forEach(function (photoM) {
-        photoM.addEventListener("click", function (event) {
+    Array.from(menuPhotos).forEach(function(photoM) {
+        photoM.addEventListener("click", function(event) {
             event.preventDefault()
             var photos = this.parentNode.parentNode.parentNode.nextElementSibling
             var infoHotel = this.parentNode.parentNode.parentNode.nextElementSibling.nextElementSibling
@@ -481,8 +524,8 @@ function addEventsForHotels() {
         })
     })
     var menuInfo = document.getElementsByClassName("menuInfo");
-    Array.from(menuInfo).forEach(function (infoM) {
-        infoM.addEventListener("click", function (event) {
+    Array.from(menuInfo).forEach(function(infoM) {
+        infoM.addEventListener("click", function(event) {
             event.preventDefault()
             var photos = this.parentNode.parentNode.parentNode.nextElementSibling
             var infoHotel = this.parentNode.parentNode.parentNode.nextElementSibling.nextElementSibling
@@ -495,8 +538,8 @@ function addEventsForHotels() {
         })
     })
     var menuOpinions = document.getElementsByClassName("menuOpinions");
-    Array.from(menuOpinions).forEach(function (opinionsM) {
-        opinionsM.addEventListener("click", function (event) {
+    Array.from(menuOpinions).forEach(function(opinionsM) {
+        opinionsM.addEventListener("click", function(event) {
             event.preventDefault()
             var photos = this.parentNode.parentNode.parentNode.nextElementSibling
             var infoHotel = this.parentNode.parentNode.parentNode.nextElementSibling.nextElementSibling
@@ -509,8 +552,8 @@ function addEventsForHotels() {
         })
     })
     var menuOfferts = document.getElementsByClassName("menuOfferts");
-    Array.from(menuOfferts).forEach(function (offertsM) {
-        offertsM.addEventListener("click", function (event) {
+    Array.from(menuOfferts).forEach(function(offertsM) {
+        offertsM.addEventListener("click", function(event) {
             event.preventDefault()
             var photos = this.parentNode.parentNode.parentNode.nextElementSibling
             var infoHotel = this.parentNode.parentNode.parentNode.nextElementSibling.nextElementSibling
