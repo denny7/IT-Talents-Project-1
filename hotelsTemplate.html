@@ -11,7 +11,7 @@
         </div>
         <div class="col-sm-2">
             {{#each offers}}
-            <div class="oferti">
+            <div class="ofertiHotel">
                 <a class="ofertiLink" href="http://www.{{nameOffer}}">{{nameOffer}}</a>
                 <p>{{priceOffer}} {{../currency}}</p>
             </div>
@@ -24,7 +24,7 @@
             {{#if breakfast}}
             <p class="breakfast">Безплатна закуска</p>
             {{/if}}
-            <button type="button" class="btn btn-default"><a href="http://www.{{offers.[0].nameOffer}}">Виж оферта</a></button>
+            <a href="http://www.{{offers.[0].nameOffer}}"><button type="button" class="btn btn-default">Виж оферта</button></a>
         </div>
     </div>
     <div class="moreAboutHotel">

@@ -23,12 +23,12 @@ body {
     width: 150px;
     display: inline-block;
     margin-left:45%;
-    margin-top: -15px;
-    margin-bottom: -15px;
+  margin-top : -40px;
 }
 .headerDown {
     background: #37454d;
     height: auto;
+    margin-top: -40px;
 }
 .headerDown .form-control1, .headerDown .searchHeader {
   margin-top: 15px;
@@ -38,6 +38,9 @@ body {
 }
 .buttonsHeader{
   margin-left:250px;
+}
+.searchHeader {
+  margin-top: 0px !important;
 }
 .headerDown .searchHeader{
   margin-top: 15px;
@@ -63,12 +66,16 @@ margin-bottom: 15px;
 main {
   margin-top: 12px;
 }
+.showDate p {
+  font-size: 1.3em;
+}
 .mapArticle {
   height: 100px;
   width: 100%;
-  border: 1px solid white;
+  border: 1px solid #37454d;
   border-radius: 3px;
   margin : 5px 0px;
+  background-color:#ebeced;
 }
 .mapArticle button {
   margin-top: 12.5%;
@@ -145,9 +152,6 @@ width: 50%;
 .showDate{
   display: none;
 }
-/*#mapGoogle{
-  display: none;
-}*/
 footer {
     height: auto;
     background: #293339;
@@ -224,6 +228,79 @@ border-radius: 5px;
   width: 250px;
   height: 200px;
   cursor: pointer;
+  float: left;
+  margin-left: 0.175em;
+  margin-right: 0.8em;
+}
+.templateHotels > .row > .col-sm-7 > p:first-of-type{
+  margin-top: 2.2em;
+}
+.templateHotels > .row > .col-sm-7 > p{
+  text-align: center;
+}
+.templateHotels > .row > .col-sm-2 > .ofertiHotel > p {
+  margin-bottom: 2em;
+}
+.templateHotels > .row > .col-sm-2 > .ofertiHotel > a {
+  color:#7C8079;
+}
+.templateHotels > .row > .col-sm-2 > .ofertiHotel > a:hover{
+  color: #7C8079;
+}
+
+.templateHotels > .row > .col-sm-3 >  p {
+  margin-bottom: 2em;
+}
+.templateHotels > .row > .col-sm-3 >a> button {
+  width : 10em;
+}
+.oldPrice {
+  color : red;
+  text-decoration: line-through;
+}
+.newPrice {
+  color : green;
+  font-weight: bold;
+}
+.avgRating {
+  margin-top: 2em;
+  width: 250px;
+  height: 300px;
+  background: #7c8079;
+  border-radius: 3px;
+}
+.avgRating > .avgRatingPar {
+  font-size: 1.5em;
+  text-align: center;
+  padding-top : 5em;
+}
+.avgRating > .avgRatingNumber {
+  font-size: 2em;
+  text-align: center;
+}
+.oferti {
+  display: inline-block;
+  margin-right: 10em;
+}
+.oferti:first-of-type{
+  margin-left: 11em;
+}
+.oferti > p, .oferti > a {
+  text-align: center;
+}
+.oferti > a {
+  color : #7c8079
+}
+.infoHotel {
+  margin-left: 1em;
+}
+.infoHotel  p {
+  display: inline-block;
+  margin-right: 2em;
+}
+.infoHotel  p:first-of-type {
+  display: block;
+  font-size: 1.5em;
 }
 .photos img {
   width : 100%;
