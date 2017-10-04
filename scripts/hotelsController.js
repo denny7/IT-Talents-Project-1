@@ -188,6 +188,9 @@ function filterByMoreFilters() {
                 filteredHotels = filterByUdobstvo(categoryUdobstvo, udobstvoID, filteredHotels);
             }
         }
+        $("#mapGoogle").hide()
+        $("#hotelsContainer").show()
+        $(".showDate").show()
         const ONE_STAR = 1;
         const TWO_STARS = 2;
         const THREE_STARS = 3;
@@ -480,6 +483,14 @@ $(".secondDate").change(function() {
       secondDateF()
     }
 })
+//map
+
+$(".showMapBtn").on("click",function(){
+  $("#mapGoogle").show()
+  $("#hotelsContainer").hide()
+  $(".showDate").hide()
+
+})
 console.log(bulgaria._cities)
 //handlebars
 // show Hotel
@@ -507,6 +518,7 @@ function showHotels(hotels) {
             }
             addEventsForHotels();
         })
+        document.getElementsByClassName("showDate")[0].style.display = "block";
     };
     putTemplate(template, hotels);
 }

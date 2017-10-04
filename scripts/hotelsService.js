@@ -789,3 +789,11 @@ function getCurrency(){
     })
   })
 }
+
+function myMap() {
+var mapProp= {
+    center:new google.maps.LatLng(42.7,25.5),
+    zoom:7,
+};
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+}
