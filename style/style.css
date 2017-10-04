@@ -139,6 +139,9 @@ width: 50%;
     height: 350px;
     background: rebecapurple;
 }
+.showDate p {
+  text-align: center;
+}
 footer {
     height: auto;
     background: #293339;

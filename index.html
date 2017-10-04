@@ -53,35 +53,35 @@
                     </div>
                 </div>
                 <div class="row">
-                <div class="buttonsHeader">
+                  <div class="buttonsHeader">
+                    <div class="col-sm-3 ">
+                      <div class="input-group date" data-provide="datepicker">
+                        <input type="text" class="form-control firstDate" value="">
+                        <div class="input-group-addon">
+                          <span class="glyphicon glyphicon-th"></span>
+                        </div>
+                    </div>
+                  </div>
                   <div class="col-sm-3 ">
-                  <div class="input-group date" data-provide="datepicker">
-                    <input type="text" class="form-control">
-                    <div class="input-group-addon">
-                      <span class="glyphicon glyphicon-th"></span>
-                </div>
+                      <div class="input-group date" data-provide="datepicker">
+                          <input type="text" class="form-control secondDate" value="">
+                          <div class="input-group-addon">
+                              <span class="glyphicon glyphicon-th"></span>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-sm-3 ">
+                      <div class="form-group">
+                          <select class="form-control" id="sel1">
+                              <option value="singleRoom">Единична стая</option>
+                              <option value="doubleRoom" selected>Двойна стая</option>
+                              <option value="familyRoom">Семейна стая</option>
+                              <option value="multipleRooms">Апартамент</option>
+                          </select>
+                      </div>
+                  </div>
+              </div>
             </div>
-    </div>
-    <div class="col-sm-3 ">
-        <div class="input-group date" data-provide="datepicker">
-            <input type="text" class="form-control">
-            <div class="input-group-addon">
-                <span class="glyphicon glyphicon-th"></span>
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-3 ">
-        <div class="form-group">
-            <select class="form-control" id="sel1">
-                <option value="singleRoom">Единична стая</option>
-                <option value="doubleRoom" selected>Двойна стая</option>
-                <option value="familyRoom">Семейна стая</option>
-                <option value="multipleRooms">Апартамент</option>
-            </select>
-        </div>
-    </div>
-    </div>
-    </div>
     <!-- close .buttonsHeader -->
     </div>
     <!-- close .headerDown -->
@@ -248,7 +248,15 @@
                 </section>
                 <!-- close .sidenav -->
                 <div class="col-sm-9 center">
+                  <div class="showDate row">
+                    <div class="col-sm-6">
+                    <p>Настаняване : <span class="firstDateSpan"></span></p>
+                    </div>
+                    <div class="col-sm-6">
+                    <p>Напускане : <span class="secondDateSpan"></span></p>
+                  </div>
 
+                  </div>
                     <div id="hotelsContainer">
 
                     </div>

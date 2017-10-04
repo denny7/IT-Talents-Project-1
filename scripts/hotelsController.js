@@ -302,7 +302,6 @@ function filterByMoreFilters() {
             $("#rangePrice").attr("min", "20").attr("max", "1000");
             selectedCurrency = '';
         }
-        console.log(filteredHotels)
         showHotels(filteredHotels);
         return filteredHotels;
 
@@ -457,7 +456,30 @@ document.querySelector("button.deleteFiltersBtn").addEventListener("click", func
 //Calendar
 $.fn.datepicker.defaults.format = "dd/mm/yyyy";
 $.fn.datepicker.defaults.startDate = "0";
-
+var date = new Date();
+document.getElementsByClassName("firstDateSpan")[0].innerText = date.getDay() + 1 + "/" + (date.getMonth() + 1) + "/" + date.getFullYear()
+document.getElementsByClassName("secondDateSpan")[0].innerText = date.getDay() + 2 + "/" + (date.getMonth() + 1) + "/" + date.getFullYear()
+function secondDateF(){
+  var day = +($(".firstDate").val().slice(0, 2)) + 1;
+  var month = $(".firstDate").val().slice(3, 5)
+  var year = $(".firstDate").val().slice(6, 10)
+  document.getElementsByClassName("secondDateSpan")[0].innerText = day + "/" + month + "/" + year
+}
+$(".firstDate").change(function() {
+    var firstDate = $(".firstDate").val()
+    document.getElementsByClassName("firstDateSpan")[0].innerText = firstDate;
+    secondDateF()
+    filterByMoreFilters();
+})
+$(".secondDate").change(function() {
+    var secondDate = $(".secondDate").val()
+    if (secondDate.slice(0, 2) > $(".firstDate").val().slice(0, 2) && secondDate.slice(3, 5) >= $(".firstDate").val().slice(3, 5) && secondDate.slice(6, 10) >= $(".firstDate").val().slice(6, 10)) {
+        document.getElementsByClassName("secondDateSpan")[0].innerText = secondDate;
+        filterByMoreFilters();
+    } else {
+      secondDateF()
+    }
+})
 console.log(bulgaria._cities)
 //handlebars
 // show Hotel
