@@ -417,6 +417,22 @@ footer {
         margin-top: 1em;
         margin-left: 0 !important;
     }
+    .progress {
+        width: 80% !important;
+        margin-left: 3em;
+    }
+    .location {
+        margin-left: 3em;
+    }
+    .offerts {
+        display: flex;
+    }
+    .oferti {
+        margin: 0px !important;
+    }
+    .oferti p, .oferti a {
+        margin-left: 8em;
+    }
 }
 
 @media screen and (max-width:992px) {
@@ -475,6 +491,36 @@ footer {
         margin-right: 1em !important;
         float: right;
     }
+    .templateHotels img {
+        width: 20em;
+    }
+    .templateHotels>.row>.col-sm-3 button {
+        width: 7em !important;
+    }
+    .templateHotels>.row>.col-sm-7 p {
+        float: left;
+        width: 100%;
+        margin-left: 40%;
+    }
+    .templateHotels>.row>.col-sm-7 p:first-of-type {
+        margin-top: 3em !important;
+    }
+    .progress {
+        width: 70% !important;
+        margin-left: 7em;
+    }
+    .location {
+        margin-left: 7em;
+    }
+    .offerts {
+        display: flex;
+    }
+    .oferti {
+        margin: 0px !important;
+    }
+    .oferti p, .oferti a {
+        margin-left: 5em;
+    }
 }
 
 @media screen and (max-width:767px) {
@@ -493,7 +539,7 @@ footer {
         margin-right: -2em;
     }
     .buttons button {
-        width: 49.3% !important;
+        width: 49.2% !important;
         margin: 0 auto !important;
         font-size: 1em;
     }
@@ -508,7 +554,7 @@ footer {
         float: right
     }
     .buttonsHeader {
-        margin: 0 auto;
+        margin: 10px auto 0px auto;
     }
     .buttonsHeader .date1 {
         width: 50% !important;
@@ -533,7 +579,7 @@ footer {
         margin-top: 1em;
     }
     .category button, .rating button, .facilities button {
-        width: 19.7%;
+        width: 19.6%;
         margin-left: -0.2em;
     }
     .firstBtn {
@@ -558,5 +604,8 @@ footer {
     .deleteFiltersBtn {
         width: 100%;
         margin-bottom: 10px;
+    }
+    #sel1 {
+        margin-top: 0.7em;
     }
 }
