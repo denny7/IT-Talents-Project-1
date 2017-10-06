@@ -51,11 +51,12 @@
                     <div class="col-sm-4 ">
                         <button type="submit" class="btn btn-default searchHeader">Търси</button>
                     </div>
+
                 </div>
                 <div class="row">
                   <div class="buttonsHeader">
                     <div class="col-sm-3 ">
-                      <div class="input-group date" data-provide="datepicker">
+                      <div class="input-group date date1" data-provide="datepicker">
                         <input type="text" class="form-control firstDate" value="">
                         <div class="input-group-addon">
                           <span class="glyphicon glyphicon-th"></span>
@@ -63,7 +64,7 @@
             </div>
     </div>
     <div class="col-sm-3 ">
-        <div class="input-group date" data-provide="datepicker">
+        <div class="input-group date2" data-provide="datepicker">
             <input type="text" class="form-control secondDate" value="">
             <div class="input-group-addon">
                 <span class="glyphicon glyphicon-th"></span>
@@ -141,7 +142,7 @@
                         <div class="topFilters">
                             <div class="category">
                                 <h3 class="filterHeading"> Категория </h3>
-                                <button type="button" id="oneStar" class="btn btn-default btnStars">1<span class="star">&#10031;</span></button>
+                                <button type="button" id="oneStar" class="btn btn-default btnStars firstBtn">1<span class="star">&#10031;</span></button>
                                 <button type="button" id="twoStars" class="btn btn-default btnStars">2<span class="star">&#10031;</span></button>
                                 <button type="button" id="threeStars" class="btn btn-default btnStars">3<span class="star">&#10031;</span></button>
                                 <button type="button" id="fourStars" class="btn btn-default btnStars">4<span class="star">&#10031;</span></button>
@@ -150,11 +151,11 @@
                             <!-- close .category -->
                             <div class="rating">
                                 <h3 class="filterHeading"> Оценка </h3>
-                                <button type="button" id="zero" class="btn btn-default ratingBtn">0+</button>
-                                <button type="button" id="twenty" class="btn btn-default ratingBtn">20+</button>
-                                <button type="button" id="fourthy" class="btn btn-default ratingBtn">40+</button>
-                                <button type="button" id="sixty" class="btn btn-default ratingBtn">60+</button>
-                                <button type="button" id="eighty" class="btn btn-default ratingBtn">80+</button>
+                                <button type="button" id="zero" class="btn btn-default ratingBtn firstBtn"><span class="btnText">0+</span></button>
+                                <button type="button" id="twenty" class="btn btn-default ratingBtn"><span class="btnText">20+</span></button>
+                                <button type="button" id="fourthy" class="btn btn-default ratingBtn"><span class="btnText">40+</span></button>
+                                <button type="button" id="sixty" class="btn btn-default ratingBtn"><span class="btnText">60+</span></button>
+                                <button type="button" id="eighty" class="btn btn-default ratingBtn"><span class="btnText">80+</span></button>
                             </div>
                             <!-- close .rating -->
                             <div class="price">
@@ -169,7 +170,7 @@
                             <!-- close .price -->
                             <div class="facilities">
                                 <h3 class="filterHeading"> Топ удобства </h3>
-                                <button type="button" id="spa" class="btn facilities btn-default ">Спа</button>
+                                <button type="button" id="spa" class="btn facilities btn-default firstBtn">Спа</button>
                                 <button type="button" id="beach" class="btn facilities btn-default ">Плаж</button>
                                 <button type="button" id="wiFi" class="btn facilities btn-default ">Безплатен Wi-fi</button>
                                 <button type="button" id="breakfast" class="btn facilities btn-default ">Закуска</button>
