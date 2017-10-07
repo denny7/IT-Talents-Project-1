@@ -674,14 +674,26 @@ var userList = (function() {
         this.username = username;
         this.password = password;
         this.email = email;
+        this.favorites = [];
     }
-
+    User.prototype.addFavourite = function(hotel){
+        this.favorites.push(hotel);
+    }
+    User.prototype.removeFavourite = function(hotel){
+        var indexHotel = this.favorites.findIndex(favourite=>hotel.name===favourite.name);
+        this.favorites.splice(indexHotel,1);
+    }
     function UserList() {
         if (localStorage.getItem("users") != null) {
             this._users = JSON.parse(localStorage.getItem("users"));
         } else {
             this._users = [new User("denny", "dennY7", "denislav.yasenov@abv.bg")];
             localStorage.setItem("users", JSON.stringify(this._users));
+        }
+    }
+    UserList.prototype.addFavourite = function(username,hotel){
+        if (this.checkUsername(username)) {
+            
         }
     }
     UserList.prototype.checkUsername = function(username) {
