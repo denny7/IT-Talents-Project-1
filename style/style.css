@@ -2,319 +2,609 @@ body {
     margin: 0 auto;
     background: #ebeced;
 }
+
 .headerUp {
     height: auto;
     background: white;
 }
+
 .currency {
     height: 70px;
     border: none;
     border-radius: 0;
     border-left: 1px solid #e4e5e3;
 }
-.myProfile{
+
+.myProfile {
     height: 70px;
     margin-right: 25px;
     border: none;
     border-radius: 0;
     border-left: 1px solid #e4e5e3;
 }
+
 #logo {
     width: 150px;
     display: inline-block;
-    margin-left:45%;
-  margin-top : -40px;
+    margin-left: 45%;
+    margin-top: -40px;
 }
+
 .headerDown {
     background: #37454d;
     height: auto;
     margin-top: -40px;
 }
+
 .headerDown .form-control1, .headerDown .searchHeader {
-  margin-top: 15px;
-  margin-bottom: 7px;
-  height: 40px;
-  margin-left: 23%;
+    margin-top: 15px;
+    margin-bottom: 7px;
+    height: 40px;
+    margin-left: 23%;
 }
-.buttonsHeader{
-  margin-left:250px;
+
+.buttonsHeader {
+    margin-left: 250px;
 }
+
 .searchHeader {
-  margin-top: 0px !important;
+    margin-top: 0px !important;
 }
-.headerDown .searchHeader{
-  margin-top: 15px;
-  height: 40px;
-  margin-left: 30%;
+
+.headerDown .searchHeader {
+    margin-top: 15px;
+    height: 40px;
+    margin-left: 30%;
 }
 
 .buttonsHeader button {
-display: inline-block;
-width: 100%;
-height: 35px;
-margin-bottom: 15px;
-}
-.buttonsHeader .datepicker{
-  height: 40px;
-  width: 22.38%;
-}
-.dropdown,.currency {
-  display: inline-block;
-  float: right;
-}
-/* header ends here */
-main {
-  margin-top: 12px;
-}
-.showDate p {
-  font-size: 1.3em;
-}
-.mapArticle {
-  height: 100px;
-  width: 100%;
-  border: 1px solid #37454d;
-  border-radius: 3px;
-  margin : 5px 0px;
-  background-color:#ebeced;
-}
-.mapArticle button {
-  margin-top: 12.5%;
-  margin-left: 22.5%;
-  border: 1px solid black;
-}
-.filterArticle>.buttons>button{
-width: 50%;
-}
-.filterArticle>.buttons>button:last-child{
-  margin-left:-0.5em;
+    display: inline-block;
+    width: 100%;
+    height: 35px;
+    margin-bottom: 15px;
 }
 
-.filterHeading{
-  width: 100%;
-  text-align: center;
+.buttonsHeader .datepicker {
+    height: 40px;
+    width: 22.38%;
 }
-.category>button, .rating>button, .facilities>button{
-  width: 18%;
-  margin-left: 1.1px;
+
+.dropdown, .currency {
+    display: inline-block;
+    float: right;
 }
+
+
+/* header ends here */
+
+main {
+    margin-top: 12px;
+}
+
+.showDate p {
+    font-size: 1.3em;
+}
+
+.mapArticle {
+    height: 100px;
+    width: 100%;
+    border: 1px solid #37454d;
+    border-radius: 3px;
+    margin: 5px 0px;
+    background-color: #ebeced;
+}
+
+.mapArticle button {
+    margin-top: 12.5%;
+    margin-left: 22.5%;
+    border: 1px solid black;
+}
+
+.filterArticle>.buttons>button {
+    width: 50%;
+}
+
+.filterArticle>.buttons>button:last-child {
+    margin-left: -0.5em;
+}
+
+.filterHeading {
+    width: 100%;
+    text-align: center;
+}
+
+.category>button, .rating>button, .facilities>button {
+    width: 18%;
+    margin-left: 1.1px;
+}
+
 .currentRange {
-  text-align: center;
+    text-align: center;
 }
+
 .minRange {
-  display: inline-block;
+    display: inline-block;
 }
+
 .maxRange {
-  display: inline-block;
-  float: right
+    display: inline-block;
+    float: right
 }
-.formSearch>input, .formSearch>button{
-  display: inline-block;
+
+.formSearch>input, .formSearch>button {
+    display: inline-block;
 }
-.formSearch>button{
-  margin-left: -0.8em;
+
+.formSearch>button {
+    margin-left: -0.8em;
 }
+
 .formSearch>input {
-  width: 14em !important;
+    width: 14em !important;
 }
+
 .price>.range {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
-.deleteFilters{
-  text-align: center;
-  margin-bottom: 10px;
+
+.deleteFilters {
+    text-align: center;
+    margin-bottom: 10px;
 }
+
 .moreFilters {
-  display: none;
+    display: none;
 }
-.moreFilters h3{
-  text-align: center;
-  cursor: pointer;
+
+.moreFilters h3 {
+    text-align: center;
+    cursor: pointer;
 }
+
 .moreFilters ul {
-  list-style-type: none;
+    list-style-type: none;
 }
+
 .moreFilters label {
-  font-weight: none;
-  margin-left: -10px;
+    font-weight: none;
+    margin-left: -10px;
 }
+
 .sidenav {
     height: auto;
     background: #7C8079;
 }
+
+
 /* sidenav ends here */
+
 .center {
     height: 350px;
     background: rebecapurple;
 }
+
 .showDate p {
-  text-align: center;
+    text-align: center;
 }
-.showDate{
-  display: none;
+
+.showDate {
+    display: none;
 }
+
 footer {
     height: auto;
     background: #293339;
 }
-.footerUp>h4{
-  margin-top: 10px;
-  text-align: center;
-  padding-top: 10px;
-}
-.centered {
-  display: flex;
-  justify-content: center;
-}
-.center-block{
-  margin-top: -20px;
-}
-.footerUp button {
-  text-align: center;
-  width : 10em;
-  height: 3em;
-  margin-left: -7px;
-}
-.footerUp input{
-width : 20em;
-height: 3em;
-border-radius: 5px;
-}
-.footerUp hr{
-  width: 80%;
-}
-.footerMiddle>p{
-  text-align:right;
-  margin-right: 15px;
-  color:white;
-}
-.footerDown p {
-  text-align: center;
-}
-.footerDown a {
-  color:white;
-}
-.lastSection {
-  padding:1px 0;
-  margin-top: -5px 0px;
-  background: #7C8079;
-  color : white;
-}
-.lastSection>h1, .lastSection>p{
-  text-align: center;
-}
-#logged {
-  display:none;
-  float: right;
-  margin-top: 25px;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-#logged img {
-  width : 25px;
-}
-#id02,#id01 {
-  z-index: 500;
-}
-.center{
-  height: auto
-}
-/* handlebars*/
-.templateHotels {
-  border : 2px dashed white;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-.profilePicture {
-  width: 250px;
-  height: 200px;
-  cursor: pointer;
-  float: left;
-  margin-left: 0.175em;
-  margin-right: 0.8em;
-}
-.templateHotels > .row > .col-sm-7 > p:first-of-type{
-  margin-top: 2.2em;
-}
-.templateHotels > .row > .col-sm-7 > p{
-  text-align: center;
-}
-.templateHotels > .row > .col-sm-2 > .ofertiHotel > p {
-  margin-bottom: 2em;
-}
-.templateHotels > .row > .col-sm-2 > .ofertiHotel > a {
-  color:#7C8079;
-}
-.templateHotels > .row > .col-sm-2 > .ofertiHotel > a:hover{
-  color: #7C8079;
+
+.footerUp>h4 {
+    margin-top: 10px;
+    text-align: center;
+    padding-top: 10px;
 }
 
-.templateHotels > .row > .col-sm-3 >  p {
-  margin-bottom: 2em;
+.centered {
+    display: flex;
+    justify-content: center;
 }
-.templateHotels > .row > .col-sm-3 >a> button {
-  width : 10em;
+
+.center-block {
+    margin-top: -20px;
 }
-.templateHotels > .row > .col-sm-7 > img.favourites{
-  position: absolute;
-  height: 50px;
-  z-index: 50;
-  float:left;
-  cursor: pointer;
-  opacity: 0.7;
-  display:none;
+
+.footerUp button {
+    text-align: center;
+    width: 10em;
+    height: 3em;
+    margin-left: -7px;
+}
+
+.footerUp input {
+    width: 20em;
+    height: 3em;
+    border-radius: 5px;
+}
+
+.footerUp hr {
+    width: 80%;
+}
+
+.footerMiddle>p {
+    text-align: right;
+    margin-right: 15px;
+    color: white;
+}
+
+.footerDown p {
+    text-align: center;
+}
+
+.footerDown a {
+    color: white;
+}
+
+.lastSection {
+    padding: 1px 0;
+    margin-top: -5px 0px;
+    background: #7C8079;
+    color: white;
+}
+
+.lastSection>h1, .lastSection>p {
+    text-align: center;
+}
+
+#logged {
+    display: none;
+    float: right;
+    margin-top: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#logged img {
+    width: 25px;
+}
+
+#id02, #id01 {
+    z-index: 500;
+}
+
+.center {
+    height: auto
+}
+
+
+/* handlebars*/
+
+.templateHotels {
+    border: 2px dashed white;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.profilePicture {
+    width: 250px;
+    height: 200px;
+    cursor: pointer;
+    float: left;
+    margin-left: 0.175em;
+    margin-right: 0.8em;
+}
+
+.templateHotels>.row>.col-sm-7>p:first-of-type {
+    margin-top: 2.2em;
+}
+
+.templateHotels>.row>.col-sm-7>p {
+    text-align: center;
+}
+
+.templateHotels>.row>.col-sm-2>.ofertiHotel>p {
+    margin-bottom: 2em;
+}
+
+.templateHotels>.row>.col-sm-2>.ofertiHotel>a {
+    color: #7C8079;
+}
+
+.templateHotels>.row>.col-sm-2>.ofertiHotel>a:hover {
+    color: #7C8079;
+}
+
+.templateHotels>.row>.col-sm-3>p {
+    margin-bottom: 2em;
+}
+
+.templateHotels>.row>.col-sm-3>a>button {
+    width: 10em;
 }
 .oldPrice {
-  color : red;
-  text-decoration: line-through;
+    color: red;
+    text-decoration: line-through;
 }
+
 .newPrice {
-  color : green;
-  font-weight: bold;
+    color: green;
+    font-weight: bold;
 }
+
 .avgRating {
-  margin-top: 2em;
-  width: 250px;
-  height: 300px;
-  background: #7c8079;
-  border-radius: 3px;
+    margin-top: 2em;
+    width: 250px;
+    height: 300px;
+    background: #7c8079;
+    border-radius: 3px;
 }
-.avgRating > .avgRatingPar {
-  font-size: 1.5em;
-  text-align: center;
-  padding-top : 5em;
+
+.avgRating>.avgRatingPar {
+    font-size: 1.5em;
+    text-align: center;
+    padding-top: 5em;
 }
-.avgRating > .avgRatingNumber {
-  font-size: 2em;
-  text-align: center;
+
+.avgRating>.avgRatingNumber {
+    font-size: 2em;
+    text-align: center;
 }
+
 .oferti {
-  display: inline-block;
-  margin-right: 10em;
+    display: inline-block;
+    margin-right: 10em;
 }
-.oferti:first-of-type{
-  margin-left: 11em;
+
+.oferti:first-of-type {
+    margin-left: 11em;
 }
-.oferti > p, .oferti > a {
-  text-align: center;
+
+.oferti>p, .oferti>a {
+    text-align: center;
 }
-.oferti > a {
-  color : #7c8079
+
+.oferti>a {
+    color: #7c8079
 }
+
 .infoHotel {
-  margin-left: 1em;
+    margin-left: 1em;
 }
-.infoHotel  p {
-  display: inline-block;
-  margin-right: 2em;
+
+.infoHotel p {
+    display: inline-block;
+    margin-right: 2em;
 }
-.infoHotel  p:first-of-type {
-  display: block;
-  font-size: 1.5em;
+
+.infoHotel p:first-of-type {
+    display: block;
+    font-size: 1.5em;
 }
+
 .photos img {
-  width : 100%;
-  height: 300px !important;
+    width: 100%;
+    height: 300px !important;
 }
+
 .moreAboutHotel, .infoHotel, .opinions, .offerts {
-  display: none;
+    display: none;
+}
+
+
+/* responsive*/
+
+@media screen and (max-width:1199px) {
+    .formSearch input {
+        width: 11.8em !important;
+        margin-left: -0.3em;
+        float: left;
+    }
+    .formSearch button {
+        width: 2.8em !important;
+        margin-left: -1.27em !important;
+        float: right;
+    }
+    .mapArticle {
+        height: 2.3em;
+        border: none !important;
+        background-color: #7c8079;
+    }
+    .mapArticle button {
+        border: none !important;
+        width: 99%;
+        margin-top: 0.5em !important;
+        margin-left: 0px;
+    }
+    .filterArticle {
+        margin-top: 1em;
+        margin-left: 0 !important;
+    }
+    .progress {
+        width: 80% !important;
+        margin-left: 3em;
+    }
+    .location {
+        margin-left: 3em;
+    }
+    .offerts {
+        display: flex;
+    }
+    .oferti {
+        margin: 0px !important;
+    }
+    .oferti p, .oferti a {
+        margin-left: 8em;
+    }
+}
+
+@media screen and (max-width:992px) {
+    .mapArticle {
+        height: 2.3em;
+        border: none !important;
+        background-color: #7c8079;
+    }
+    .mapArticle button {
+        border: none !important;
+        width: 99%;
+        margin-top: 0.5em !important;
+        margin-left: 0px;
+    }
+    .filterArticle {
+        margin-top: 1em;
+        margin-left: 0 !important;
+    }
+    .buttons button {
+        width: 48% !important;
+        margin: 0 auto !important;
+        font-size: 0.72em;
+    }
+    .category button, .rating button, .facilities button {
+        width: 19.7%;
+        margin-left: -0.2em;
+    }
+    .btnText {
+        margin-left: -0.4em;
+    }
+    .formSearch input {
+        width: 12em !important;
+        margin-left: -1em;
+        float: left;
+    }
+    .formSearch button {
+        width: 3em !important;
+        margin-left: -20px !important;
+        float: right;
+    }
+    .deleteFiltersBtn {
+        clear: both;
+        width: 99%;
+        font-size: 0.8em;
+    }
+    .formSearch {
+        width: 120% !important;
+    }
+    .formSearch input {
+        width: 86% !important;
+        margin: 0 auto !important;
+        margin-left: -1em !important;
+    }
+    .formSearch button {
+        width: 25% !important;
+        margin-right: 1em !important;
+        float: right;
+    }
+    .templateHotels img {
+        width: 20em;
+    }
+    .templateHotels>.row>.col-sm-3 button {
+        width: 7em !important;
+    }
+    .templateHotels>.row>.col-sm-7 p {
+        float: left;
+        width: 100%;
+        margin-left: 40%;
+    }
+    .templateHotels>.row>.col-sm-7 p:first-of-type {
+        margin-top: 3em !important;
+    }
+    .progress {
+        width: 70% !important;
+        margin-left: 7em;
+    }
+    .location {
+        margin-left: 7em;
+    }
+    .offerts {
+        display: flex;
+    }
+    .oferti {
+        margin: 0px !important;
+    }
+    .oferti p, .oferti a {
+        margin-left: 5em;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .headerUp {
+        width: 99%;
+    }
+    #logo {
+        margin-left: -0.8em;
+    }
+    .currency {
+        width: 6em;
+        margin-left: -5em;
+    }
+    .dropdown {
+        float: right;
+        margin-right: -2em;
+    }
+    .buttons button {
+        width: 49.2% !important;
+        margin: 0 auto !important;
+        font-size: 1em;
+    }
+    .form-control1 {
+        width: 85%;
+        margin: 0px !important;
+        float: left;
+    }
+    .searchHeader {
+        width: 15%;
+        margin: 0px !important;
+        float: right
+    }
+    .buttonsHeader {
+        margin: 10px auto 0px auto;
+    }
+    .buttonsHeader .date1 {
+        width: 50% !important;
+        margin-top: 0px;
+        float: left;
+    }
+    .buttonsHeader .date2 {
+        width: 50% !important;
+        margin-top: -1px !important;
+    }
+    .mapArticle {
+        height: 2.3em;
+        border: none !important;
+        background-color: #7c8079;
+    }
+    .mapArticle button {
+        border: none !important;
+        width: 99%;
+        margin-top: 0.5em !important;
+    }
+    .filterArticle {
+        margin-top: 1em;
+    }
+    .category button, .rating button, .facilities button {
+        width: 19.6%;
+        margin-left: -0.2em;
+    }
+    .firstBtn {
+        margin-left: 0px !important;
+    }
+    .showMapBtn {
+        width: 100%;
+        margin: 0 auto !important;
+    }
+    .formSearch {
+        width: 100% !important;
+    }
+    .formSearch input {
+        width: 86% !important;
+        margin: 0 auto !important;
+    }
+    .formSearch button {
+        width: 14% !important;
+        float: right;
+        margin-right: 0px !important;
+    }
+    .deleteFiltersBtn {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    #sel1 {
+        margin-top: 0.7em;
+    }
 }
