@@ -293,6 +293,7 @@ function filterByMoreFilters() {
                 $(".minRange").html("10 EUR");
                 $(".maxRange").html("500 EUR");
                 $("#rangePrice").attr("min", "10").attr("max", "500");
+                $("#rangePrice").val(250);
                 selectedCurrency = '';
             })
         }
@@ -435,7 +436,7 @@ function resetFilters() {
     selectedValue = '';
     clickedCategory = '';
     clickedRating = '';
-    slider.value = 510;
+    slider.value = (parseInt(document.querySelector(".maxRange").value))/2;
     currentRange.innerText = '';
     filterPrice = '';
     if (clickedSpa) {
