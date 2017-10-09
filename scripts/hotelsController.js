@@ -128,11 +128,11 @@ loginButton.addEventListener("click", function (event) {
     if (userList.login(username, password)) {
         var dropDown = document.getElementsByClassName("dropdown")[0]
         dropDown.style.display = "none";
-        document.getElementById("userShowName").innerText = "  " + username;
+        document.getElementById("userShowName").innerText = username;
         document.getElementById("logged").style.display = "inline-block";
         modal.style.display = 'none';
         logDisplayed = false;
-        document.querySelectorAll(".templateHotels > .row > .col-sm-7 > img.favourites").forEach(fav => fav.style.display = "inline-block");
+        favouriteHotels();
     } else {
         p.innerText = "Невалиден потребител или парола!";
         p.style.color = "red";
@@ -416,9 +416,7 @@ function resetFilters() {
     var checkedFilters = document.querySelectorAll("input:checked");
     checkedFilters.forEach(function (filter) {
         filter.checked = false;
-        // filter.removeAttribute("checked");
-    }
-    );
+    });
     selectedValue = '';
     clickedCategory = '';
     clickedRating = '';
@@ -461,6 +459,7 @@ $.fn.datepicker.defaults.startDate = "0";
 var date = new Date();
 document.getElementsByClassName("firstDateSpan")[0].innerText = date.getDay() + 1 + "/" + (date.getMonth() + 1) + "/" + date.getFullYear()
 document.getElementsByClassName("secondDateSpan")[0].innerText = date.getDay() + 2 + "/" + (date.getMonth() + 1) + "/" + date.getFullYear()
+
 function secondDateF() {
     var day = +($(".firstDate").val().slice(0, 2)) + 1;
     var month = $(".firstDate").val().slice(3, 5)
@@ -515,17 +514,7 @@ function showHotels(hotels) {
             for (var index = 0; index < hotels.length; index++) {
                 container.innerHTML += templateFunc(hotels[index]);
             }
-            if (document.getElementById("logged").style.display === "inline-block") {
-                document.querySelectorAll(".templateHotels > .row > .col-sm-7 > img.favourites").forEach(function(fav){
-                    fav.style.display = "inline-block";
-                    fav.addEventListener("mouseover",function(event){
-                        this.style.opacity = 1;
-                    })
-                    fav.addEventListener("mouseout",function(event){
-                        this.style.opacity = 0.7;
-                    })
-                });
-            }
+            favouriteHotels();
             addEventsForHotels();
         })
         document.getElementsByClassName("showDate")[0].style.display = "block";
@@ -534,80 +523,119 @@ function showHotels(hotels) {
 
 }
 
-function addEventsForHotels() {
-    var profilePictures = document.getElementsByClassName("profilePicture");
-    Array.from(profilePictures).forEach(function (img) {
-        img.addEventListener("click", function () {
-            var moreAboutHotel = this.parentNode.parentNode.nextElementSibling;
-            if (moreAboutHotel.style.display == "none") {
-                moreAboutHotel.style.display = "block";
-            } else {
-                moreAboutHotel.style.display = "none";
+function favouriteHotels() {
+    if (document.getElementById("logged").style.display === "inline-block") {
+        document.querySelectorAll(".templateHotels > .row > .col-sm-7 > img.favourites").forEach(function (fav) {
+            fav.style.display = "inline-block";
+            console.log(fav);
+            function maxOpacity(ev){
+                fav.style.opacity = 1;
             }
+            function reducedOpacity(ev){
+                ev.target.style.opacity = 0.7;
+            }
+            var hotelName = fav.parentNode.querySelector("p").innerText;
+            var hotel = findHotel(hotelName);
+            var username = document.getElementById("userShowName").innerText;
+            if (userList.isTheHotelAdded(username, hotel)) {
+                fav.removeEventListener("mouseover", maxOpacity(event))
+                fav.removeEventListener("mouseout", reducedOpacity(event))
+                fav.style.opacity = 1; 
+            } else {
+                fav.addEventListener("mouseover", maxOpacity(event))
+                fav.addEventListener("mouseout", reducedOpacity(event))
+            }
+            fav.addEventListener("click", function (event) {
+                hotelName = event.target.parentNode.querySelector("p").innerText;
+                hotel = findHotel(hotelName);
+                if (userList.isTheHotelAdded(username, hotel)) {
+                    userList.removeFavourite(username,hotel);
+                    fav.addEventListener("mouseover", maxOpacity(event))
+                    fav.addEventListener("mouseout", reducedOpacity(event))
+                } else {
+                    userList.addFavourite(username,hotel);
+                    fav.removeEventListener("mouseover", maxOpacity(event))
+                    fav.removeEventListener("mouseout", reducedOpacity(event))
+                    fav.style.opacity = 1;
+                }
+            })
         });
-    });
-    var closeMenu = document.getElementsByClassName("closeMenu");
-    Array.from(closeMenu).forEach(function (close) {
-        close.addEventListener("click", function () {
-            event.preventDefault()
-            var moreAboutHotel = this.parentNode.parentNode.parentNode.parentNode
-            moreAboutHotel.style.display = "none";
-        });
-    })
-    var menuPhotos = document.getElementsByClassName("menuPhotos");
-    Array.from(menuPhotos).forEach(function (photoM) {
-        photoM.addEventListener("click", function (event) {
-            event.preventDefault()
-            var photos = this.parentNode.parentNode.parentNode.nextElementSibling
-            var infoHotel = this.parentNode.parentNode.parentNode.nextElementSibling.nextElementSibling
-            var opinions = this.parentNode.parentNode.parentNode.nextElementSibling.nextElementSibling.nextElementSibling
-            var offerts = this.parentNode.parentNode.parentNode.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling
-            photos.style.display = "block";
-            infoHotel.style.display = "none";
-            opinions.style.display = "none";
-            offerts.style.display = "none";
-        })
-    })
-    var menuInfo = document.getElementsByClassName("menuInfo");
-    Array.from(menuInfo).forEach(function (infoM) {
-        infoM.addEventListener("click", function (event) {
-            event.preventDefault()
-            var photos = this.parentNode.parentNode.parentNode.nextElementSibling
-            var infoHotel = this.parentNode.parentNode.parentNode.nextElementSibling.nextElementSibling
-            var opinions = this.parentNode.parentNode.parentNode.nextElementSibling.nextElementSibling.nextElementSibling
-            var offerts = this.parentNode.parentNode.parentNode.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling
-            photos.style.display = "none";
-            infoHotel.style.display = "block";
-            opinions.style.display = "none";
-            offerts.style.display = "none";
-        })
-    })
-    var menuOpinions = document.getElementsByClassName("menuOpinions");
-    Array.from(menuOpinions).forEach(function (opinionsM) {
-        opinionsM.addEventListener("click", function (event) {
-            event.preventDefault()
-            var photos = this.parentNode.parentNode.parentNode.nextElementSibling
-            var infoHotel = this.parentNode.parentNode.parentNode.nextElementSibling.nextElementSibling
-            var opinions = this.parentNode.parentNode.parentNode.nextElementSibling.nextElementSibling.nextElementSibling
-            var offerts = this.parentNode.parentNode.parentNode.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling
-            photos.style.display = "none";
-            infoHotel.style.display = "none";
-            opinions.style.display = "block";
-            offerts.style.display = "none";
-        })
-    })
-    var menuOfferts = document.getElementsByClassName("menuOfferts");
-    Array.from(menuOfferts).forEach(function (offertsM) {
-        offertsM.addEventListener("click", function (event) {
-            event.preventDefault()
-            var photos = this.parentNode.parentNode.parentNode.nextElementSibling
-            var infoHotel = this.parentNode.parentNode.parentNode.nextElementSibling.nextElementSibling
-            var opinions = this.parentNode.parentNode.parentNode.nextElementSibling.nextElementSibling.nextElementSibling
-            var offerts = this.parentNode.parentNode.parentNode.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling
-            photos.style.display = "none";
-            infoHotel.style.display = "none";
-            opinions.style.display = "none";
-            offerts.style.display = "block";
-        })
-    })
+    }
 }
+    function addEventsForHotels() {
+        var profilePictures = document.getElementsByClassName("profilePicture");
+        Array.from(profilePictures).forEach(function (img) {
+            img.addEventListener("click", function () {
+                var moreAboutHotel = this.parentNode.parentNode.nextElementSibling;
+                if (moreAboutHotel.style.display == "none") {
+                    moreAboutHotel.style.display = "block";
+                } else {
+                    moreAboutHotel.style.display = "none";
+                }
+            });
+        });
+        var closeMenu = document.getElementsByClassName("closeMenu");
+        Array.from(closeMenu).forEach(function (close) {
+            close.addEventListener("click", function () {
+                event.preventDefault()
+                var moreAboutHotel = this.parentNode.parentNode.parentNode.parentNode
+                moreAboutHotel.style.display = "none";
+            });
+        })
+        var menuPhotos = document.getElementsByClassName("menuPhotos");
+        Array.from(menuPhotos).forEach(function (photoM) {
+            photoM.addEventListener("click", function (event) {
+                event.preventDefault()
+                var photos = this.parentNode.parentNode.parentNode.nextElementSibling
+                var infoHotel = this.parentNode.parentNode.parentNode.nextElementSibling.nextElementSibling
+                var opinions = this.parentNode.parentNode.parentNode.nextElementSibling.nextElementSibling.nextElementSibling
+                var offerts = this.parentNode.parentNode.parentNode.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling
+                photos.style.display = "block";
+                infoHotel.style.display = "none";
+                opinions.style.display = "none";
+                offerts.style.display = "none";
+            })
+        })
+        var menuInfo = document.getElementsByClassName("menuInfo");
+        Array.from(menuInfo).forEach(function (infoM) {
+            infoM.addEventListener("click", function (event) {
+                event.preventDefault()
+                var photos = this.parentNode.parentNode.parentNode.nextElementSibling
+                var infoHotel = this.parentNode.parentNode.parentNode.nextElementSibling.nextElementSibling
+                var opinions = this.parentNode.parentNode.parentNode.nextElementSibling.nextElementSibling.nextElementSibling
+                var offerts = this.parentNode.parentNode.parentNode.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling
+                photos.style.display = "none";
+                infoHotel.style.display = "block";
+                opinions.style.display = "none";
+                offerts.style.display = "none";
+            })
+        })
+        var menuOpinions = document.getElementsByClassName("menuOpinions");
+        Array.from(menuOpinions).forEach(function (opinionsM) {
+            opinionsM.addEventListener("click", function (event) {
+                event.preventDefault()
+                var photos = this.parentNode.parentNode.parentNode.nextElementSibling
+                var infoHotel = this.parentNode.parentNode.parentNode.nextElementSibling.nextElementSibling
+                var opinions = this.parentNode.parentNode.parentNode.nextElementSibling.nextElementSibling.nextElementSibling
+                var offerts = this.parentNode.parentNode.parentNode.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling
+                photos.style.display = "none";
+                infoHotel.style.display = "none";
+                opinions.style.display = "block";
+                offerts.style.display = "none";
+            })
+        })
+        var menuOfferts = document.getElementsByClassName("menuOfferts");
+        Array.from(menuOfferts).forEach(function (offertsM) {
+            offertsM.addEventListener("click", function (event) {
+                event.preventDefault()
+                var photos = this.parentNode.parentNode.parentNode.nextElementSibling
+                var infoHotel = this.parentNode.parentNode.parentNode.nextElementSibling.nextElementSibling
+                var opinions = this.parentNode.parentNode.parentNode.nextElementSibling.nextElementSibling.nextElementSibling
+                var offerts = this.parentNode.parentNode.parentNode.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling
+                photos.style.display = "none";
+                infoHotel.style.display = "none";
+                opinions.style.display = "none";
+                offerts.style.display = "block";
+            })
+        })
+    }

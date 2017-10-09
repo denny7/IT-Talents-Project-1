@@ -318,6 +318,16 @@ footer {
 .templateHotels>.row>.col-sm-3>a>button {
     width: 10em;
 }
+.templateHotels > .row > .col-sm-7 > img.favourites{
+  position: absolute;
+  height: 50px;
+  z-index: 50;
+  float:left;
+  cursor: pointer;
+  opacity: 0.7;
+  display:none;
+  width: 50px;
+}
 .oldPrice {
     color: red;
     text-decoration: line-through;

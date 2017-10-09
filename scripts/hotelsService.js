@@ -676,13 +676,7 @@ var userList = (function() {
         this.email = email;
         this.favorites = [];
     }
-    User.prototype.addFavourite = function(hotel){
-        this.favorites.push(hotel);
-    }
-    User.prototype.removeFavourite = function(hotel){
-        var indexHotel = this.favorites.findIndex(favourite=>hotel.name===favourite.name);
-        this.favorites.splice(indexHotel,1);
-    }
+    
     function UserList() {
         if (localStorage.getItem("users") != null) {
             this._users = JSON.parse(localStorage.getItem("users"));
@@ -692,12 +686,20 @@ var userList = (function() {
         }
     }
     UserList.prototype.addFavourite = function(username,hotel){
-        if (this.checkUsername(username)) {
-            
-        }
+        var findUser = this._users.find(user=>user.username===username);
+        findUser.favorites.push(hotel);
+    }
+    UserList.prototype.removeFavourite = function(username,hotel){
+        var findUser = this._users.find(user=>user.username===username);
+        var indexHotel = findUser.favorites.findIndex(favourite=>hotel.name===favourite.name);
+        findUser.favorites.splice(indexHotel,1);
+    }
+    UserList.prototype.isTheHotelAdded = function(username,hotel){
+        var findUser = this._users.find(user=>user.username===username);
+        return findUser.favorites.find(fav=>fav.name==hotel.name);
     }
     UserList.prototype.checkUsername = function(username) {
-        return this._users.some(user => user.username === username);
+        return this._users.find(user => user.username === username);
     }
     UserList.prototype.addUser = function(username, password, email) {
         var pattern = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[\d])(?=\S+$).{6,}$/.test(password)
