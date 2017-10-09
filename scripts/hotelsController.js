@@ -163,13 +163,13 @@ document.querySelector("button.searchHeader").addEventListener("click", function
     $(".container").show()
     $(".buttonsHeader").show()
     $(".findBestHotel").hide()
-    $(".headerDown > .row > .col-sm-4").css("margin-top","0px")
-    $(".headerDown").css("padding-bottom","0px")
+    $(".headerDown > .row > .col-sm-4").css("margin-top", "0px")
+    $(".headerDown").css("padding-bottom", "0px")
 
     filterByMoreFilters();
 }, false)
 //Event for the hotel search bar
-document.getElementById("searchByName").addEventListener("keyup", function (event) {
+document.getElementById("searchByName").addEventListener("keyup", function(event) {
     event.preventDefault();
     if (event.key == "Enter") {
         isItSearchingByCity = false;
@@ -456,7 +456,7 @@ function resetFilters() {
     selectedValue = '';
     clickedCategory = '';
     clickedRating = '';
-    slider.value = (parseInt(document.querySelector(".maxRange").value))/2;
+    slider.value = (parseInt(document.querySelector(".maxRange").value)) / 2;
     currentRange.innerText = '';
     filterPrice = '';
     if (clickedSpa) {
@@ -484,6 +484,14 @@ function resetFilters() {
         swimmingPool.classList.remove("btn-primary")
         clickedSwimmingPool = !clickedSwimmingPool;
     }
+    ratingArr.forEach(function(btn) {
+        btn.classList.add("btn-default")
+        btn.classList.remove("btn-primary")
+    })
+    categoryArr.forEach(function(btn) {
+        btn.classList.add("btn-default")
+        btn.classList.remove("btn-primary")
+    })
     filterByMoreFilters();
 }
 document.querySelector("button.deleteFiltersBtn").addEventListener("click", function() {
