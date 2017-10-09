@@ -721,8 +721,9 @@ var userList = (function() {
 //Filters
 function filterByCity(city) {
     var findCity = null;
-    if (city) {
-        findCity = bulgaria.getCities().find(bgCity => city.toLowerCase() === bgCity.name.toLowerCase());
+    if (city.length>0) {
+        city = city.toLowerCase().trim()
+        findCity = bulgaria.getCities().find(bgCity => bgCity.name.toLowerCase().startsWith(city));
     }else{
        findCity = bulgaria.getCities()[Math.floor((Math.random() * bulgaria.getCities().length))];
     }
@@ -736,10 +737,11 @@ function findHotel(hotelName) {
         }
     }
     var foundHotel = null;
-    if (!hotelName) {
+    if (hotelName.length===0) {
         foundHotel = hotels[Math.floor(Math.random() * hotels.length)];
     } else {
-        foundHotel = hotels.find(hotel => hotelName.toLowerCase() == hotel.name.toLowerCase());
+        hotelName = hotelName.trim().toLowerCase();
+        foundHotel = hotels.find(hotel => hotel.name.toLowerCase().startsWith(hotelName));
     }
     return foundHotel;
 }
