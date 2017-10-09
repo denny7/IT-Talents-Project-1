@@ -163,11 +163,7 @@ document.querySelector("button.searchHeader").addEventListener("click", function
     filterByMoreFilters();
 }, false)
 //Event for the hotel search bar
-<<<<<<< HEAD
-document.getElementById("searchByName").addEventListener("keypress", function(event) {
-=======
 document.getElementById("searchByName").addEventListener("keyup", function (event) {
->>>>>>> 653a18c4f2ab19c038603f05e800022b9247bb3c
     event.preventDefault();
     if (event.key == "Enter") {
         isItSearchingByCity = false;
