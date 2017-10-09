@@ -148,7 +148,9 @@ var UDOBSTVA_V_HOTELA = {
     DOSTYPNOST: ["Достъп инвалидни колички", "Достъпен паркинг", "Достъпни коридори"]
 };
 //Hotel constructor
+var id=0;
 function Hotel(name) {
+    this.id = id++;
     this.name = name;
     this.imgs = [];
     var randomForRoom = Math.random();
@@ -676,7 +678,7 @@ var userList = (function() {
         this.email = email;
         this.favorites = [];
     }
-    
+
     function UserList() {
         if (localStorage.getItem("users") != null) {
             this._users = JSON.parse(localStorage.getItem("users"));

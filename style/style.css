@@ -68,7 +68,9 @@ body {
     height: 40px;
     width: 22.38%;
 }
-
+.showFiltersBtn{
+  display: none;
+}
 .dropdown, .currency {
     display: inline-block;
     float: right;
@@ -530,9 +532,6 @@ footer {
     .location {
         margin-left: 7em;
     }
-    .offerts {
-        display: flex;
-    }
     .oferti {
         margin: 0px !important;
     }
@@ -683,5 +682,13 @@ footer {
     }
     #id01 .container, #id02 .container {
         width: 100%;
+    }
+    .showFiltersBtn {
+      display: block;
+      width: 100%;
+      margin-bottom: 0.5em;
+    }
+    .sidenav {
+      display: none;
     }
 }
