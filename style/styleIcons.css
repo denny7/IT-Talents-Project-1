@@ -31,3 +31,27 @@
  #social-em:hover {
      color: #f39c12;
  }
+ .facilities button{
+     height:35px;
+     background-repeat: no-repeat; 
+ }
+ #spa{
+     background-image: url(../images/spa_icon.png);
+     background-size: 35px;
+ }
+ #beach{
+     background-image: url(../images/beach_icon.png);
+     background-size: 40px 35px;
+ }
+ #wiFi{
+     background-image: url(../images/wifi_icon.png);
+     background-size: 44px 35px;
+ }
+ #breakfast{
+     background-image: url(../images/breakfast_icon.png);
+     background-size: 45px 30px;;
+ }
+ #swimmingPool{
+     background-image: url(../images/swimming_pool_icon.png);
+     background-size: 45px 40px;
+ }

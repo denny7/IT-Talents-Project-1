@@ -737,7 +737,7 @@ function findHotel(hotelName) {
     if (!hotelName) {
         foundHotel = hotels[Math.floor(Math.random() * hotels.length)];
     } else {
-        foundHotel = hotels.find(hotel => hotel.name.toLowerCase() == hotel.name.toLowerCase());
+        foundHotel = hotels.find(hotel => hotelName.toLowerCase() == hotel.name.toLowerCase());
     }
     return foundHotel;
 }

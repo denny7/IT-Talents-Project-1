@@ -149,33 +149,45 @@ function getHotelsInSearchBar() {
     return city.getHotels();
 }
 //Events for the search bar
+var isItSearchingByCity = true;
 document.querySelector("input.form-control1").addEventListener("keypress", function (event) {
     if (event.keyCode == 13) {
+        isItSearchingByCity = true;
         filterByMoreFilters();
     }
 }, false)
 document.querySelector("button.searchHeader").addEventListener("click", function () {
+    isItSearchingByCity = true;
     filterByMoreFilters();
 }, false)
 //Event for the hotel search bar
-document.getElementById("searchByName").addEventListener("blur", function (event) {
-    var searchHotel = document.getElementById("searchByName");
-    var hotel = findHotel(searchHotel.value);
-    searchHotel.value = hotel.name;
-    showHotels(hotel);
+document.getElementById("searchByName").addEventListener("keypress", function (event) {
+    event.preventDefault();
+    if (event.key == "Enter") {
+        isItSearchingByCity = false;
+        filterByMoreFilters();
+    }
 }, false)
 document.getElementById("searchByNameButton").addEventListener("click", function (event) {
     event.preventDefault();
-    var searchHotel = document.getElementById("searchByName");
-    var hotel = findHotel(searchHotel.value);
-    searchHotel.value = hotel.name;
-    showHotels(hotel);
+    isItSearchingByCity = false;
+    filterByMoreFilters();
 }, false)
 //Function for the More filters section
 function filterByMoreFilters() {
     var checkedFilters = document.querySelectorAll("input:checked");
     try {
-        var filteredHotels = getHotelsInSearchBar();
+        var filteredHotels = [];
+        if (!isItSearchingByCity) {
+            var searchHotel = document.getElementById("searchByName");
+            var hotel = findHotel(searchHotel.value);
+            searchHotel.value = hotel.name;
+            document.querySelector("input.form-control1").value = '';
+            filteredHotels.push(hotel);
+        }else{
+            filteredHotels = getHotelsInSearchBar();
+            document.getElementById("searchByName").value = '';
+        }
         if (checkedFilters.length != 0) {
             for (var index = 0; index < checkedFilters.length; index++) {
                 var categoryUdobstvo = checkedFilters[index].parentNode.parentNode.parentNode.parentNode.firstElementChild.id;
@@ -511,8 +523,12 @@ function showHotels(hotels) {
             var templateFunc = Handlebars.compile(templateText);
             var container = document.getElementById("hotelsContainer");
             container.innerHTML = '';
-            for (var index = 0; index < hotels.length; index++) {
-                container.innerHTML += templateFunc(hotels[index]);
+            if (Array.isArray(hotels)) {
+                for (var index = 0; index < hotels.length; index++) {
+                    container.innerHTML += templateFunc(hotels[index]);
+                }
+            }else{
+                container.innerHTML += templateFunc(hotels);
             }
             favouriteHotels();
             addEventsForHotels();
@@ -527,35 +543,21 @@ function favouriteHotels() {
     if (document.getElementById("logged").style.display === "inline-block") {
         document.querySelectorAll(".templateHotels > .row > .col-sm-7 > img.favourites").forEach(function (fav) {
             fav.style.display = "inline-block";
-            console.log(fav);
-            function maxOpacity(ev){
-                fav.style.opacity = 1;
-            }
-            function reducedOpacity(ev){
-                ev.target.style.opacity = 0.7;
-            }
             var hotelName = fav.parentNode.querySelector("p").innerText;
             var hotel = findHotel(hotelName);
             var username = document.getElementById("userShowName").innerText;
             if (userList.isTheHotelAdded(username, hotel)) {
-                fav.removeEventListener("mouseover", maxOpacity(event))
-                fav.removeEventListener("mouseout", reducedOpacity(event))
                 fav.style.opacity = 1; 
-            } else {
-                fav.addEventListener("mouseover", maxOpacity(event))
-                fav.addEventListener("mouseout", reducedOpacity(event))
+            }else{
+                fav.style.opacity = 0.7; 
             }
-            fav.addEventListener("click", function (event) {
-                hotelName = event.target.parentNode.querySelector("p").innerText;
-                hotel = findHotel(hotelName);
+            fav.addEventListener("click",function(event){
+                
                 if (userList.isTheHotelAdded(username, hotel)) {
                     userList.removeFavourite(username,hotel);
-                    fav.addEventListener("mouseover", maxOpacity(event))
-                    fav.addEventListener("mouseout", reducedOpacity(event))
-                } else {
+                    fav.style.opacity = 0.7; 
+                }else{
                     userList.addFavourite(username,hotel);
-                    fav.removeEventListener("mouseover", maxOpacity(event))
-                    fav.removeEventListener("mouseout", reducedOpacity(event))
                     fav.style.opacity = 1;
                 }
             })
