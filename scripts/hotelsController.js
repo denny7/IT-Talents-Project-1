@@ -145,8 +145,10 @@ function getHotelsInSearchBar() {
     var searchValue = document.querySelector("input.form-control");
     var city = filterByCity(searchValue.value);
     searchValue.value = city.name;
-    // city.getHotels().forEach(hotel => console.log(hotel.name));
-    return city.getHotels();
+    if (city) {
+        return city.getHotels();
+    }
+    return city;
 }
 //Events for the search bar
 var isItSearchingByCity = true;
@@ -161,7 +163,7 @@ document.querySelector("button.searchHeader").addEventListener("click", function
     filterByMoreFilters();
 }, false)
 //Event for the hotel search bar
-document.getElementById("searchByName").addEventListener("keypress", function (event) {
+document.getElementById("searchByName").addEventListener("keyup", function (event) {
     event.preventDefault();
     if (event.key == "Enter") {
         isItSearchingByCity = false;
@@ -316,7 +318,8 @@ function filterByMoreFilters() {
         return filteredHotels;
 
     } catch (error) {
-        console.error(error.message);
+        var container = document.getElementById("hotelsContainer");
+        container.innerHTML = "<h2>Зададеното име от вас го няма!</h2>"
     }
 }
 
