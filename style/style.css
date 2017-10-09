@@ -2,12 +2,23 @@ body {
     margin: 0 auto;
     background: #ebeced;
 }
-
+.container, .buttonsHeader {
+  display: none;
+}
+.findBestHotel{
+  color: white;
+  text-align: center;
+}
+.headerDown > .row > .col-sm-4 {
+  margin-top: 1.1em;
+}
 .headerUp {
     height: auto;
     background: white;
 }
-
+.headerDown {
+  padding-bottom: 2em;
+}
 .currency {
     height: 70px;
     border: none;
@@ -56,7 +67,9 @@ body {
     height: 40px;
     margin-left: 30%;
 }
-
+.searchHeader {
+  width: 4em;
+}
 .buttonsHeader button {
     display: inline-block;
     width: 100%;
@@ -690,5 +703,13 @@ footer {
     }
     .sidenav {
       display: none;
+    }
+    .headerDown > .row > .col-sm-4 {
+      margin-top: -1px;
+    }
+    .findBestHotel{
+      color: white;
+      text-align: center;
+      font-size: 1.5em;
     }
 }

@@ -160,6 +160,12 @@ document.querySelector("input.form-control1").addEventListener("keypress", funct
 }, false)
 document.querySelector("button.searchHeader").addEventListener("click", function() {
     isItSearchingByCity = true;
+    $(".container").show()
+    $(".buttonsHeader").show()
+    $(".findBestHotel").hide()
+    $(".headerDown > .row > .col-sm-4").css("margin-top","0px")
+    $(".headerDown").css("padding-bottom","0px")
+
     filterByMoreFilters();
 }, false)
 //Event for the hotel search bar
@@ -664,11 +670,11 @@ $(".showFilters").on("click", function() {
     clickedShowFilters = !clickedShowFilters
     if (clickedShowFilters) {
         $(".sidenav").css("display", "none");
-        $(".btnText").text("Покажи филтрите");
+        $(".btnTextFilters").text("Покажи филтрите");
 
     } else {
         $(".sidenav").css("display", "block");
-        $(".btnText").text("Скрий филтрите");
+        $(".btnTextFilters").text("Скрий филтрите");
 
     }
 });
