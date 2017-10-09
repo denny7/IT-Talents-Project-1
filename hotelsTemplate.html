@@ -83,16 +83,16 @@
         </div>
         <!-- close .photos -->
         <div class="row infoHotel">
-            <p class="infoHotels"> Инфо за {{name}} </p>
+            <h3 class="infoHotels"> Инфо за {{name}} </h3>
             <p> -Категория {{category}} звезди</p>
             <p> -Pазстояние до центъра {{distanceFromCentre}} км.</p>
             <p> -Брай стаи {{numberOfRooms}} </p>
             {{#if breakfast}}
-            <p>- Безплатна закуска</p>
+            <p> -Безплатна закуска</p>
             {{/if}} {{#if wi-fi}}
-            <p>- Безплатен Wi-Fi</p>
+            <p> -Безплатен Wi-Fi</p>
             {{/if}} {{#each plusoveZaHotela}}
-            <p> - {{this}} </p>
+            <p> -{{this}} </p>
             {{/each}}
 
         </div>
@@ -155,7 +155,7 @@
             {{#each offers}}
             <div class="oferti">
                 <a class="ofertiLink" href="http://www.{{nameOffer}}">{{nameOffer}}</a>
-                <p>{{priceOffer}}  {{currency}}</p>
+                <p>{{priceOffer}} {{currency}}</p>
             </div>
             {{/each}}
         </div>

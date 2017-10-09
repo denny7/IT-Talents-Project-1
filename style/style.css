@@ -269,6 +269,10 @@ footer {
     z-index: 500;
 }
 
+#id01 .container, #id02 .container {
+    width: 220%;
+}
+
 .center {
     height: auto
 }
@@ -375,17 +379,24 @@ footer {
 }
 
 .infoHotel {
-    margin-left: 1em;
+    margin-left: 5em;
 }
 
 .infoHotel p {
-    display: inline-block;
-    margin-right: 2em;
+    width: 50%;
+    text-align: center;
 }
 
-.infoHotel p:first-of-type {
+.infoHotel p:nth-child(2n) {
+    float: right;
+    margin-right: 5em;
+}
+
+.infoHotel h3 {
     display: block;
     font-size: 1.5em;
+    width: 100%;
+    text-align: center;
 }
 
 .photos img {
@@ -433,9 +444,7 @@ footer {
     .location {
         margin-left: 3em;
     }
-    .offerts {
-        display: flex;
-    }
+
     .oferti {
         margin: 0px !important;
     }
@@ -500,7 +509,7 @@ footer {
         margin-right: 1em !important;
         float: right;
     }
-    .templateHotels img {
+    .templateHotels .profilePicture {
         width: 20em;
     }
     .templateHotels>.row>.col-sm-3 button {
@@ -616,5 +625,63 @@ footer {
     }
     #sel1 {
         margin-top: 0.7em;
+    }
+    .ofertiHotel {
+        width: 100% !important;
+        text-align: center;
+    }
+    .templateHotels>.row>.col-sm-7>p {
+        width: 100% !important;
+        margin: 0 0 0.5em 0 !important;
+    }
+    .templateHotels>.row>.col-sm-3>p {
+        width: 100% !important;
+        margin: 0 0 0.5em 0 !important;
+        text-align: center;
+    }
+    .templateHotels>.row>.col-sm-3 button {
+        width: 80% !important;
+        margin-left: 10% !important;
+    }
+    .moreAboutHotel li {
+        text-align: center
+    }
+    .moreAboutHotel li:hover {
+        background: #7c8079;
+    }
+    .infoHotel p {
+        width: 100% !important;
+        text-align: center;
+        margin: 0 0 0.5em 0!important;
+    }
+    .avgRating {
+        width: 100% !important;
+        height: auto !important;
+        font-size: .8em;
+        margin: 0 0 .8em 0 !important;
+    }
+    .avgRatingPar, .avgRatingNumber {
+        margin: 0 auto !important;
+        padding: 0 !important
+    }
+    .checkOpinion {
+        width: 100%;
+        text-align: center;
+    }
+    .location {
+        margin: 0 auto !important;
+        width: 100%;
+        text-align: center;
+    }
+    .oferti {
+        display: block;
+    }
+    .oferti a, .oferti p {
+        margin: 0 auto !important;
+        display: inline-block;
+        width: 100%;
+    }
+    #id01 .container, #id02 .container {
+        width: 100%;
     }
 }
