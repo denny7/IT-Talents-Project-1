@@ -2,7 +2,7 @@ body {
     margin: 0 auto;
     background: #ebeced;
 }
-.container, .buttonsHeader {
+.containerMain, .buttonsHeader {
   display: none;
 }
 .findBestHotel{

@@ -194,7 +194,7 @@ document.querySelector("input.form-control1").addEventListener("keyup", function
     if (event.key == "Enter") {
         isFavouritesClicked = false;
         isItSearchingByCity = true;
-        $(".container").show()
+        $(".containerMain").show()
         $(".buttonsHeader").show()
         $(".findBestHotel").hide()
         $(".headerDown > .row > .col-sm-4").css("margin-top", "0px")
@@ -570,7 +570,7 @@ function resetFilters() {
         currencySelectors[0].setAttribute("selected","selected");
         selectCurrency.selectedIndex = 0;
     }
-    
+
     filterByMoreFilters();
 }
 document.querySelector("button.deleteFiltersBtn").addEventListener("click", function () {
@@ -667,7 +667,7 @@ function favouriteHotels() {
             } else {
                 fav.style.opacity = 0.7;
             }
-            fav.addEventListener("click", function (event) {     
+            fav.addEventListener("click", function (event) {
                 if (userList.isTheHotelAdded(username, hotelName)) {
                     userList.removeFavourite(username, hotelName);
                     fav.style.opacity = 0.7;
