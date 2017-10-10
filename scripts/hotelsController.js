@@ -214,7 +214,7 @@ document.querySelector("button.searchHeader").addEventListener("click", function
     filterByMoreFilters();
 }, false)
 //Event for the hotel search bar
-document.getElementById("searchByName").addEventListener("keyup", function (event) {
+document.getElementById("searchByName").addEventListener("keyup", function(event) {
     event.preventDefault();
     if (event.key == "Enter") {
         isFavouritesClicked = false;
