@@ -687,18 +687,25 @@ var userList = (function() {
             localStorage.setItem("users", JSON.stringify(this._users));
         }
     }
-    UserList.prototype.addFavourite = function(username,hotel){
+    UserList.prototype.addFavourite = function(username,hotelName){
         var findUser = this._users.find(user=>user.username===username);
-        findUser.favorites.push(hotel);
+        findUser.favorites.push(findHotel(hotelName));
+        localStorage.setItem('users', JSON.stringify(this._users));
     }
-    UserList.prototype.removeFavourite = function(username,hotel){
+    UserList.prototype.removeFavourite = function(username,hotelName){
         var findUser = this._users.find(user=>user.username===username);
-        var indexHotel = findUser.favorites.findIndex(favourite=>hotel.name===favourite.name);
+        var indexHotel = findUser.favorites.findIndex(favourite=>hotelName===favourite.name);
         findUser.favorites.splice(indexHotel,1);
+        localStorage.setItem('users', JSON.stringify(this._users));
     }
-    UserList.prototype.isTheHotelAdded = function(username,hotel){
+    UserList.prototype.isTheHotelAdded = function(username,hotelName){
         var findUser = this._users.find(user=>user.username===username);
-        return findUser.favorites.find(fav=>fav.name==hotel.name);
+        for (var index = 0; index < findUser.favorites.length; index++) {
+            if (findUser.favorites[index].name==hotelName) {
+                return true;
+            }   
+        }
+        return false;
     }
     UserList.prototype.checkUsername = function(username) {
         return this._users.find(user => user.username === username);
@@ -714,6 +721,9 @@ var userList = (function() {
     }
     UserList.prototype.login = function(username, password) {
         return this._users.some(user => user.username === username && user.password === password);
+    }
+    UserList.prototype.getFavouriteHotelsOfUser = function(username){
+        return this.checkUsername(username).favorites;
     }
     return new UserList();
 })();

@@ -275,7 +275,35 @@ footer {
     margin-left: 10px;
     margin-right: 10px;
 }
-
+#logged:hover{
+    cursor: default;
+}
+#logged-in-dropdown-menu{
+    display:none;
+    width: 80px;
+    height: 40px;
+    position: absolute;
+    right: 15px;
+    z-index: 100;
+    top:70px;
+    background-color: white;
+    box-shadow: inset 1px 1px rgba(0,0,0,0.075);
+    box-sizing: border-box;
+    margin-top: -22px;
+}
+#logged-in-dropdown-menu>ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+#logged-in-dropdown-menu>ul>li{
+    margin: 0;
+    padding: 0;
+}
+#logged-in-dropdown-menu>ul>li:hover{
+    background-color: #51A4E3;
+    cursor: pointer;
+}
 #logged img {
     width: 25px;
 }
@@ -343,7 +371,7 @@ footer {
   z-index: 50;
   float:left;
   cursor: pointer;
-  opacity: 0.7;
+  opacity: 0.5;
   display:none;
   width: 50px;
 }
