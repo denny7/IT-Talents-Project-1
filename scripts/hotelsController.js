@@ -162,14 +162,12 @@ document.getElementById("logout").addEventListener("click", function (event) {
     dropDown.style.display = "block";
     document.getElementById("userShowName").innerText = '';
     document.getElementById("logged").style.display = "none";
-    document.querySelector("#logged-in-dropdown-menu>ul").style.display="none";
     logDisplayed = true;
     isFavouritesClicked = false;
     var container = document.getElementById("hotelsContainer");
     container.innerHTML = '';
     resetFilters();
 })
-var isFavouritesClicked = false;
 document.getElementById("favourites").addEventListener("click", function (event) {
     isFavouritesClicked = true;
     document.querySelector("input.form-control1").value = '';

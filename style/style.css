@@ -9,6 +9,7 @@ body {
   color: white;
   text-align: center;
 }
+
 .headerDown > .row > .col-sm-4 {
   margin-top: 1.1em;
 }
@@ -293,7 +294,7 @@ footer {
 }
 #logged-in-dropdown-menu>ul{
     list-style-type: none;
-    padding: 0;
+    padding: 0 0 0 1em;
     margin: 0;
 }
 #logged-in-dropdown-menu>ul>li{
